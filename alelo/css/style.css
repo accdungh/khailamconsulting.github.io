@@ -120,6 +120,7 @@ a:hover {
 
   .btn-created:hover {
     background:#3177B2;
+    color: #fff;
   }
 
   .btn-created.btn-save {
@@ -173,6 +174,11 @@ a:hover {
 .f-n-14 {
   font-size: 14px;
   font-weight: 400;
+}
+
+.f-m-14 {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 
@@ -268,26 +274,34 @@ a:hover {
  * Class Viewer
  */
 
+
+.card-body .table-custom tr:first-child td:first-child,
 .table-custom th:first-child {
     -moz-border-radius: 6px 0 0 0;
     -webkit-border-radius: 6px 0 0 0;
     border-radius: 6px 0 0 0;
 }
+
+.card-body .table-custom tr:first-child td:last-child,
 .table-custom th:last-child {
     -moz-border-radius: 0 6px 0 0;
     -webkit-border-radius: 0 6px 0 0;
     border-radius: 0 6px 0 0;
 }
+
+.card-body .table-custom td:only-child,
 .table-custom th:only-child{
     -moz-border-radius: 6px 6px 0 0;
     -webkit-border-radius: 6px 6px 0 0;
     border-radius: 6px 6px 0 0;
 }
+
 .table-custom tr:last-child td:first-child {
     -moz-border-radius: 0 0 0 6px;
     -webkit-border-radius: 0 0 0 6px;
     border-radius: 0 0 0 6px;
 }
+
 .table-custom tr:last-child td:last-child {
     -moz-border-radius: 0 0 6px 0;
     -webkit-border-radius: 0 0 6px 0;
@@ -299,8 +313,12 @@ a:hover {
   border-radius: 6px;
   border-collapse: separate !important;
   border-spacing: 0;
+   
+ }
+
+ .table-custom > tbody {
   height: 125px;
-  overflow: hidden;
+  overflow-y: scroll;
  }
 .table-custom th {
   background: #61AAE8;
@@ -309,6 +327,7 @@ a:hover {
   font-size: 18px;
   font-weight: 500;
   padding: 5px 0;
+  position: sticky; top: 0;
 }
 
 .table-custom td {
@@ -334,10 +353,6 @@ a:hover {
   display: block;
   height: 18px;
   margin-left: 45px; 
-}
-
-.table-custom tbody {
-  overflow-y: scroll;
 }
 
 .form-setting {
@@ -368,3 +383,150 @@ a:hover {
   right: 20px;
   top: 15px;
 }
+.wrap-date .input-group {
+  float: left;
+  width: 50%;
+}
+.wrap-date {
+  position: relative;
+}
+.wrap-date input {
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  border: 1px solid #CBCBCB; 
+  border-radius: 6px ;
+  padding: 5px;
+  color:#707070;
+  width: 100%;
+}
+
+.wrap-date .datepicker-enddate {
+  border-right: 0;
+  border-radius: 6px 0px 0px 6px;
+  
+}
+
+
+.wrap-date .datepicker-startdate {
+  border-radius: 0px 6px 6px 0px;
+}
+
+.wrap-date .end-date:after {
+  background: url("../images/calendar.png") no-repeat 0 0 ;
+  width: 56px;
+  height: 42px;
+  position: absolute;
+  right: 0;
+  bottom:0;
+  content: "";
+  display: block;
+}
+
+.modal-content {
+  border: 1px solid #61AAE8;
+  border-radius: 6px;
+}
+
+.modal-header {
+  background-color: #61AAE8;
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+}
+
+.modal-header h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-body,
+.modal-body {
+  padding: 30px
+}
+
+.modal-body h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color:#FF5F37;
+  margin-bottom: 20px;
+}
+
+.modal-header .close {
+  border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 5px;
+    line-height: 13px;
+    margin: 0;
+    color: #fff;
+    
+    opacity: 1;
+}
+
+.card {
+  margin: 0 0 20px 0;
+  border-radius: 6px;
+  border: 1px solid #61AAE8;
+}
+
+.card .card-header {
+  background-color: #61AAE8;
+  font-size: 20px;
+  color: #fff;
+  padding: 0;
+  color: #fff; 
+  border-bottom: 0;
+}
+
+
+.card .card-header .btn-link {
+  color: #fff;
+  padding: 10px;
+}
+
+.card-body .table-custom {
+  border-color: #707070;
+}
+
+.card-body .table-custom td {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.table-modal th {
+  width: 166px;
+  padding: 10px;
+  color: #3177B2;
+  font-weight: 500;
+}
+
+
+
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 752px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-tabs-list {
+    width: 100%;
+  }
+
+  .nav-tabs-list .nav-item {
+    padding: 0px 10px;
+  }
+}
+
+
+
+
+
+  
+
+
+
+
+

@@ -1,6 +1,5 @@
 jQuery(document).ready(function ( $ ) {
-	//Tab
-	$('#myTab li:last-child a').tab('show')
-	
-
-}
+	$('.datepicker-startdate').datepicker();
+	$('.datepicker-enddate').datepicker();
+	var bsModal = $.fn.modal.noConflict();
+});
