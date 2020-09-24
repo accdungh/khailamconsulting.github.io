@@ -1,0 +1,20 @@
+[
+  {
+    "id": "59a72342b0b6f76295f65110",
+    "name": "Speech Class",
+    "startDate": "7/15/2020",
+    "endDate": "8/31/2020",
+    "description": "Aliquam ut finibus est ....",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  },
+  {
+    "id": "59a72342b1b6f76295f65110",
+    "name": "Grammar 1",
+    "startDate": "6/01/2020",
+    "endDate": "7/31/2020",
+    "description": "Aliquam ut finibus est ....",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  }
+]

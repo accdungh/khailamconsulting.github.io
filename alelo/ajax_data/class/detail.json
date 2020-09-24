@@ -1,0 +1,39 @@
+{
+  "id": "59a72342b0b6f76295f65110",
+  "name": "Speech Class",
+  "startDate": "7/15/2020",
+  "endDate": "8/31/2020",
+  "description": "Aliquam ut finibus est ….",
+  "enrolledStudent": 6,
+  "totalStudent": 7,
+  "activeCourse": [
+    {
+      "id": 1,
+      "name": "Enskill CEFR Level A1",
+      "expirationDate": "8/31/2021",
+      "link": "/url/to/course/en1",
+      "simulation": [
+        {
+          "xid": 1,
+          "name": "Jerry’s Spaghetti",
+          "description": "CEFR Statements …… exchanges.",
+          "Objectives": [
+            {
+              "name": "Order Appetizer",
+              "skills": "HTML"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "availableCourse": [],
+  "students": [
+    {
+      "id": "59a72342b0b6f76295f65680",
+      "firstName": "Samuel",
+      "lastName": "Hernandez",
+      "lastLogin": "mm/dd/yyyy hh:mm"
+    }
+  ]
+}
