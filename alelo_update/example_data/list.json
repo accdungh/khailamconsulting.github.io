@@ -1,0 +1,56 @@
+[
+  {
+    "id": "59a72342b0b6f76295f65110",
+    "name": "Speech Class",
+    "startDate": "7/15/2020",
+    "endDate": "8/31/2020",
+    "description": "Aliquam ut finibus est ....",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  },
+  {
+    "id": "59a72342b0b6f76295f65110",
+    "name": "Inglés intermedio nivel 1",
+    "startDate": "9/1/2020",
+    "endDate": "12/31/2020",
+    "description": "6 out of 7 students have enrolled in the Enskill Simulations.",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  },
+  {
+    "id": "59a72342b0b6f76295f65110",
+    "name": "Inglés intermedio nivel 2",
+    "startDate": "9/1/2020",
+    "endDate": "12/31/2020",
+    "description": "6 out of 7 students have enrolled in the Enskill Simulations.",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  },
+  {
+    "id": "59a72342b0b6f76295f65110",
+    "name": "Academic English",
+    "startDate": "9/1/2020",
+    "endDate": "12/31/2020",
+    "description": "6 out of 7 students have enrolled in the Enskill Simulations.",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  },
+  {
+    "id": "59a72342b0b6f76295f65110",
+    "name": "Business English 1",
+    "startDate": "9/1/2020",
+    "endDate": "12/31/2020",
+    "description": "6 out of 7 students have enrolled in the Enskill Simulations.",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  },
+  {
+    "id": "59a72342b1b6f76295f65110",
+    "name": "Grammar 1",
+    "startDate": "6/01/2020",
+    "endDate": "7/31/2020",
+    "description": "Aliquam ut finibus est ....",
+    "enrolledStudent": 6,
+    "totalStudent": 7
+  }
+]
