@@ -1,0 +1,4 @@
+1. run `npm install`
+2. run `npm start`
+3. import js `assets/dist/main.js` to html file
+3. import css `assets/dist/main.css` to html file
