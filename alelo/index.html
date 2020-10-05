@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/styles/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/bootstrap-datepicker3.standalone.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- From assets -->
+  <link rel="stylesheet" href="assets/dist/main.css" rel="stylesheet">
+
+  <title>Enskill_3.0_SimServer_InstructorDashboard</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-20">
+            <a href="index.html"><img src="assets/images/logo.jpg" alt=""></a>
+          </div>
+          <div class="col-12 col-lg-4 text-right mt-md-4">
+
+            <div class="dropdown">
+              <button class="btn dropdown-toggle button-gray-100" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Language <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">English</a>
+                <a class="dropdown-item" href="#">Español</a>
+                <a class="dropdown-item" href="#">Português</a>
+                <a class="dropdown-item" href="#">中文</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="block-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-19 col-md-12">
+            <h1 class="title-heading">Welcome, Walter Mitchell!</h1>
+          </div>
+          <div class="col-5 col-md-12 text-right"><a href="" class="text-white f-n-18">Log Out</a></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <ul class="nav nav-tabs-list" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="classlist-tab" data-toggle="tab" href="#classlist" role="tab" aria-controls="classlist" aria-selected="true">Class List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="classviewer-tab" data-toggle="tab" href="#classviewer" role="tab" aria-controls="classviewer" aria-selected="false">Class Viewer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="archived-tab" data-toggle="tab" href="#archived" role="tab" aria-controls="archived" aria-selected="false">Archived Classes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Class List-->
+          <div class="tab-pane class-list mt-4 active" id="classlist" role="tabpanel" aria-labelledby="classlist-tab">
+            <form>
+              <div class="form-group">
+                <h2 class="class-title">Inglés intermedio nivel 1</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+              </div>
+
+              <div class="form-group">
+                <h2 class="class-title">Inglés intermedio nivel 2</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+
+              </div>
+
+              <div class="form-group">
+                <h2 class="class-title">Academic English</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+              </div>
+
+              <div class="form-group">
+                <h2 class="class-title">Business English 1</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+              </div>
+
+              <a href="#" class="btn btn-created mt-5 mb-5">Create A  New Class</a>
+
+            </form>
+          </div>
+
+          <!-- Class Viewer-->
+          <div class="tab-pane class-viewer mt-4" id="classviewer" role="tabpanel" aria-labelledby="classviewer-tab">
+            <form>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-13">
+                    <h2 class="class-title d-inline">Inglés intermedio nivel 1</h2>
+                    <a class="edit-link d-inline f-n-20 ml-2" href="#">Edit</a>
+                  </div>
+                  <div class="col-md-11 clearfix">
+                    <div class="wrap-date float-right">
+                      <div class="input-group start-date">
+                        <label class="f-m-14 blue-light ml-3">Start</label>
+                        <input class="datepicker-enddate" value="9/1/2020" data-date-format="mm/dd/yyyy">
+                      </div>
+
+
+                      <div class="input-group end-date">
+                        <label class="f-m-14 blue-light ml-3">End</label>
+                        <input class="datepicker-startdate" value="12/31/2020" data-date-format="mm/dd/yyyy">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+
+              </div>
+            </form>
+
+            <div class="wrap-course mb-3">
+              <h3 class="f-m-20 d-inline blue-bold">Courses</h3>
+              <span class="d-inline float-right f-n-14 blue-light mr-4">Hover on any title for more information</span>
+            </div>
+            <div class="wrap-item">
+            <div class="scrollbar scrollbar-inner">
+
+            <table class="table table-striped table-custom header-fixed">
+              <thead>
+                <tr>
+
+                  <th class="text-center" scope="col">Accessible</th>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Play Simulations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#course-info" data-toggle="modal" data-target="#course-info">Basic English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Transitional English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Effective and Persuasive Communication</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold">English Refresher</td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#exampleModalLong" data-toggle="modal" data-target="#exampleModal">Basic English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Transitional English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Effective and Persuasive Communication</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold">English Refresher</td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#exampleModalLong" data-toggle="modal" data-target="#exampleModal">Basic English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Transitional English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Effective and Persuasive Communication</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold">English Refresher</td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#exampleModalLong" data-toggle="modal" data-target="#exampleModal">Basic English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Transitional English</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold"><a href="#">Effective and Persuasive Communication</a></td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+
+                <tr>
+                  <td align="center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="f-m-18 blue-bold">English Refresher</td>
+                  <td><a href="#" class="launch_ap"></a></td>
+                </tr>
+
+
+
+
+              </tbody>
+            </table>
+          </div>
+          </div>
+
+            <div class="wrap-student mb-3">
+              <h3 class="f-m-20 d-inline blue-bold">Student List</h3>
+              <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"><i class="fa fa-download"></i> Download</span>
+            </div>
+            <div class="wrap-item">
+            <div class="scrollbar scrollbar-inner">
+            <table class="table table-striped table-custom table-lst-student header-fixed">
+              <thead>
+                <tr>
+                  <th class="text-center pl-4 pr-4" scope="col">
+                     <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox"  value="option1" aria-label="...">
+                    </div>
+                  </th>
+                  <th scope="col">Last Name <i class="fa fa-chevron-down"></i></th>
+                  <th scope="col">First Name <i class="fa fa-chevron-down"></i></th>
+                  <th scope="col">Last Login <i class="fa fa-chevron-down"></i></th>
+                  <th scope="col">Total Time <i class="fa fa-chevron-down"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold"><a href="StudentPage.html">Hernandez</a></td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold color-red">Hernandez</td>
+                  <td class="font-weight-bold color-red">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+                <tr>
+
+                  <td class="text-center">
+                    <div class="form-check">
+                      <input class="form-check-input position-static" type="checkbox" value="option1" aria-label="...">
+                    </div>
+                  </td>
+                  <td class="font-weight-bold">Hernandez</td>
+                  <td class="font-weight-bold">Samuel</td>
+                  <td>September 3, 2020 23:57</td>
+                  <td>1:24:28</td>
+                </tr>
+
+
+
+
+
+              </tbody>
+            </table>
+          </div>
+          </div>
+
+              <div class="clearfix">
+                <a href="#delete-class" class="float-left f-m-18" data-toggle="modal" data-target="#delete-class">
+                Delete Your Class</a>
+                <a href="#addclass1" data-toggle="modal" data-target="#addclass1" class="btn-created float-right">Add Students</a>
+
+                <a href="#resent-invitation" data-toggle="modal" data-target="#resent-invitation" class="btn-created btn-red float-right">Resend Invitation(s)</a>
+
+                <a href="#removestudent" data-toggle="modal" data-target="#removestudent" class="btn-created  btn-red float-right">Remove Student(s)</a>
+
+              </div>
+
+          </div>
+
+          <!-- Archived Class-->
+          <div class="tab-pane class-archived mt-4" id="archived" role="tabpanel" aria-labelledby="archived-tab">
+            <form>
+              <div class="form-group">
+
+                <h2 class="class-title">Archived Class 1</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+
+              </div>
+
+              <div class="form-group">
+
+                <h2 class="class-title">Archived Class 2</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+
+              </div>
+
+              <div class="form-group mb-5 pb-5">
+
+                <h2 class="class-title">Archived Class 3</h2>
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                  <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">9/1/2020 - 12/31/2020</div>
+                </div>
+                <input type="text" id="" class="form-control" value="6 out of 7 students have enrolled in the Enskill Simulations.">
+
+              </div>
+
+
+
+
+            </form>
+          </div>
+
+          <!-- Settings-->
+          <div class="tab-pane mt-4" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <h2 class="class-title mb-2">Profile</h2>
+            <form>
+              <div class="form-setting">
+                <div class="form-group">
+                  <div class="clearfix mb-3">
+                    <h2 class="class-title d-inline">Walter Mitchell</h2>
+                    <a class="edit-link d-inline f-n-20 ml-2" href="#">Edit</a>
+                  </div>
+                  <div class="custom-select-group col-md-14">
+                    <select class="form-control custom-select mb-4">
+                      <option value="0">Institution</option>
+                      <option value="1">Institution</option>
+                      <option value="2">Institution</option>
+                    </select>
+                  </div>
+
+                  <div class="custom-select-group col-md-14">
+                    <select class="form-control custom-select mb-4">
+                      <option value="0">Institution</option>
+                      <option value="1">Institution</option>
+                      <option value="2">Institution</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-created mt-3 mb-3" data-toggle="collapse" href="#passwordShow" aria-expanded="false" aria-controls="passwordShow">Change Password</button>
+
+
+                <div id="passwordShow" class="wrap-password collapse">
+
+                    <div class="form-group">
+                      <label for="current-password" class="f-n-16">Enter your current password</label>
+                      <input type="email" class="form-control col-md-10 p-2" id="current-password" aria-describedby="emailHelp">
+
+                    </div>
+                    <div class="form-group">
+                      <label for="new-password" class="f-n-16">Enter a new password</label>
+                      <input type="password" class="form-control col-md-10 mb-2 p-2" id="new-password">
+                      <input type="password" class="form-control col-md-10 p-2" id="confirm-new-password">
+                    </div>
+
+                    <button type="submit" class="btn btn-created">Submit</button>
+
+                </div>
+              </div>
+              <div class="form-check mt-3 mb-3">
+                <input type="checkbox" class="form-check-input" id="receive">
+                <label class="form-check-label" for="receive">Receive our newsletter to learn about new developments!</label>
+              </div>
+              <button type="submit" class="btn btn-created btn-save">Save</button>
+            </form>
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="bg-blue">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 text-center text-md-left">
+              Copyright 2020 Alelo Inc.  All rights reserved.
+            </div>
+            <div class="col-md-7 text-center text-md-left">
+              Play. Learn. Communicate.
+            </div>
+            <div class="col-md-7">
+              <ul class="list-inline f-20 mb-0 mt-md-0 text-center text-md-right">
+                <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Legal</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal-delele-Class -->
+    <div class="modal fade" id="course-info" tabindex="-1" role="dialog" aria-labelledby="course-infoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="course-infoLabel">Course Objectives</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3>Select a simulation for more information</h3>
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h3 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Jerry’s Spaghetti
+                    </button>
+                  </h3>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <h4 class="f-m-18 blue-bold">CEFR Statements / Students can:</h4>
+                    <ul>
+                      <li>Understand what people say to me in simple, everyday conversation.</li>
+                      <li>Communicate in everyday situations.</li>
+                      <li>Politely talk to people in short social exchanges.</li>
+                    </ul>
+                    <table class="table-modal">
+                      <thead>
+                        <tr>
+                          <th scope="col">Objectives</th>
+                          <th scope="col">Skills</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <table class="table table-striped table-custom">
+                      <tbody>
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Your Roommate Tony
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <h4 class="f-m-18 blue-bold">CEFR Statements / Students can:</h4>
+                    <ul>
+                      <li>Understand what people say to me in simple, everyday conversation.</li>
+                      <li>Communicate in everyday situations.</li>
+                      <li>Politely talk to people in short social exchanges.</li>
+                    </ul>
+                    <table class="table-modal">
+                      <thead>
+                        <tr>
+                          <th scope="col">Objectives</th>
+                          <th scope="col">Skills</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <table class="table table-striped table-custom">
+                      <tbody>
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Music Festival
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <h4 class="f-m-18 blue-bold">CEFR Statements / Students can:</h4>
+                    <ul>
+                      <li>Understand what people say to me in simple, everyday conversation.</li>
+                      <li>Communicate in everyday situations.</li>
+                      <li>Politely talk to people in short social exchanges.</li>
+                    </ul>
+                    <table class="table-modal">
+                      <thead>
+                        <tr>
+                          <th scope="col">Objectives</th>
+                          <th scope="col">Skills</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <table class="table table-striped table-custom">
+                      <tbody>
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                        <tr>
+                          <td>Order Appetizer</td>
+                          <td>Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal-delele-Class -->
+    <div class="modal fade" id="delete-class" tabindex="-1" role="dialog" aria-labelledby="delete-classLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="delete-classLabel">Delete Class</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="f-m-20 blue-bold">This class and all of its data will be deleted forever.</p>
+            <div class="wrap-item text-center pb-5">
+              <h3 class="mt-5 mb-5">Are you sure you want to delete this class?</h3>
+              <a href ="#" class="btn-created">Yes, Delete</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal-Add-Class -->
+    <div class="modal fade" id="addclass1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Add Students</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="f-m-20 blue-bold mb-1">Instructions</p>
+            <p class="f-m-20 gray-blur mb-5">Enter email addresses separated by a comma or space. You may also copy and paste a list into the box.</p>
+            <div class="wrap-item text-center pb-5">
+              <div class="lst-student text-left p-1">
+                ninenine@yahoo.ca<br>
+                oracle@hotmail.com<br>
+                tellis@icloud.com<br>
+                pakaste@me.com<br>
+                banarse@comcast.net<br>
+                animats@att.net<br>
+                helger@comcast.net<br>
+                rmcfarla@comcast.net<br>
+                microfab@mac.com<br>
+                jfmulder@yahoo.com<br>
+                mgreen@aol.com<br>
+                stevelim@live.com
+              </div>
+
+            </div>
+            <a href ="#addclass2" class="btn-created float-right btn-invite"  data-toggle="modal" data-target="#addclass2">Invite</a>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal-Invite -->
+    <div class="modal fade" id="addclass2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Add Students</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="f-m-20 blue-bold mb-1">Instructions</p>
+            <p class="f-m-20 gray-blur mb-5">Enter email addresses separated by a comma or space. You may also copy and paste a list into the box.</p>
+            <div class="wrap-item text-center pb-5">
+               <h3 class="mt-5 mb-5">Invitations sent!</h3>
+                <a href ="#" class="btn-created">Add More</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal-Remove Student -->
+    <div class="modal fade" id="removestudent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Remove Student(s)</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="f-m-20 blue-bold mb-5">This will permanently remove student(s) from your class!</p>
+
+            <div class="wrap-item text-center pb-5">
+               <h3 class="mt-5 mb-5">Are you sure you want to remove
+the selected student(s)?</h3>
+                <a href ="#" class="btn-created">Yes, Remove</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal-Remove Student -->
+    <div class="modal fade" id="resent-invitation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Resend Invitation</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="f-m-20 blue-bold mb-1">You are about to resend an invitation to the following student(s):</p>
+            <p class="f-m-20 gray-blur mb-5">Invitations will be sent to selected students.  If a student has already accepted an invitation, a new invitation will not be sent.</p>
+
+            <div class="wrap-item text-center pb-5">
+               <h3 class="mt-5 mb-5">Resend Invitation?</h3>
+                <a href ="#" class="btn-created">Yes, Resend</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="assets/scripts/jquery-3.5.1.min.js"></script>
+  <script src="assets/scripts/popper.min.js"></script>
+  <script src="assets/scripts/bootstrap.min.js"></script>
+  <script src="assets/scripts/bootstrap-datepicker.min.js"></script>
+  <script src="assets/scripts/jquery.scrollbar.min.js"></script>
+
+  <!-- From assets -->
+  <script src="assets/dist/main.js"></script>
+</body>
+
+</html>

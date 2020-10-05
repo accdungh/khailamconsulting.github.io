@@ -394,7 +394,6 @@ a:hover {
    */
 
 .nav-tabs-list {
-  border-bottom: 1px solid #707070;
   padding: 30px 0 0;
 }
 
@@ -800,6 +799,10 @@ a:hover {
   }
 
   .nav-tabs-list .nav-item {
+    width: 25%;
+  }
+
+  .nav-tabs-list .nav-item {
     padding: 0px 10px;
   }
 
@@ -823,3 +826,5 @@ a:hover {
     padding: 5px 0;
   }
 }
+
+

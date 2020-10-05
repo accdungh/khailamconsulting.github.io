@@ -27135,7 +27135,7 @@ var staticRenderFns = [
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12 col-lg-4 text-right mt-4" }, [
+            _c("div", { staticClass: "col-12 col-lg-4 text-right mt-md-4" }, [
               _c("div", { staticClass: "dropdown" }, [
                 _c(
                   "button",
@@ -28528,7 +28528,8 @@ var render = function() {
           _c(
             "table",
             {
-              staticClass: "table table-striped table-custom table-lst-student"
+              staticClass:
+                "table table-striped table-custom table-lst-student header-fixed"
             },
             [
               _vm._m(6),

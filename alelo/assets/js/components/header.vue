@@ -6,7 +6,7 @@
           <div class="col-12 col-lg-20">
             <a href="#"><img src="assets/images/logo.jpg" alt="" /></a>
           </div>
-          <div class="col-12 col-lg-4 text-right mt-4">
+          <div class="col-12 col-lg-4 text-right mt-md-4">
             <div class="dropdown">
               <button
                 class="btn dropdown-toggle button-gray-100"

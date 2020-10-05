@@ -104,7 +104,7 @@
     </div>
     <div class="wrap-item">
       <div class="scrollbar scrollbar-inner">
-        <table class="table table-striped table-custom table-lst-student">
+        <table class="table table-striped table-custom table-lst-student header-fixed">
           <thead>
             <tr>
               <th class="text-center pl-4 pr-4" scope="col">
