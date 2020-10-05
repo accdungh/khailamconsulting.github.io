@@ -17,15 +17,6 @@ window.CommonJs = (function () {
         });
 
       });
-
-      $('.table-lst-student input[type=checkbox]').on('change', function () {
-      if($(this).prop('checked') == true)
-          $(".btn-show").show();  // checked
-
-      else if(!$(".table-lst-student input[type=checkbox]:checked").length)
-          $(".btn-show").hide();  // unchecked
-      })
-      
     }
   }
 })();

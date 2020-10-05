@@ -104,7 +104,9 @@
     </div>
     <div class="wrap-item">
       <div class="scrollbar scrollbar-inner">
-        <table class="table table-striped table-custom table-lst-student header-fixed">
+        <table
+          class="table table-striped table-custom table-lst-student header-fixed"
+        >
           <thead>
             <tr>
               <th class="text-center pl-4 pr-4" scope="col">
@@ -114,13 +116,75 @@
                     type="checkbox"
                     value="option1"
                     aria-label="..."
+                    v-model="selectedAllStudent"
+                    @change="selectAllStudent()"
                   />
                 </div>
               </th>
-              <th scope="col">Last Name <i class="fa fa-chevron-down"></i></th>
-              <th scope="col">First Name <i class="fa fa-chevron-down"></i></th>
-              <th scope="col">Last Login <i class="fa fa-chevron-down"></i></th>
-              <th scope="col">Total Time <i class="fa fa-chevron-down"></i></th>
+              <th scope="col">
+                <a
+                  href="javascript:void(0)"
+                  @click="sortStudent('lastName')"
+                  class="student-sorter"
+                >
+                  Last Name
+                  <i
+                    class="fa"
+                    :class="{
+                      'fa-chevron-down': studentOrder.lastName,
+                      'fa-chevron-up': !studentOrder.lastName,
+                    }"
+                  ></i>
+                </a>
+              </th>
+              <th scope="col">
+                <a
+                  href="javascript:void(0)"
+                  @click="sortStudent('firstName')"
+                  class="student-sorter"
+                >
+                  First Name
+                  <i
+                    class="fa"
+                    :class="{
+                      'fa-chevron-down': studentOrder.firstName,
+                      'fa-chevron-up': !studentOrder.firstName,
+                    }"
+                  ></i>
+                </a>
+              </th>
+              <th scope="col">
+                <a
+                  href="javascript:void(0)"
+                  @click="sortStudent('lastLogin', 'date')"
+                  class="student-sorter"
+                >
+                  Last Login
+                  <i
+                    class="fa"
+                    :class="{
+                      'fa-chevron-down': studentOrder.lastLogin,
+                      'fa-chevron-up': !studentOrder.lastLogin,
+                    }"
+                  ></i>
+                </a>
+              </th>
+              <th scope="col">
+                <a
+                  href="javascript:void(0)"
+                  @click="sortStudent('totalTime', 'time')"
+                  class="student-sorter"
+                >
+                  Total Time
+                  <i
+                    class="fa"
+                    :class="{
+                      'fa-chevron-down': studentOrder.totalTime,
+                      'fa-chevron-up': !studentOrder.totalTime,
+                    }"
+                  ></i>
+                </a>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -133,8 +197,8 @@
                   <input
                     class="form-check-input position-static"
                     type="checkbox"
-                    value="option1"
                     aria-label="..."
+                    v-model="selectedStudent[index]"
                   />
                 </div>
               </td>
@@ -172,18 +236,20 @@
       >
 
       <a
+        v-if="studentSelected"
         href="#resent-invitation"
         data-toggle="modal"
         data-target="#resent-invitation"
-        class="btn-created btn-red float-right btn-show"
+        class="btn-created btn-red float-right"
         >Resend Invitation(s)</a
       >
 
       <a
+        v-if="studentSelected"
         href="#removestudent"
         data-toggle="modal"
         data-target="#removestudent"
-        class="btn-created btn-red float-right btn-show"
+        class="btn-created btn-red float-right"
         >Remove Student(s)</a
       >
     </div>
@@ -295,13 +361,64 @@ export default {
   data() {
     return {
       selectedCourse: {},
+      selectedStudent: [],
+      selectedAllStudent: false,
+      studentOrder: {
+        lastName: true,
+        firstName: true,
+        lastLogin: true,
+        totalTime: true,
+      },
     };
   },
   computed: {
     ...mapGetters(["classDetail"]),
+    studentSelected() {
+      return this.selectedStudent.filter((i) => i == true).length > 0;
+    },
   },
   methods: {
     ...mapActions(["fetchClassDetail"]),
+    selectAllStudent() {
+      if (this.selectedAllStudent)
+        this.selectedStudent = this.classDetail.students.map((i) => true);
+      else this.selectedStudent = [];
+    },
+    sortStudent(orderBy, type = "string", flag = undefined) {
+      if (flag == undefined) {
+        this.studentOrder[orderBy] = !this.studentOrder[orderBy];
+        var flag = this.studentOrder[orderBy];
+      }
+
+      this.classDetail.students = this.classDetail.students.sort((a, b) => {
+        if (flag) {
+          var o1 = a[orderBy];
+          var o2 = b[orderBy];
+        } else {
+          var o1 = b[orderBy];
+          var o2 = a[orderBy];
+        }
+
+        if (type == "date") {
+          o1 = moment(o1, "MM/DD/YYYY HH:mm").format();
+          o2 = moment(o2, "MM/DD/YYYY HH:mm").format();
+        }
+
+        if (type == "time") {
+          o1 = moment(o1, "HH:mm:ss").format();
+          o2 = moment(o2, "HH:mm:ss").format();
+        }
+
+        if (o1 < o2) {
+          return -1;
+        }
+        if (o1 > o2) {
+          return 1;
+        }
+
+        return 0;
+      });
+    },
   },
   filters: {
     timeParser(string) {
@@ -315,4 +432,7 @@ export default {
 </script>
 
 <style>
+a.student-sorter {
+  color: #fff;
+}
 </style>
