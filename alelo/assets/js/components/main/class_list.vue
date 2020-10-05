@@ -79,7 +79,7 @@
         />
       </div> -->
 
-      <a href="#" class="btn btn-created mt-5 mb-5">Create A New Class</a>
+      <a href="javascript:void(0)" @click="$router.push({ name: 'ClassView' })" class="btn btn-created mt-5 mb-5">Create A New Class</a>
     </form>
   </div>
 </template>

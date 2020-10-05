@@ -125,7 +125,8 @@ var CommonJs = function () {
       });
 
       $('.table-lst-student input[type=checkbox]').on('change', function () {
-        if ($(this).prop('checked') == true) $(".btn-show").show(); // checked
+        if ($(this).prop('checked') == true) alert(123), $(".btn-show").show(); // checked
+
         else if (!$(".table-lst-student input[type=checkbox]:checked").length) $(".btn-show").hide(); // unchecked
       });
     }
@@ -27471,7 +27472,15 @@ var render = function() {
           _vm._v(" "),
           _c(
             "a",
-            { staticClass: "btn btn-created mt-5 mb-5", attrs: { href: "#" } },
+            {
+              staticClass: "btn btn-created mt-5 mb-5",
+              attrs: { href: "javascript:void(0)" },
+              on: {
+                click: function($event) {
+                  return _vm.$router.push({ name: "ClassView" })
+                }
+              }
+            },
             [_vm._v("Create A New Class")]
           )
         ],
