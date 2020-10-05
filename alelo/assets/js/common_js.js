@@ -1,6 +1,4 @@
-import './config/app.js'
-
-window.CommonJs = (function () {
+var CommonJs = (function () {
   return {
     initJs() {
       $('.datepicker-startdate').datepicker();
@@ -20,5 +18,3 @@ window.CommonJs = (function () {
     }
   }
 })();
-
-window.CommonJs.initJs();

@@ -37,7 +37,7 @@ export default {
   watch: {
     $route(to, from) {
       setTimeout(() => {
-        MainJs.initJs();
+        window.CommonJs.initJs();
       }, 50);
     },
   },

@@ -3,6 +3,7 @@ const ROOT_PATH = process.cwd();
 const Autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const Webpack = require('webpack');
 
 module.exports = function (env) {
     return {
@@ -22,9 +23,17 @@ module.exports = function (env) {
             sourceMapFilename: '[name].map'
         },
         plugins: [
+            // new Webpack.ProvidePlugin({
+            //     $: 'jquery',
+            //     jQuery: 'jquery'
+            // }),
             new ExtractTextPlugin("[name].css"),
-            new VueLoaderPlugin()
+            new VueLoaderPlugin(),
         ],
+        externals: {
+            jquery: 'jQuery',
+            $: 'jQuery'
+        },
         module: {
             rules: [
                 {
