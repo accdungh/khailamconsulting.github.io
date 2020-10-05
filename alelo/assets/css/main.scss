@@ -26,9 +26,7 @@
   width: 0;
 }
 
-.scroll-element {
-  display: none;
-}
+
 .scroll-element,
 .scroll-element div {
   box-sizing: content-box;
@@ -776,6 +774,11 @@ a:hover {
   border-color: #3177b2;
 }
 
+.btn-show {
+  display: none;
+  margin-left: 10px;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 752px;
@@ -784,10 +787,6 @@ a:hover {
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .scrollbar-inner > .scroll-element.scroll-y {
-    display: none;
-  }
-
   .form-setting {
     width: 100%;
   }
@@ -806,6 +805,8 @@ a:hover {
     padding: 0px 10px;
   }
 
+   .scrollbar-inner > .scroll-element .scroll-element_outer:before,
+  .scrollbar-inner > .scroll-element .scroll-element_outer:after,
   .scrollbar-inner > .scroll-element.scroll-y {
     display: none;
   }

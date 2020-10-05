@@ -175,7 +175,7 @@
         href="#resent-invitation"
         data-toggle="modal"
         data-target="#resent-invitation"
-        class="btn-created btn-red float-right"
+        class="btn-created btn-red float-right btn-show"
         >Resend Invitation(s)</a
       >
 
@@ -183,7 +183,7 @@
         href="#removestudent"
         data-toggle="modal"
         data-target="#removestudent"
-        class="btn-created btn-red float-right"
+        class="btn-created btn-red float-right btn-show"
         >Remove Student(s)</a
       >
     </div>
