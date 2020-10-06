@@ -17,6 +17,8 @@ window.CommonJs = (function () {
         });
 
       });
+
+      autosize($('.auto-size'));
     }
   }
 })();

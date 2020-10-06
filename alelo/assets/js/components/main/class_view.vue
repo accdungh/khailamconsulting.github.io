@@ -39,11 +39,10 @@
         <div class="row">
           <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
         </div>
-        <input
-          type="text"
-          id=""
-          class="form-control"
-          :value="classDetail.description"
+        <textarea
+          rows="1"
+          v-model="classDetail.description"
+          class="form-control auto-size"
         />
       </div>
     </form>
