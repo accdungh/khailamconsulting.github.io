@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel clean webpack:dev",
+    "start": "npm-run-all --parallel clean webpack-dev-server webpack:dev",
     "build": "npm-run-all --parallel clean webpack:prod",
+    "webpack-dev-server": "webpack-dev-server --env.env=dev",
     "webpack:dev": "webpack --env.env=dev --watch --progress --profile --colors",
     "webpack:prod": "webpack --env.env=prod --progress --profile --colors",
     "clean": "rimraf dist"
@@ -22,7 +23,8 @@
     "vue-router": "^3.4.5",
     "vue-template-compiler": "^2.6.12",
     "vuex": "^3.5.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "autoprefixer": "^9.8.5",

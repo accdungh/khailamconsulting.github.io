@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_PATH = window.location.href.replace(/(.+\/)[^\/]+\.html.+/, '$1');
+const API_PATH = '';
 
 export default {
   classList() {

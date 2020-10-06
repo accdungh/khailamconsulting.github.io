@@ -22,14 +22,18 @@
           <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">
             {{ item.startDate }} - {{ item.endDate }}
           </div>
+          <div class="txt-description col-md-24">
+            {{ item.description }}
+          </div>
         </div>
-        <div class="txt-description col-md-24">
-        {{ item.description }}
-        </div>
-        
       </div>
 
-      <a href="javascript:void(0)" @click="$router.push({ name: 'ClassView' })" class="btn btn-created mt-5 mb-5">Create A New Class</a>
+      <a
+        href="javascript:void(0)"
+        @click="$router.push({ name: 'ClassView' })"
+        class="btn btn-created mt-5 mb-5"
+        >Create A New Class</a
+      >
     </form>
   </div>
 </template>
@@ -50,6 +54,7 @@ export default {
     },
   },
   created() {
+    console.log(1);
     this.fetchClassList();
   },
 };

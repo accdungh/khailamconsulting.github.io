@@ -9,7 +9,7 @@ module.exports = function (env) {
     return {
         target: 'web',
         entry: {
-            main: Glob.sync("./+(css|js)/+(*.js|*.css|*.scss)")
+            main: Glob.sync(ROOT_PATH + "/assets/+(css|js)/+(*.js|*.css|*.scss)")
         },
         resolve: {
             extensions: ['.js', '.jsx', '.css', '.scss'],
@@ -18,9 +18,10 @@ module.exports = function (env) {
             },
         },
         output: {
-            path: ROOT_PATH + "/dist",
+            path: ROOT_PATH + "/assets/dist",
             chunkFilename: '[name].js',
-            sourceMapFilename: '[name].map'
+            sourceMapFilename: '[name].map',
+            publicPath: ROOT_PATH
         },
         plugins: [
             // new Webpack.ProvidePlugin({
