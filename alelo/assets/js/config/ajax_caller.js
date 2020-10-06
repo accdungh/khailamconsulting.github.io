@@ -8,6 +8,11 @@ export default {
       withCredentials: true
     });
   },
+  archivedClassList() {
+    return axios.get(`${API_PATH}/example_data/archived_list.json`, {
+      withCredentials: true
+    });
+  },
   classDetail() {
     return axios.get(`${API_PATH}/example_data/detail.json`, {
       withCredentials: true

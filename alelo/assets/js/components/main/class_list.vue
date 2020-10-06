@@ -7,26 +7,12 @@
     aria-labelledby="classlist-tab"
   >
     <form>
-      <div
-        class="form-group"
+      <ClassListItem
         v-for="(item, index) in classList"
         :key="'class-list-item' + index"
-      >
-        <h2
-          class="class-title"
-          v-text="item.name"
-          @click="select(item.id)"
-        ></h2>
-        <div class="row">
-          <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
-          <div class="col-md-12 mb-2 mt-2 f-n-16 text-right">
-            {{ item.startDate }} - {{ item.endDate }}
-          </div>
-          <div class="txt-description col-md-24">
-            {{ item.description }}
-          </div>
-        </div>
-      </div>
+        :classData="item"
+        @selected="select"
+      />
 
       <a
         href="javascript:void(0)"
@@ -40,11 +26,15 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import ClassListItem from "./class_list_item.vue";
 
 export default {
   name: "ClassList",
   computed: {
     ...mapGetters(["classList"]),
+  },
+  components: {
+    ClassListItem,
   },
   methods: {
     ...mapActions(["fetchClassList", "selectClass"]),
