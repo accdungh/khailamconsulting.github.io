@@ -868,7 +868,7 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var API_PATH = '';
+var API_PATH = window.location.href.replace(/(.+)\/[^\/]*#.*/, '$1');
 
 exports.default = {
   classList: function classList() {
@@ -3220,7 +3220,6 @@ exports.default = {
     }
   }),
   created: function created() {
-    console.log(1);
     this.fetchClassList();
   }
 }; //
