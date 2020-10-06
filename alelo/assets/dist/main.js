@@ -3258,56 +3258,6 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 
@@ -27576,11 +27526,9 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: { type: "text", id: "" },
-                  domProps: { value: item.description }
-                })
+                _c("div", { staticClass: "txt-description col-md-24" }, [
+                  _vm._v("\n      " + _vm._s(item.description) + "\n      ")
+                ])
               ]
             )
           }),
