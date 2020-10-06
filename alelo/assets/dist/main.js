@@ -1165,6 +1165,8 @@ window.CommonJs = function () {
           currentModal.closest("div[id^='addclass']").nextAll("div[id^='addclass']").first().modal('show');
         });
       });
+
+      autosize($('.auto-size'));
     }
   };
 }();
@@ -3913,7 +3915,6 @@ var _moment2 = _interopRequireDefault(_moment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
 //
 //
 //
@@ -28588,10 +28589,26 @@ var render = function() {
           _vm._v(" "),
           _vm._m(0),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", id: "" },
-            domProps: { value: _vm.classDetail.description }
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.classDetail.description,
+                expression: "classDetail.description"
+              }
+            ],
+            staticClass: "form-control auto-size",
+            attrs: { rows: "1" },
+            domProps: { value: _vm.classDetail.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.classDetail, "description", $event.target.value)
+              }
+            }
           })
         ])
       ]),
