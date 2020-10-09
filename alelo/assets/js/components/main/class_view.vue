@@ -9,16 +9,32 @@
     <form>
       <div class="form-group">
         <div class="row">
-          <div class="col-md-13">
+          <div class="col-md-13" v-if="!editMode">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
-            <a class="edit-link d-inline f-n-20 ml-2" href="#">Edit</a>
+            <a class="edit-link d-inline f-n-20 ml-2" href="javascript:void(0)" @click="editMode = true">Edit</a>
+          </div>
+          <div class="col-md-13" v-else>
+            <h2 class="class-title d-inline form-inline">
+              <input
+                type="text"
+                id=""
+                class="form-control"
+                v-model="classDetail.name"
+              />
+            </h2>
+            <a
+              class="edit-link d-inline f-n-20 ml-2"
+              href="javascript:void(0)"
+              @click="editMode = false"
+              >Save</a
+            >
           </div>
           <div class="col-md-11 clearfix">
             <div class="wrap-date float-right">
               <div class="input-group start-date">
                 <label class="f-m-14 blue-light ml-3">Start</label>
                 <input
-                  class="datepicker-enddate"
+                  class="datepicker-startdate"
                   :value="classDetail.startDate"
                   data-date-format="mm/dd/yyyy"
                 />
@@ -27,12 +43,13 @@
               <div class="input-group end-date">
                 <label class="f-m-14 blue-light ml-3">End</label>
                 <input
-                  class="datepicker-startdate"
+                  class="datepicker-enddate"
                   :value="classDetail.endDate"
                   data-date-format="mm/dd/yyyy"
                 />
               </div>
             </div>
+            <div class="text-danger"><small class="date-error-message"></small></div>
           </div>
         </div>
 
@@ -53,14 +70,22 @@
         >Hover on any title for more information</span
       >
     </div>
+
     <div class="wrap-item">
       <div class="scrollbar scrollbar-inner">
         <table class="table table-striped table-custom header-fixed">
           <thead>
             <tr>
-              <th class="text-center" scope="col">Accessible</th>
-              <th scope="col">Course Name</th>
-              <th scope="col">Play Simulations</th>
+              <th class="text-center">
+                <a href="#" data-toggle="tooltip" data-container="body" data-placement="top" title="Click a course name to see objectives and CEFR statements.">Accessible</a>
+              </th>
+              <th>
+                <a href="#" data-toggle="tooltip"  data-container="body" data-placement="top" title="Click a course name to see objectives and CEFR statements.">Course Name</a>
+              </th>
+              <th>
+                <a href="#" data-toggle="tooltip"  data-container="body" data-placement="top" title="Click the icon to play the simulations yourself.">Play Simulations</a>
+                
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -368,6 +393,7 @@ export default {
         lastLogin: true,
         totalTime: true,
       },
+      editMode: false
     };
   },
   computed: {
