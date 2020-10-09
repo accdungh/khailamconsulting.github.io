@@ -69,19 +69,55 @@
                 <thead>
                   <tr>
                     <th scope="col">
-                      Simulation <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                      >
+                        Simulation <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Last Attempt <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Last Attempt <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Last Score <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Last Score <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Completed / Started <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Completed / Started <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Total Time <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Total Time <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                   </tr>
                 </thead>
@@ -217,19 +253,55 @@
                 <thead>
                   <tr>
                     <th scope="col">
-                      Simulation <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                      >
+                        Simulation <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Last Attempt <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Last Attempt <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Last Score <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Last Score <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Completed / Started <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Completed / Started <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Total Time <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Total Time <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                   </tr>
                 </thead>
@@ -360,19 +432,55 @@
                 <thead>
                   <tr>
                     <th scope="col">
-                      Simulation <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                      >
+                        Simulation <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Last Attempt <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Last Attempt <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Last Score <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Last Score <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Completed / Started <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Completed / Started <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                     <th scope="col">
-                      Total Time <i class="fa fa-chevron-down"></i>
+                      <a
+                        href="#"
+                        data-toggle="tooltip"
+                        data-container="body"
+                        data-placement="top"
+                        title="Hover on any title for more information"
+                        >Total Time <i class="fa fa-chevron-down"></i>
+                      </a>
                     </th>
                   </tr>
                 </thead>

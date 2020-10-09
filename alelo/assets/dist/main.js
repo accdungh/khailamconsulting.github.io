@@ -3899,6 +3899,114 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: "ClassStudent"
@@ -27845,28 +27953,98 @@ var staticRenderFns = [
                   _c("thead", [
                     _c("tr", [
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Simulation "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("\n                      Simulation "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Last Attempt "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Last Attempt "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Last Score "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Last Score "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Completed / Started "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Completed / Started "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Total Time "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Total Time "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ])
                     ])
                   ]),
@@ -28102,28 +28280,98 @@ var staticRenderFns = [
                   _c("thead", [
                     _c("tr", [
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Simulation "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("\n                      Simulation "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Last Attempt "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Last Attempt "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Last Score "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Last Score "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Completed / Started "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Completed / Started "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Total Time "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Total Time "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ])
                     ])
                   ]),
@@ -28351,28 +28599,98 @@ var staticRenderFns = [
                   _c("thead", [
                     _c("tr", [
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Simulation "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("\n                      Simulation "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Last Attempt "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Last Attempt "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Last Score "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Last Score "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Completed / Started "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Completed / Started "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("\n                    Total Time "),
-                        _c("i", { staticClass: "fa fa-chevron-down" })
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "tooltip",
+                              "data-container": "body",
+                              "data-placement": "top",
+                              title: "Hover on any title for more information"
+                            }
+                          },
+                          [
+                            _vm._v("Total Time "),
+                            _c("i", { staticClass: "fa fa-chevron-down" })
+                          ]
+                        )
                       ])
                     ])
                   ]),
