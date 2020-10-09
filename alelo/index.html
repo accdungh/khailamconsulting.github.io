@@ -41,7 +41,7 @@
             <p class="f-m-20 blue-bold">This class and all of its data will be deleted forever.</p>
             <div class="wrap-item text-center pb-5">
               <h3 class="mt-5 mb-5">Are you sure you want to delete this class?</h3>
-              <a href="#" class="btn-created">Yes, Delete</a>
+              <a href="#" class="btn-created" data-dismiss="modal">Yes, Delete</a>
             </div>
           </div>
 
@@ -110,7 +110,7 @@
               paste a list into the box.</p>
             <div class="wrap-item text-center pb-5">
               <h3 class="mt-5 mb-5">Invitations sent!</h3>
-              <a href="#" class="btn-created">Add More</a>
+              <a href="#addclass1" data-target="#addclass1" class="btn-created btn-add-more">Add More</a>
             </div>
           </div>
 
@@ -137,7 +137,7 @@
             <div class="wrap-item text-center pb-5">
               <h3 class="mt-5 mb-5">Are you sure you want to remove
                 the selected student(s)?</h3>
-              <a href="#" class="btn-created">Yes, Remove</a>
+              <a href="#" class="btn-created" data-dismiss="modal">Yes, Remove</a>
             </div>
           </div>
 
@@ -166,8 +166,65 @@
 
             <div class="wrap-item text-center pb-5">
               <h3 class="mt-5 mb-5">Resend Invitation?</h3>
-              <a href="#" class="btn-created">Yes, Resend</a>
+              <a href="#" class="btn-created" data-dismiss="modal">Yes, Resend</a>
             </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal-Create-New-Class -->
+    <div class="modal fade" id="create-new-class" tabindex="-1" role="dialog" aria-labelledby="NewClassLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Create A New Class</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+           <form>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-24 mb-3">
+                    <h2 class="class-title d-inline">Inglés intermedio nivel 1</h2>
+                    <a class="edit-link d-inline f-n-20 ml-2" href="#">Edit</a>
+                  </div>
+                  <div class="col-md-16 mb-3 clearfix">
+                    <div class="wrap-date">
+                      <div class="input-group start-date">
+                        <label class="f-m-14 blue-light ml-3">Start</label>
+                        <input class="datepicker-startdate" value="9/1/2020" data-date-format="mm/dd/yyyy">
+                      </div>
+
+
+                      <div class="input-group end-date">
+                        <label class="f-m-14 blue-light ml-3">End</label>
+                        <input class="datepicker-enddate" value="12/31/2020" data-date-format="mm/dd/yyyy">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                </div>
+                
+                
+                <textarea rows="1" class="form-control auto-size">6 out of 7 students have enrolled in the Enskill Simulations.</textarea>
+              </div>
+            </form>
+            <a href="#" class="btn-created float-right btn-invite" data-dismiss="modal">Save</a>
           </div>
 
 

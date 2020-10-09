@@ -15,13 +15,14 @@
       />
 
       <a
-        href="javascript:void(0)"
-        @click="$router.push({ name: 'ClassView' })"
+        href="#create-new-class"
+        data-toggle="modal"
+        data-target="#create-new-class"
         class="btn btn-created mt-5 mb-5"
-        >Create A New Class</a
-      >
+        >Create A New Class</a>
     </form>
   </div>
+
 </template>
 
 <script>

@@ -1,7 +1,6 @@
 /*************** SCROLLBAR BASE CSS ***************/
 
 .scroll-wrapper {
-  overflow: hidden !important;
   padding: 0 !important;
   position: relative;
 }
@@ -470,7 +469,7 @@ a:hover {
   margin-left: 5px;
 }
 
-.tab-pane .form-control {
+.form-control {
   font-size: 14px;
   border-color: #61aae8;
   border-radius: 5px;
@@ -601,15 +600,14 @@ a:hover {
   color: #707070;
   width: 100%;
 }
-
-.wrap-date .datepicker-enddate {
+.wrap-date .datepicker-startdate {
   border-right: 0;
   border-radius: 6px 0px 0px 6px;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
-.wrap-date .datepicker-startdate {
+.wrap-date .datepicker-enddate {
   border-radius: 0px 6px 6px 0px;
   -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
@@ -726,10 +724,12 @@ a:hover {
   top: 0;
   z-index: 3;
 }
+.header-fixed th a {
+  color: #fff;
+}
 .wrap-item {
   border: 1px solid #61aae8;
   border-radius: 6px;
-  overflow: hidden;
   margin-bottom: 20px;
 }
 
@@ -776,6 +776,19 @@ a:hover {
 .btn-show {
   display: none;
   margin-right: 10px;
+}
+
+.tooltip.bs-tooltip-top .tooltip-inner,
+.tooltip.bs-tooltip-bottom .tooltip-inner {
+  background: #707070;
+  font-style: 10px;
+}
+
+.bs-tooltip-auto[x-placement^=t] .arrow::before,
+.bs-tooltip-top .arrow::before ,
+.bs-tooltip-auto[x-placement^=t] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #707070; /* Red */
 }
 
 @media (min-width: 576px) {
