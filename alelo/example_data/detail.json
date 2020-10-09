@@ -472,7 +472,7 @@
     {
       "id": 1,
       "name": "Enskill CEFR Level A1",
-      "expirationDate": "8/31/2021",
+      "expirationDate": "8/21/2021",
       "link": "/url/to/course/en1",
       "simulation": [
         {
@@ -549,7 +549,7 @@
     {
       "id": 1,
       "name": "Enskill CEFR Level A1",
-      "expirationDate": "8/31/2021",
+      "expirationDate": "8/23/2021",
       "link": "/url/to/course/en1",
       "simulation": [
         {
@@ -722,56 +722,56 @@
       "firstName": "Samuel3",
       "lastName": "Hernandez3",
       "lastLogin": "9/3/2020 2:57",
-      "totalTime": "3:24:28"
+      "totalTime": "3:32:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel4",
       "lastName": "Hernandez4",
       "lastLogin": "9/3/2020 3:57",
-      "totalTime": "4:24:28"
+      "totalTime": "4:11:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel5",
       "lastName": "Hernandez5",
       "lastLogin": "9/3/2020 4:57",
-      "totalTime": "1:24:28"
+      "totalTime": "1:33:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel6",
       "lastName": "Hernandez6",
       "lastLogin": "9/3/2020 5:57",
-      "totalTime": "1:24:28"
+      "totalTime": "1:54:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel",
       "lastName": "Hernandez",
-      "lastLogin": "9/3/2020 23:57",
-      "totalTime": "1:24:28"
+      "lastLogin": "9/3/2020 6:57",
+      "totalTime": "1:55:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel",
       "lastName": "Hernandez",
-      "lastLogin": "9/3/2020 23:57",
-      "totalTime": "1:24:28"
+      "lastLogin": "9/3/2020 7:57",
+      "totalTime": "1:27:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel",
       "lastName": "Hernandez",
-      "lastLogin": "9/3/2020 23:57",
-      "totalTime": "1:24:28"
+      "lastLogin": "9/3/2020 8:57",
+      "totalTime": "1:28:28"
     },
     {
       "id": "59a72342b0b6f76295f65680",
       "firstName": "Samuel",
       "lastName": "Hernandez",
-      "lastLogin": "9/3/2020 23:57",
-      "totalTime": "1:24:28"
+      "lastLogin": "9/3/2020 9:57",
+      "totalTime": "1:29:28"
     }
   ]
 }
