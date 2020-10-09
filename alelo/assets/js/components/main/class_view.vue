@@ -11,7 +11,12 @@
         <div class="row">
           <div class="col-md-13" v-if="!editMode">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
-            <a class="edit-link d-inline f-n-20 ml-2" href="javascript:void(0)" @click="editMode = true">Edit</a>
+            <a
+              class="edit-link d-inline f-n-20 ml-2"
+              href="javascript:void(0)"
+              @click="editMode = true"
+              >Edit</a
+            >
           </div>
           <div class="col-md-13" v-else>
             <h2 class="class-title d-inline form-inline">
@@ -48,8 +53,11 @@
                   data-date-format="mm/dd/yyyy"
                 />
               </div>
+
+              <div class="text-danger">
+                <small class="date-error-message"></small>
+              </div>
             </div>
-            <div class="text-danger"><small class="date-error-message"></small></div>
           </div>
         </div>
 
@@ -77,14 +85,34 @@
           <thead>
             <tr>
               <th class="text-center">
-                <a href="#" data-toggle="tooltip" data-container="body" data-placement="top" title="Click a course name to see objectives and CEFR statements.">Accessible</a>
+                <a
+                  href="#"
+                  data-toggle="tooltip"
+                  data-container="body"
+                  data-placement="top"
+                  title="Click a course name to see objectives and CEFR statements."
+                  >Accessible</a
+                >
               </th>
               <th>
-                <a href="#" data-toggle="tooltip"  data-container="body" data-placement="top" title="Click a course name to see objectives and CEFR statements.">Course Name</a>
+                <a
+                  href="#"
+                  data-toggle="tooltip"
+                  data-container="body"
+                  data-placement="top"
+                  title="Click a course name to see objectives and CEFR statements."
+                  >Course Name</a
+                >
               </th>
               <th>
-                <a href="#" data-toggle="tooltip"  data-container="body" data-placement="top" title="Click the icon to play the simulations yourself.">Play Simulations</a>
-                
+                <a
+                  href="#"
+                  data-toggle="tooltip"
+                  data-container="body"
+                  data-placement="top"
+                  title="Click the icon to play the simulations yourself."
+                  >Play Simulations</a
+                >
               </th>
             </tr>
           </thead>
@@ -393,7 +421,7 @@ export default {
         lastLogin: true,
         totalTime: true,
       },
-      editMode: false
+      editMode: false,
     };
   },
   computed: {
@@ -452,6 +480,20 @@ export default {
   },
   created() {
     this.fetchClassDetail();
+  },
+  watch: {
+    classDetail() {
+      if (this.classDetail) {
+        $(".datepicker-startdate").datepicker(
+          "setDate",
+          moment(this.classDetail.startDate, "MM/DD/YYYY").toDate()
+        );
+        $(".datepicker-enddate").datepicker(
+          "setDate",
+          moment(this.classDetail.endDate, "MM/DD/YYYY").toDate()
+        );
+      }
+    },
   },
 };
 </script>

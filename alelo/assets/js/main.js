@@ -2,8 +2,9 @@ import './config/app.js'
 
 window.CommonJs = (function () {
   function compareDates() {
-    var startDate = $('.datepicker-startdate').datepicker('getDate');
-    var endDate = $('.datepicker-enddate').datepicker('getDate');
+    var startDate = $('.datepicker-startdate').first().datepicker('getDate');
+    var endDate = $('.datepicker-enddate').first().datepicker('getDate');
+
     $('.date-error-message').text(startDate > endDate && "Start Date shouldn't greater than End Date" || "")
   }
 
@@ -14,9 +15,6 @@ window.CommonJs = (function () {
       $(document).on('change', '.datepicker-startdate, .datepicker-enddate', compareDates);
       $('.scrollbar-inner').scrollbar();
       $('[data-toggle="tooltip"]').tooltip();
-      $('.example-popover').popover({
-        container: 'body'
-      });
 
       $("div[id^='addclass']").each(function () {
 
@@ -29,7 +27,7 @@ window.CommonJs = (function () {
         });
 
         //click prev
-          currentModal.find('.btn-add-more').click(function(){
+        currentModal.find('.btn-add-more').click(function () {
           currentModal.modal('hide');
           currentModal.closest("div[id^='addclass']").prevAll("div[id^='addclass']").first().modal('show');
         });
