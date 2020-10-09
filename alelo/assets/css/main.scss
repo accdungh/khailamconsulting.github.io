@@ -1,6 +1,7 @@
 /*************** SCROLLBAR BASE CSS ***************/
 
 .scroll-wrapper {
+  overflow: hidden !important;
   padding: 0 !important;
   position: relative;
 }
@@ -24,7 +25,6 @@
   height: 0;
   width: 0;
 }
-
 
 .scroll-element,
 .scroll-element div {
@@ -792,9 +792,9 @@ a:hover {
   font-style: 10px;
 }
 
-.bs-tooltip-auto[x-placement^=t] .arrow::before,
-.bs-tooltip-top .arrow::before ,
-.bs-tooltip-auto[x-placement^=t] .arrow::before,
+.bs-tooltip-auto[x-placement^="t"] .arrow::before,
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-auto[x-placement^="t"] .arrow::before,
 .bs-tooltip-bottom .arrow::before {
   border-bottom-color: #707070; /* Red */
 }
@@ -825,7 +825,7 @@ a:hover {
     padding: 0px 10px;
   }
 
-   .scrollbar-inner > .scroll-element .scroll-element_outer:before,
+  .scrollbar-inner > .scroll-element .scroll-element_outer:before,
   .scrollbar-inner > .scroll-element .scroll-element_outer:after,
   .scrollbar-inner > .scroll-element.scroll-y {
     display: none;
@@ -847,5 +847,8 @@ a:hover {
     padding: 5px 0;
   }
 }
-
-
+table th a:hover,
+table th a:focus,
+table th a {
+  color: #fff;
+}
