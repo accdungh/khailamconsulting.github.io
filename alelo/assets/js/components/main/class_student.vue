@@ -14,7 +14,7 @@
         <h3 class="f-m-36">Samuel Hernandez</h3>
         <b>Student ID:</b> 123456<br />
         <b>Email:</b> Sam_Hernan@yahoo.com<br />
-        <b>Other Information: XXXXXXX</b>
+        <b>Other Information:</b>
       </div>
 
       <h3 class="f-m-20 blue-bold mb-3">Course(s)</h3>
