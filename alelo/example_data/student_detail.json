@@ -1,0 +1,1247 @@
+{
+  "name": "Samuel Hernandez",
+  "studentId": "123456",
+  "email": "Sam_Hernan@yahoo.com",
+  "otherInformation": "",
+  "courses": [
+    {
+      "id": 1,
+      "name": "Basic English",
+      "active": [
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Transitional English",
+      "active": [
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Transitional English",
+      "active": [
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        },
+        {
+          "simulation": "Planning a Party",
+          "lastAttempt": "9/3/2020 0:57",
+          "lastScore": "38",
+          "completed": 1,
+          "started": 1,
+          "totalTime": "3:20",
+          "logs": [
+            {
+              "time": "Sept. 3, 2020 at 22:57",
+              "masteryScore": 79,
+              "objectives": 4,
+              "objectivesMet": 4,
+              "turnsPerMinute": 4.0,
+              "hintsUsed": 3,
+              "timeSpent": "3:16"
+            },
+            {
+              "time": "Sept. 3, 2020 at 22:35",
+              "masteryScore": 66,
+              "objectives": 4,
+              "objectivesMet": 3,
+              "turnsPerMinute": 3.2,
+              "hintsUsed": 4,
+              "timeSpent": "3:10"
+            },
+            {
+              "time": "Sept. 3, 2020 at 21:58",
+              "masteryScore": 58,
+              "objectives": 3,
+              "objectivesMet": 1,
+              "turnsPerMinute": 2.5,
+              "hintsUsed": 1,
+              "timeSpent": "3:34"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

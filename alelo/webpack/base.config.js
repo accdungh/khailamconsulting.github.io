@@ -24,16 +24,12 @@ module.exports = function (env) {
             publicPath: ROOT_PATH
         },
         plugins: [
-            // new Webpack.ProvidePlugin({
-            //     $: 'jquery',
-            //     jQuery: 'jquery'
-            // }),
             new ExtractTextPlugin("[name].css"),
             new VueLoaderPlugin(),
         ],
         externals: {
             jquery: 'jQuery',
-            $: 'jQuery'
+            $: 'jQuery',
         },
         module: {
             rules: [

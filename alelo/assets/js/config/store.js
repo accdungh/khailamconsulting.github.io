@@ -9,7 +9,8 @@ export default new Vuex.Store({
     classList: [],
     classDetail: {},
     classDetailId: null,
-    userSetting: {}
+    userSetting: {},
+    studentDetail: {}
   },
 
   mutations: {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     fetchedUserSetting(state, data) {
       state.userSetting = data;
     },
+    fetchedStudentDetail(state, data) {
+      state.studentDetail = data;
+    },
   },
 
   actions: {
@@ -38,6 +42,22 @@ export default new Vuex.Store({
         commit('fetchedClassDetail', data);
       })
     },
+    createClass({ commit, state }, classData) {
+      return AjaxCaller.createClass(classData).then(({ data }) => {
+        commit('fetchedClassDetail', data);
+        commit('selectedClass', data.id);
+      })
+    },
+    updateClass({ commit, state }, classData) {
+      return AjaxCaller.updateClass(state.classDetailId, classData).then(({ data }) => {
+        commit('fetchedClassDetail', data);
+      })
+    },
+    deleteClass({ commit, state }) {
+      return AjaxCaller.deleteClass(state.classDetailId).then(({ data }) => {
+        commit('fetchedClassDetail', {});
+      })
+    },
     fetchUserSetting({ commit, state }, id) {
       AjaxCaller.userSetting(id).then(({ data }) => {
         commit('fetchedUserSetting', data);
@@ -49,11 +69,17 @@ export default new Vuex.Store({
     selectClass({ commit, state }, id) {
       commit('selectedClass', id);
     },
+    fetchStudentDetail({ commit, state }, id) {
+      return AjaxCaller.studentDetail(id).then(({ data }) => {
+        commit('fetchedStudentDetail', data);
+      })
+    },
   },
 
   getters: {
     classList: state => state.classList,
     classDetail: state => state.classDetail,
-    userSetting: state => state.userSetting
+    userSetting: state => state.userSetting,
+    studentDetail: state => state.studentDetail,
   }
 })

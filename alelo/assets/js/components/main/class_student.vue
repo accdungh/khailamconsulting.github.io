@@ -11,239 +11,41 @@
       </div>
       <h2 class="f-m-20 mb-3 blue-bold">Summary</h2>
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
-        <h3 class="f-m-36">Samuel Hernandez</h3>
-        <b>Student ID:</b> 123456<br />
-        <b>Email:</b> Sam_Hernan@yahoo.com<br />
-        <b>Other Information:</b>
+        <h3 class="f-m-36">{{ studentDetail.name }}</h3>
+        <div><b>Student ID:</b> {{ studentDetail.studentId }}</div>
+        <div><b>Email:</b> {{ studentDetail.email }}</div>
+        <div><b>Other Information:</b> {{ studentDetail.otherInformation }}</div>
       </div>
 
       <h3 class="f-m-20 blue-bold mb-3">Course(s)</h3>
       <ul class="nav nav-tabs nav-tab-course" id="coursetab" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            href="#basic-english"
-            data-toggle="tab"
-            role="tab"
-            aria-controls="basic-english"
-            aria-selected="true"
-            >Basic English</a
-          >
-        </li>
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          v-for="(course, index) in studentDetail.courses"
+          :key="'student-course-' + index"
+        >
           <a
             class="nav-link"
-            href="#transitional-english"
+            :class="{ active: index == 0 }"
+            :href="'#student-course-' + index"
             data-toggle="tab"
             role="tab"
-            aria-controls="transitional-english"
-            aria-selected="false"
-            >Transitional English</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            data-toggle="tab"
-            href="#effective-persuasive"
-            role="tab"
-            aria-controls="effective-persuasive"
-            aria-selected="false"
-            >Effective and Persuasive Comm.</a
+            :aria-controls="'student-course-' + index"
+            :aria-selected="index == 0"
+            >{{ course.name }}</a
           >
         </li>
       </ul>
 
       <div class="tab-content">
         <div
-          class="tab-pane fade show active"
-          id="basic-english"
-          role="tabpanel"
-          aria-labelledby="basic-english"
-        >
-          <div class="wrap-item">
-            <div class="scrollbar scrollbar-inner">
-              <table
-                class="table table-striped table-custom table-lst-student table-lst-student-custom"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                      >
-                        Simulation <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Last Attempt <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Last Score <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Completed / Started <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Total Time <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a
-                        href="#course-detail"
-                        data-toggle="modal"
-                        data-target="#course-detail"
-                        >Planning a Party</a
-                      >
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="clearfix">
-            <span class="d-inline float-left f-n-14 blue-light mr-4"
-              >Hover on any title for more information</span
-            >
-            <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-              ><i class="fa fa-download"></i> Download</span
-            >
-          </div>
-        </div>
-        <div
+          v-for="(course, index) in studentDetail.courses"
+          :key="'student-course-table-' + index"
           class="tab-pane fade"
-          id="transitional-english"
+          :class="{ 'active show': index == 0 }"
+          :id="'student-course-' + index"
           role="tabpanel"
-          aria-labelledby="transitional-english"
+          :aria-labelledby="'student-course-' + index"
         >
           <div class="wrap-item">
             <div class="scrollbar scrollbar-inner">
@@ -254,7 +56,7 @@
                   <tr>
                     <th scope="col">
                       <a
-                        href="#"
+                        href="javascript:void(0)"
                         data-toggle="tooltip"
                         data-container="body"
                         data-placement="top"
@@ -265,7 +67,7 @@
                     </th>
                     <th scope="col">
                       <a
-                        href="#"
+                        href="javascript:void(0)"
                         data-toggle="tooltip"
                         data-container="body"
                         data-placement="top"
@@ -275,7 +77,7 @@
                     </th>
                     <th scope="col">
                       <a
-                        href="#"
+                        href="javascript:void(0)"
                         data-toggle="tooltip"
                         data-container="body"
                         data-placement="top"
@@ -285,7 +87,7 @@
                     </th>
                     <th scope="col">
                       <a
-                        href="#"
+                        href="javascript:void(0)"
                         data-toggle="tooltip"
                         data-container="body"
                         data-placement="top"
@@ -295,7 +97,7 @@
                     </th>
                     <th scope="col">
                       <a
-                        href="#"
+                        href="javascript:void(0)"
                         data-toggle="tooltip"
                         data-container="body"
                         data-placement="top"
@@ -306,288 +108,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="clearfix">
-            <span class="d-inline float-left f-n-14 blue-light mr-4"
-              >Hover on any title for more information</span
-            >
-            <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-              ><i class="fa fa-download"></i> Download</span
-            >
-          </div>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="effective-persuasive"
-          role="tabpanel"
-          aria-labelledby="effective-persuasive"
-        >
-          <div class="wrap-item">
-            <div class="scrollbar scrollbar-inner">
-              <table
-                class="table table-striped table-custom table-lst-student table-lst-student-custom"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                      >
-                        Simulation <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Last Attempt <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Last Score <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Completed / Started <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                    <th scope="col">
-                      <a
-                        href="#"
-                        data-toggle="tooltip"
-                        data-container="body"
-                        data-placement="top"
-                        title="Hover on any title for more information"
-                        >Total Time <i class="fa fa-chevron-down"></i>
-                      </a>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
+                  <tr
+                    v-for="(active, aIndex) in course.active"
+                    :key="`course-${index}-active-${aIndex}`"
+                  >
                     <td>
                       <a
-                        href="#course-detail"
+                        href="#active-detail"
                         data-toggle="modal"
-                        data-target="#course-detail"
-                        >Planning a Party</a
+                        data-target="#active-detail"
+                        @click="activeDetail = active"
+                        >{{ active.simulation }}</a
                       >
                     </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="#">Planning a Party</a>
-                    </td>
-                    <td>September 3, 2020, 23:57</td>
-                    <td>38%</td>
-                    <td>1/1</td>
-                    <td>3:20</td>
+                    <td>{{ active.lastAttempt }}</td>
+                    <td>{{ active.lastScore }}%</td>
+                    <td>{{ active.completed }}/{{ active.started }}</td>
+                    <td>{{ active.totalTime }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -604,12 +141,34 @@
         </div>
       </div>
     </div>
+
+    <StudentActiveDetail :activeDetail="activeDetail" />
   </section>
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+import StudentActiveDetail from "./popup/student_active_detail.vue";
+
 export default {
   name: "ClassStudent",
+  data() {
+    return {
+      activeDetail: {},
+    };
+  },
+  computed: {
+    ...mapGetters(["studentDetail"]),
+  },
+  methods: {
+    ...mapActions(["fetchStudentDetail"]),
+  },
+  components: { StudentActiveDetail },
+  created() {
+    this.fetchStudentDetail().finally(() => {
+      $(".scrollbar-inner").scrollbar();
+    });
+  },
 };
 </script>
 

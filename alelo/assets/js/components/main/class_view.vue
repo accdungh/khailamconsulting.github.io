@@ -250,7 +250,7 @@
                     class="form-check-input position-static"
                     type="checkbox"
                     aria-label="..."
-                    v-model="selectedStudent[index]"
+                    v-model="student.selected"
                   />
                 </div>
               </td>
@@ -280,9 +280,9 @@
         Delete Your Class</a
       >
       <a
-        href="#addclass1"
+        href="#add_student_modal"
         data-toggle="modal"
-        data-target="#addclass1"
+        data-target="#add_student_modal"
         class="btn-created float-right"
         >Add Students</a
       >
@@ -401,19 +401,28 @@
         </div>
       </div>
     </div>
+
+    <DeleteClassModal />
+    <RemoveStudentModal @confirmed="removeStudent()" />
+    <ResendInvitationModal @confirmed="resendInviteStudent()" />
+    <AddStudentModal />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import moment from "moment";
+import _ from "lodash";
+import DeleteClassModal from "./popup/delete_class_modal.vue";
+import RemoveStudentModal from "./popup/remove_student_modal.vue";
+import ResendInvitationModal from "./popup/resend_invitation_modal.vue";
+import AddStudentModal from "./popup/add_student_modal.vue";
 
 export default {
   name: "ClassView",
   data() {
     return {
       selectedCourse: {},
-      selectedStudent: [],
       selectedAllStudent: false,
       studentOrder: {
         lastName: true,
@@ -424,18 +433,25 @@ export default {
       editMode: false,
     };
   },
+  components: {
+    DeleteClassModal,
+    RemoveStudentModal,
+    ResendInvitationModal,
+    AddStudentModal,
+  },
   computed: {
     ...mapGetters(["classDetail"]),
     studentSelected() {
-      return this.selectedStudent.filter((i) => i == true).length > 0;
+      return (this.classDetail.students || []).find((s) => s.selected);
     },
   },
   methods: {
     ...mapActions(["fetchClassDetail"]),
     selectAllStudent() {
-      if (this.selectedAllStudent)
-        this.selectedStudent = this.classDetail.students.map((i) => true);
-      else this.selectedStudent = [];
+      this.classDetail.students = this.classDetail.students.map((s) => {
+        s.selected = this.selectedAllStudent;
+        return s;
+      });
     },
     sortStudent(orderBy, type = "string", flag = undefined) {
       if (flag == undefined) {
@@ -471,6 +487,15 @@ export default {
 
         return 0;
       });
+    },
+    removeStudent() {
+      // TODO: maybe call API update here
+      this.classDetail.students = this.classDetail.students.filter(
+        (s) => s.selected != true
+      );
+    },
+    resendInviteStudent() {
+      // TODO: call API invite
     },
   },
   filters: {

@@ -19,15 +19,18 @@
         data-toggle="modal"
         data-target="#create-new-class"
         class="btn btn-created mt-5 mb-5"
-        >Create A New Class</a>
+        >Create A New Class</a
+      >
     </form>
-  </div>
 
+    <CreateClassModal />
+  </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import ClassListItem from "./class_list_item.vue";
+import CreateClassModal from "./popup/create_class_modal.vue";
 
 export default {
   name: "ClassList",
@@ -36,6 +39,7 @@ export default {
   },
   components: {
     ClassListItem,
+    CreateClassModal,
   },
   methods: {
     ...mapActions(["fetchClassList", "selectClass"]),

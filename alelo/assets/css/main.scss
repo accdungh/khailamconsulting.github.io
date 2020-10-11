@@ -708,7 +708,10 @@ a:hover {
   font-weight: 500;
 }
 
-.table-modal-custom th {
+.table-modal-custom th,
+.table-modal-custom th a:hover,
+.table-modal-custom th a:focus,
+.table-modal-custom th a {
   font-size: 16px;
   color: #ff5f37;
 }
