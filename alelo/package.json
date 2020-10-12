@@ -41,6 +41,7 @@
     "script-loader": "^0.7.2",
     "style-loader": "^1.2.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
+    "vee-validate": "^2.1.7",
     "webpack": "^4.44.0",
     "webpack-merge": "^5.0.9"
   }

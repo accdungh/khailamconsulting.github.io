@@ -848,13 +848,13 @@ table th a {
   color: #fff;
 }
 
-a.student-sorter {
-  color: #fff;
-}
-
 .student-list {
   font-size: 18px;
   color: #707070;
+}
+
+a.student-sorter {
+  color: #fff;
 }
 
 /*# sourceMappingURL=main.map*/

@@ -40,9 +40,10 @@
                     <input
                       placeholder="Add new title"
                       type="text"
-                      id=""
                       class="form-control"
                       v-model="classDetail.name"
+                      v-validate="'required'"
+                      data-vv-name="title"
                     />
                   </h2>
                   <a
@@ -51,29 +52,51 @@
                     @click="editMode = false"
                     >Save</a
                   >
+                  <div>
+                    <small v-show="errors.has('title')" class="text-danger">{{
+                      errors.first("title")
+                    }}</small>
+                  </div>
                 </div>
                 <div class="col-md-16 mb-3 clearfix">
                   <div class="wrap-date">
                     <div class="input-group start-date">
                       <label class="f-m-14 blue-light ml-3">Start</label>
-                      <input
-                        class="datepicker-startdate"
-                        :value="classDetail.startDate"
-                        data-date-format="mm/dd/yyyy"
+                      <KlDatepicker
+                        v-model="classDetail.startDate"
+                        v-validate="'required|date_format:MM/dd/yyyy'"
+                        data-vv-name="start date"
+                        ref="start date"
                       />
                     </div>
 
                     <div class="input-group end-date">
                       <label class="f-m-14 blue-light ml-3">End</label>
-                      <input
-                        class="datepicker-enddate"
-                        :value="classDetail.endDate"
-                        data-date-format="mm/dd/yyyy"
+                      <KlDatepicker
+                        v-model="classDetail.endDate"
+                        v-validate="
+                          'required|date_format:MM/dd/yyyy|after:start date,inclusion:true'
+                        "
+                        data-vv-name="end date"
+                        ref="end date"
                       />
                     </div>
 
                     <div class="text-danger">
-                      <small class="date-error-message"></small>
+                      <div>
+                        <small
+                          v-show="errors.has('start date')"
+                          class="text-danger"
+                          >{{ errors.first("start date") }}</small
+                        >
+                      </div>
+                      <div>
+                        <small
+                          v-show="errors.has('end date')"
+                          class="text-danger"
+                          >{{ errors.first("end date") }}</small
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -88,7 +111,15 @@
                 rows="1"
                 class="form-control auto-size"
                 v-model="classDetail.description"
+                v-validate="'required'"
+                data-vv-name="summary"
               ></textarea>
+
+              <div>
+                <small v-show="errors.has('summary')" class="text-danger">{{
+                  errors.first("summary")
+                }}</small>
+              </div>
             </div>
           </form>
           <a
@@ -117,12 +148,13 @@ export default {
   methods: {
     ...mapActions(["createClass"]),
     saveClass() {
-      let invalid = $('[class*="error-message"]').text();
-      if (invalid) return;
-
-      this.createClass(this.classDetail).finally(() => {
-        $("#create-new-class").modal("hide");
-        this.$router.push({ name: "ClassView" });
+      this.$validator.validateAll().then((valid) => {
+        if (valid) {
+          this.createClass(this.classDetail).finally(() => {
+            $("#create-new-class").modal("hide");
+            this.$router.push({ name: "ClassView" });
+          });
+        }
       });
     },
   },
