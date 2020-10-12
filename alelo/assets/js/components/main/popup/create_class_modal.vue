@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-24 mb-3" v-else>
                   <h2 class="class-title d-inline form-inline">
-                    <input
+                    <input placeholder="Add new title"
                       type="text"
                       id=""
                       class="form-control"
@@ -82,7 +82,7 @@
                 <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
               </div>
 
-              <textarea
+              <textarea placeholder="Add new summary"
                 rows="1"
                 class="form-control auto-size"
                 v-model="classDetail.description"
@@ -108,13 +108,9 @@ export default {
   name: "CreateClassModal",
   data() {
     return {
-      editMode: false,
+      editMode: true,
       classDetail: {
-        name: "Inglés intermedio nivel 1",
-        startDate: "9/1/2020",
-        endDate: "12/31/2020",
-        description:
-          "6 out of 7 students have enrolled in the Enskill Simulations.",
+       
       },
     };
   },
