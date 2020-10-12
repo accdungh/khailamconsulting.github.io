@@ -37,7 +37,8 @@
                 </div>
                 <div class="col-md-24 mb-3" v-else>
                   <h2 class="class-title d-inline form-inline">
-                    <input placeholder="Add new title"
+                    <input
+                      placeholder="Add new title"
                       type="text"
                       id=""
                       class="form-control"
@@ -82,7 +83,8 @@
                 <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
               </div>
 
-              <textarea placeholder="Add new summary"
+              <textarea
+                placeholder="Add new summary"
                 rows="1"
                 class="form-control auto-size"
                 v-model="classDetail.description"
@@ -109,9 +111,7 @@ export default {
   data() {
     return {
       editMode: true,
-      classDetail: {
-       
-      },
+      classDetail: {},
     };
   },
   methods: {
