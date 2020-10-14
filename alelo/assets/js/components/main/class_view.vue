@@ -270,7 +270,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="group-button clearfix">
       <a
         href="#delete-class"
         class="float-left f-m-18"
@@ -280,6 +280,7 @@
         Delete Your Class</a
       >
       <a
+        v-if="!studentSelected"
         href="#add_student_modal"
         data-toggle="modal"
         data-target="#add_student_modal"
