@@ -524,6 +524,26 @@ a:hover {
   border-radius: 0 0 6px 0;
 }
 
+.table-lst-student-custom.table-custom {
+  -moz-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+}
+
+.table-lst-student-custom.table-custom th:last-child,
+.table-lst-student-custom.table-custom th:first-child {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.wrap-item.wrap-item-custom {
+  -moz-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
 .table-custom {
   border-radius: 6px;
   border-collapse: separate !important;
@@ -742,6 +762,7 @@ a:hover {
   border: 1px solid #61aae8;
   border-radius: 6px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .table-lst-student td {
