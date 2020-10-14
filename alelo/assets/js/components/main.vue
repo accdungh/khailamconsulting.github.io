@@ -7,7 +7,7 @@
             <h1 class="title-heading">Welcome, Walter Mitchell!</h1>
           </div>
           <div class="col-5 col-md-12 text-right">
-            <a href="" class="text-white f-n-18">Log Out</a>
+            <a href="" class="text-white f-n-18 align-middle">Log Out</a>
           </div>
         </div>
       </div>
