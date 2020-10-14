@@ -158,6 +158,15 @@ export default {
       });
     },
   },
+  created() {
+    this.$validator.localize("en", {
+      custom: {
+        "end date": {
+          after: "Start Date should not be before End Date",
+        },
+      },
+    });
+    },
 };
 </script>
 

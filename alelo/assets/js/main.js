@@ -5,7 +5,7 @@ window.CommonJs = (function () {
     var startDate = $('.datepicker-startdate').first().datepicker('getDate');
     var endDate = $('.datepicker-enddate').first().datepicker('getDate');
 
-    $('.date-error-message').text(startDate && endDate && startDate > endDate && "Start Date shouldn't greater than End Date" || "")
+    $('.date-error-message').text(startDate && endDate && startDate > endDate && "Start Date should not be before End Date" || "")
   }
 
   return {
