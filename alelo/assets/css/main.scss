@@ -824,6 +824,8 @@ a:hover {
   border-bottom-color: #707070;
 }
 
+.group-button a {margin-left: 32px;}
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 752px;
