@@ -45,7 +45,7 @@ export default {
     ...mapActions(["fetchClassList", "selectClass"]),
     select(id) {
       this.selectClass(id);
-      this.$router.push({ name: "ClassView" });
+      this.$router.push({ name: "ClassView", params: { id } });
     },
   },
   created() {

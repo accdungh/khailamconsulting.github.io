@@ -257,7 +257,9 @@
               <td class="font-weight-bold">
                 <a
                   href="javascript:void(0)"
-                  @click="$router.push({ name: 'ClassStudent' })"
+                  @click="
+                    $router.push({ name: 'ClassStudent', params: { classId: $route.params.id, id: student.id }})
+                  "
                   >{{ student.lastName }}</a
                 >
               </td>
@@ -505,7 +507,7 @@ export default {
     },
   },
   created() {
-    this.fetchClassDetail();
+    this.fetchClassDetail(this.$route.params.id);
   },
   watch: {
     classDetail() {

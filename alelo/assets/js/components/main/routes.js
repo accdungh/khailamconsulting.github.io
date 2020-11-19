@@ -23,7 +23,7 @@ export default [
     }
   },
   {
-    path: "/class_view",
+    path: "/class/:id?",
     component: ClassView,
     name: 'ClassView',
     meta: {
@@ -47,7 +47,7 @@ export default [
     }
   },
   {
-    path: "/class_student",
+    path: "/class/:classId/student/:id",
     component: ClassStudent,
     name: 'ClassStudent',
     meta: {

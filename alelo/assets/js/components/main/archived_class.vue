@@ -27,8 +27,9 @@ export default {
     return { archivedClassList: [] };
   },
   created() {
-    AjaxCaller.archivedClassList().then(({ data }) => {
-      this.archivedClassList = data;
+    AjaxCaller.archivedClassList().then((resp) => {
+      let json = resp.data;
+      if (json && json.success) this.archivedClassList = json.data;
     });
   },
 };

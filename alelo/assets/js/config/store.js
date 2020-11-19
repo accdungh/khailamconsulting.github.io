@@ -33,47 +33,62 @@ export default new Vuex.Store({
 
   actions: {
     fetchClassList({ commit, state }) {
-      AjaxCaller.classList().then(({ data }) => {
-        if (data && data.success)
-          commit('fetchedClassList', data.data);
+      AjaxCaller.classList().then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassList', json.data);
       })
     },
     fetchClassDetail({ commit, state }, id) {
-      AjaxCaller.classDetail(id).then(({ data }) => {
-        if (data && data.success)
-          commit('fetchedClassDetail', data.data);
+      AjaxCaller.classDetail(id || state.classDetailId).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassDetail', json.data);
       })
     },
     createClass({ commit, state }, classData) {
-      return AjaxCaller.createClass(classData).then(({ data }) => {
-        commit('fetchedClassDetail', data);
-        commit('selectedClass', data.id);
+      return AjaxCaller.createClass(classData).then((resp) => {
+        let json = resp.data;
+        if (json && json.success) {
+          commit('fetchedClassDetail', json.data);
+          commit('selectedClass', json.data.id);
+        }
+
+        return resp;
       })
     },
     updateClass({ commit, state }, classData) {
-      return AjaxCaller.updateClass(state.classDetailId, classData).then(({ data }) => {
-        commit('fetchedClassDetail', data);
+      return AjaxCaller.updateClass(state.classDetailId, classData).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassDetail', json.data);
       })
     },
     deleteClass({ commit, state }) {
-      return AjaxCaller.deleteClass(state.classDetailId).then(({ data }) => {
-        commit('fetchedClassDetail', {});
+      return AjaxCaller.deleteClass(state.classDetailId).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassDetail', {});
       })
     },
     fetchUserSetting({ commit, state }, id) {
-      AjaxCaller.userSetting(id).then(({ data }) => {
-        commit('fetchedUserSetting', data);
+      AjaxCaller.userSetting(id).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedUserSetting', json.data);
       })
     },
     updateUserSetting({ commit, state }) {
-      AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then(({ data }) => { })
+      AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then((resp) => { })
     },
     selectClass({ commit, state }, id) {
       commit('selectedClass', id);
     },
     fetchStudentDetail({ commit, state }, id) {
-      return AjaxCaller.studentDetail(id).then(({ data }) => {
-        commit('fetchedStudentDetail', data);
+      return AjaxCaller.studentDetail(id).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedStudentDetail', json.data);
       })
     },
   },

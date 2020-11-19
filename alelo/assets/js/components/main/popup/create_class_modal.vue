@@ -150,9 +150,12 @@ export default {
     saveClass() {
       this.$validator.validateAll().then((valid) => {
         if (valid) {
-          this.createClass(this.classDetail).finally(() => {
+          this.createClass(this.classDetail).then(({ data }) => {
             $("#create-new-class").modal("hide");
-            this.$router.push({ name: "ClassView" });
+            this.$router.push({
+              name: "ClassView",
+              params: { id: data.id },
+            });
           });
         }
       });
@@ -166,7 +169,7 @@ export default {
         },
       },
     });
-    },
+  },
 };
 </script>
 
