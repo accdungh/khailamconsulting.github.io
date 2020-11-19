@@ -24,33 +24,28 @@ export default {
     // FIXME: Use method POST with real API
     return axios.post(`${API_PATH}/class/create`, data, {
       withCredentials: true,
-      transformRequest: [(data) => JSON.stringify(data.data)],
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
+      transformRequest: [(data) => {
+        return JSON.stringify(data)
+      }]
     });
   },
   updateClass(id, data) {
+    console.log(1, data)
     // FIXME: Use method PUT with real API
     return axios.post(`${API_PATH}/class/update/` + id, data, {
       withCredentials: true,
-      transformRequest: [(data) => JSON.stringify(data.data)],
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
+      transformRequest: [(data) => {
+        return JSON.stringify(data)
+      }]
     });
   },
   deleteClass(id) {
     // FIXME: Use method DELETE with real API
     return axios.post(`${API_PATH}/class/delete/` + id, {
       withCredentials: true,
-      transformRequest: [(data) => JSON.stringify(data.data)],
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
+      transformRequest: [(data) => {
+        return JSON.stringify(data)
+      }]
     });
   },
   userSetting(id) {
@@ -61,11 +56,9 @@ export default {
   updateUserSetting(id, data) {
     return axios.post(`${API_PATH}/user/info`, data, {
       withCredentials: true,
-      transformRequest: [(data) => JSON.stringify(data.data)],
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
+      transformRequest: [(data) => {
+        return JSON.stringify(data)
+      }]
     });
   },
   studentDetail(id) {
@@ -76,11 +69,9 @@ export default {
   userInvitation(data) {
     return axios.post(`${API_PATH}/class/invite`, {
       withCredentials: true,
-      transformRequest: [(data) => JSON.stringify(data.data)],
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
+      transformRequest: [(data) => {
+        return JSON.stringify(data)
+      }]
     });
   }
 }
