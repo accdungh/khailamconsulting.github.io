@@ -9,7 +9,7 @@
         :to="{ name: r.name }"
         class="nav-link"
         :class="{ active: r.name == $route.name }"
-        >{{ r.name }}
+        >{{ r.meta.text }}
       </router-link>
     </li>
     <!-- <li class="nav-item">

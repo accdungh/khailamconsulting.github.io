@@ -19,6 +19,7 @@
 <script>
 import AjaxCaller from "../../config/ajax_caller";
 import ClassListItem from "./class_list_item.vue";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "ArchivedClass",
@@ -26,10 +27,14 @@ export default {
   data() {
     return { archivedClassList: [] };
   },
+  methods: {
+    ...mapActions(["setNoticeMessage"]),
+  },
   created() {
     AjaxCaller.archivedClassList().then((resp) => {
       let json = resp.data;
       if (json && json.success) this.archivedClassList = json.data;
+      else this.setNoticeMessage(json.message);
     });
   },
 };

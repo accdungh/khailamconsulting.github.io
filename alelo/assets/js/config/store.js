@@ -10,7 +10,8 @@ export default new Vuex.Store({
     classDetail: {},
     classDetailId: null,
     userSetting: {},
-    studentDetail: {}
+    studentDetail: {},
+    noticeMessage: null
   },
 
   mutations: {
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     fetchedStudentDetail(state, data) {
       state.studentDetail = data;
     },
+    setNoticeMessage(state, message) {
+      state.noticeMessage = message;
+    },
   },
 
   actions: {
@@ -37,6 +41,7 @@ export default new Vuex.Store({
         let json = resp.data;
         if (json && json.success)
           commit('fetchedClassList', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
     fetchClassDetail({ commit, state }, id) {
@@ -46,6 +51,7 @@ export default new Vuex.Store({
           commit('fetchedClassDetail', json.data);
           commit('selectedClass', id || state.classDetailId);
         }
+        else commit('setNoticeMessage', json.message);
       })
     },
     createClass({ commit, state }, classData) {
@@ -55,7 +61,7 @@ export default new Vuex.Store({
           commit('fetchedClassDetail', json.data);
           commit('selectedClass', json.data.id);
         }
-
+        else commit('setNoticeMessage', json.message);
         return resp;
       })
     },
@@ -64,6 +70,7 @@ export default new Vuex.Store({
         let json = resp.data;
         if (json && json.success)
           commit('fetchedClassDetail', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
     deleteClass({ commit, state }) {
@@ -71,6 +78,7 @@ export default new Vuex.Store({
         let json = resp.data;
         if (json && json.success)
           commit('fetchedClassDetail', {});
+        else commit('setNoticeMessage', json.message);
       })
     },
     fetchUserSetting({ commit, state }, id) {
@@ -78,10 +86,14 @@ export default new Vuex.Store({
         let json = resp.data;
         if (json && json.success)
           commit('fetchedUserSetting', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
     updateUserSetting({ commit, state }) {
-      AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then((resp) => { })
+      AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then((resp) => {
+        if (!(json && json.success))
+          commit('setNoticeMessage', json.message);
+      })
     },
     selectClass({ commit, state }, id) {
       commit('selectedClass', id);
@@ -91,8 +103,12 @@ export default new Vuex.Store({
         let json = resp.data;
         if (json && json.success)
           commit('fetchedStudentDetail', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
+    setNoticeMessage({ commit, state }, message) {
+      commit('setNoticeMessage', message);
+    }
   },
 
   getters: {
@@ -100,5 +116,6 @@ export default new Vuex.Store({
     classDetail: state => state.classDetail,
     userSetting: state => state.userSetting,
     studentDetail: state => state.studentDetail,
+    noticeMessage: state => state.noticeMessage,
   }
 })
