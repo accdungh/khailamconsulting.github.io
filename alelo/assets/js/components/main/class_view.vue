@@ -30,7 +30,7 @@
             <a
               class="edit-link d-inline f-n-20 ml-2"
               href="javascript:void(0)"
-              @click="editMode = false"
+              @click="save()"
               >Save</a
             >
           </div>
@@ -257,7 +257,12 @@
               <td class="font-weight-bold">
                 <a
                   href="javascript:void(0)"
-                  @click="$router.push({ name: 'ClassStudent' })"
+                  @click="
+                    $router.push({
+                      name: 'ClassStudent',
+                      params: { classId: $route.params.id, id: student.id },
+                    })
+                  "
                   >{{ student.lastName }}</a
                 >
               </td>
@@ -447,7 +452,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["fetchClassDetail"]),
+    ...mapActions(["fetchClassDetail", "updateClass"]),
     selectAllStudent() {
       this.classDetail.students = this.classDetail.students.map((s) => {
         s.selected = this.selectedAllStudent;
@@ -498,6 +503,11 @@ export default {
     resendInviteStudent() {
       // TODO: call API invite
     },
+    save() {
+      this.updateClass(this.classDetail).then(() => {
+        this.editMode = false;
+      });
+    },
   },
   filters: {
     timeParser(string) {
@@ -505,7 +515,7 @@ export default {
     },
   },
   created() {
-    this.fetchClassDetail();
+    this.fetchClassDetail(this.$route.params.id);
   },
   watch: {
     classDetail() {

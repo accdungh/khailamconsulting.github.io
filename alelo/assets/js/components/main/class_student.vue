@@ -4,7 +4,7 @@
       <div class="mt-4 mb-4">
         <a
           href="javascript:void(0)"
-          @click="$router.push({ name: 'ClassView' })"
+          @click="$router.push({ name: 'ClassView', params: { id: $route.params.classId }})"
           class="f-m-20 d-line border-bottom border-secondary pb-2"
           ><i class="fa fa-arrow-left"></i> Back to Class Viewer</a
         >
@@ -165,7 +165,7 @@ export default {
   },
   components: { StudentActiveDetail },
   created() {
-    this.fetchStudentDetail().finally(() => {
+    this.fetchStudentDetail(this.$route.params.id).finally(() => {
       $(".scrollbar-inner").scrollbar();
     });
   },

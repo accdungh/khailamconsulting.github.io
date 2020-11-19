@@ -10,7 +10,8 @@ export default new Vuex.Store({
     classDetail: {},
     classDetailId: null,
     userSetting: {},
-    studentDetail: {}
+    studentDetail: {},
+    noticeMessage: null
   },
 
   mutations: {
@@ -29,53 +30,85 @@ export default new Vuex.Store({
     fetchedStudentDetail(state, data) {
       state.studentDetail = data;
     },
+    setNoticeMessage(state, message) {
+      state.noticeMessage = message;
+    },
   },
 
   actions: {
     fetchClassList({ commit, state }) {
-      AjaxCaller.classList().then(({ data }) => {
-        if (data && data.success)
-          commit('fetchedClassList', data.data);
+      AjaxCaller.classList().then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassList', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
     fetchClassDetail({ commit, state }, id) {
-      AjaxCaller.classDetail(id).then(({ data }) => {
-        if (data && data.success)
-          commit('fetchedClassDetail', data.data);
+      AjaxCaller.classDetail(id || state.classDetailId).then((resp) => {
+        let json = resp.data;
+        if (json && json.success) {
+          commit('fetchedClassDetail', json.data);
+          commit('selectedClass', id || state.classDetailId);
+        }
+        else commit('setNoticeMessage', json.message);
       })
     },
     createClass({ commit, state }, classData) {
-      return AjaxCaller.createClass(classData).then(({ data }) => {
-        commit('fetchedClassDetail', data);
-        commit('selectedClass', data.id);
+      return AjaxCaller.createClass(classData).then((resp) => {
+        let json = resp.data;
+        if (json && json.success) {
+          commit('fetchedClassDetail', json.data);
+          commit('selectedClass', json.data.id);
+        }
+        else commit('setNoticeMessage', json.message);
+        return resp;
       })
     },
     updateClass({ commit, state }, classData) {
-      return AjaxCaller.updateClass(state.classDetailId, classData).then(({ data }) => {
-        commit('fetchedClassDetail', data);
+      return AjaxCaller.updateClass(state.classDetailId, classData).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassDetail', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
     deleteClass({ commit, state }) {
-      return AjaxCaller.deleteClass(state.classDetailId).then(({ data }) => {
-        commit('fetchedClassDetail', {});
+      return AjaxCaller.deleteClass(state.classDetailId).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedClassDetail', {});
+        else commit('setNoticeMessage', json.message);
       })
     },
     fetchUserSetting({ commit, state }, id) {
-      AjaxCaller.userSetting(id).then(({ data }) => {
-        commit('fetchedUserSetting', data);
+      AjaxCaller.userSetting(id).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedUserSetting', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
     updateUserSetting({ commit, state }) {
-      AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then(({ data }) => { })
+      AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then((resp) => {
+        if (!(json && json.success))
+          commit('setNoticeMessage', json.message);
+      })
     },
     selectClass({ commit, state }, id) {
       commit('selectedClass', id);
     },
     fetchStudentDetail({ commit, state }, id) {
-      return AjaxCaller.studentDetail(id).then(({ data }) => {
-        commit('fetchedStudentDetail', data);
+      return AjaxCaller.studentDetail(id).then((resp) => {
+        let json = resp.data;
+        if (json && json.success)
+          commit('fetchedStudentDetail', json.data);
+        else commit('setNoticeMessage', json.message);
       })
     },
+    setNoticeMessage({ commit, state }, message) {
+      commit('setNoticeMessage', message);
+    }
   },
 
   getters: {
@@ -83,5 +116,6 @@ export default new Vuex.Store({
     classDetail: state => state.classDetail,
     userSetting: state => state.userSetting,
     studentDetail: state => state.studentDetail,
+    noticeMessage: state => state.noticeMessage,
   }
 })

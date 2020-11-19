@@ -6,9 +6,8 @@
       :key="'route-link-' + index"
     >
       <router-link
-        :to="r.path"
+        :to="{ name: r.name }"
         class="nav-link"
-        active-class="active"
         :class="{ active: r.name == $route.name }"
         >{{ r.meta.text }}
       </router-link>

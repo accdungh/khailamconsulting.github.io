@@ -15,8 +15,8 @@
     <section>
       <div class="container">
         <TabList v-if="!$route.meta.hideRouterLink" />
-
         <router-view></router-view>
+        <NoticeModal />
       </div>
     </section>
   </main>
@@ -25,11 +25,12 @@
 <script>
 import VueRouter from "vue-router";
 import TabList from "./main/tab_list.vue";
+import NoticeModal from "./main/popup/notice_modal.vue";
 import routes from "./main/routes.js";
 
 export default {
   name: "Main",
-  components: { TabList },
+  components: { TabList, NoticeModal },
   router: new VueRouter({
     base: "/",
     routes,
