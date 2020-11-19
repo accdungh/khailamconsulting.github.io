@@ -339,7 +339,7 @@
             <div id="accordion">
               <div
                 class="card"
-                v-for="(simulation, index) in selectedCourse.simulation"
+                v-for="(simulation, index) in selectedCourse.simulations"
                 :key="'simulation' + index"
               >
                 <div class="card-header" id="headingOne">
@@ -351,7 +351,7 @@
                       aria-expanded="true"
                       :aria-controls="'simulation' + index"
                     >
-                      {{ simulation.name }}
+                      {{ simulation.title }}
                     </button>
                   </h3>
                 </div>
@@ -388,11 +388,11 @@
                     <table class="table table-striped table-custom">
                       <tbody>
                         <tr
-                          v-for="(Objective, jIndex) in simulation.Objectives"
-                          :key="'Objectives' + index + '-' + jIndex"
+                          v-for="(objective, jIndex) in simulation.objectives"
+                          :key="'objectives' + index + '-' + jIndex"
                         >
-                          <td>{{ Objective.name }}</td>
-                          <td v-html="Objective.skills">
+                          <td>{{ objective.name }}</td>
+                          <td v-html="objective.skills">
                             Appetizer Vocabulary<br />Articles with Countable
                             and Uncountable Nouns
                           </td>
@@ -510,8 +510,10 @@ export default {
     },
   },
   filters: {
-    timeParser(string) {
-      return moment(string, "MM/DD/YYYY HH:mm").format("MMMM DD, YYYY HH:mm");
+    timeParser(value) {
+      if (value) {
+        return moment(String(value)).format("MMMM DD, YYYY HH:mm");
+      }
     },
   },
   created() {

@@ -16,7 +16,7 @@ export default {
   },
   classDetail(id) {
     //  return axios.get(`${API_PATH}/example_data/detail.json`, {
-    return axios.get(`${API_PATH}/class/view/$` + id, {
+    return axios.get(`${API_PATH}/class/view/` + id, {
       withCredentials: true
     });
   },

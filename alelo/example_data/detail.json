@@ -15,9 +15,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -38,9 +38,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -61,9 +61,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -92,9 +92,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -115,9 +115,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -138,9 +138,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -169,9 +169,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -192,9 +192,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -215,9 +215,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -246,9 +246,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -269,9 +269,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -292,9 +292,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -323,9 +323,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -346,9 +346,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -369,9 +369,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -400,9 +400,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -423,9 +423,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -446,9 +446,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -477,9 +477,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -500,9 +500,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -523,9 +523,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -554,9 +554,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -577,9 +577,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -600,9 +600,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -631,9 +631,9 @@
       "simulation": [
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -654,9 +654,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
@@ -677,9 +677,9 @@
         },
         {
           "xid": 1,
-          "name": "Jerry’s Spaghetti",
+          "title": "Jerry’s Spaghetti",
           "description": "<h4 class=\"f-m-18 blue-bold\">CEFR Statements / Students can:</h4><ul><li>Understand what people say to me in simple, everyday conversation.</li><li>Communicate in everyday situations.</li><li>Politely talk to people in short social exchanges.</li></ul>",
-          "Objectives": [
+          "objectives": [
             {
               "name": "Order Appetizer",
               "skills": "Appetizer Vocabulary<br>Articles with Countable and Uncountable Nouns"
