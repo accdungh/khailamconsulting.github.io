@@ -34,12 +34,14 @@ export default new Vuex.Store({
   actions: {
     fetchClassList({ commit, state }) {
       AjaxCaller.classList().then(({ data }) => {
-        commit('fetchedClassList', data);
+        if (data && data.success)
+          commit('fetchedClassList', data.data);
       })
     },
     fetchClassDetail({ commit, state }, id) {
       AjaxCaller.classDetail(id).then(({ data }) => {
-        commit('fetchedClassDetail', data);
+        if (data && data.success)
+          commit('fetchedClassDetail', data.data);
       })
     },
     createClass({ commit, state }, classData) {
