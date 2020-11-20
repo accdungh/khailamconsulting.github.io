@@ -60,8 +60,8 @@ export default {
       }]
     });
   },
-  studentDetail(id) {
-    return axios.get(`${API_PATH}/student/` + id, {
+  studentDetail(id, classId) {
+    return axios.get(`${API_PATH}/student/` + id + '/' + classId, {
       withCredentials: true
     });
   },

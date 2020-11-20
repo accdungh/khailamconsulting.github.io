@@ -165,7 +165,7 @@ export default {
   },
   components: { StudentActiveDetail },
   created() {
-    this.fetchStudentDetail(this.$route.params.id).finally(() => {
+    this.fetchStudentDetail({ id: this.$route.params.id, classId: this.$route.params.classId}).finally(() => {
       $(".scrollbar-inner").scrollbar();
     });
   },
