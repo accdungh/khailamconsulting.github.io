@@ -487,8 +487,8 @@ export default {
         }
 
         if (type == "date") {
-          o1 = moment(o1, "MM/DD/YYYY HH:mm").format();
-          o2 = moment(o2, "MM/DD/YYYY HH:mm").format();
+          o1 = moment(new Date(o1), "MM/DD/YYYY HH:mm").format();
+          o2 = moment(new Date(o2), "MM/DD/YYYY HH:mm").format();
         }
 
         if (type == "time") {
