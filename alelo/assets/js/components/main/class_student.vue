@@ -184,7 +184,6 @@ export default {
   },
   components: { StudentSimulationDetail },
   created() {
-    console.log(this.$route.params.id, this.$route.params.classId)
     this.fetchStudentDetail({ id: this.$route.params.id, classId: this.$route.params.classId}).finally(() => {
       $(".scrollbar-inner").scrollbar();
     });
