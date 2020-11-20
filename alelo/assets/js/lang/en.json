@@ -60,5 +60,8 @@
     "receiveEmail": "Receive our newsletter to learn about new developments!",
     "enterCurrentPass": "Enter your current password",
     "enterNewPass": "Enter a new password"
+  },
+  "classStudent": {
+    "backToClassViewer": "Back to Class Viewer"
   }
 }

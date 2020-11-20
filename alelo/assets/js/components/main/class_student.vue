@@ -6,7 +6,7 @@
           href="javascript:void(0)"
           @click="$router.push({ name: 'ClassView', params: { id: $route.params.classId }})"
           class="f-m-20 d-line border-bottom border-secondary pb-2"
-          ><i class="fa fa-arrow-left"></i> Back to Class Viewer</a
+          ><i class="fa fa-arrow-left"></i> {{ $t('backToClassViewer') }}</a
         >
       </div>
       <h2 class="f-m-20 mb-3 blue-bold">{{ $t("classList.summary") }}</h2>
