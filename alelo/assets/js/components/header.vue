@@ -47,7 +47,7 @@ export default {
       allLang: {
         en: "English",
         es: "Español",
-        po: "Português",
+        pt: "Português",
         cn: "中文",
       },
     };
