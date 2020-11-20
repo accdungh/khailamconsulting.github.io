@@ -92,7 +92,7 @@
                 :key="'active-log-' + index"
               >
                 <td>{{ attempt.date | timeParser }}</td>
-                <td>{{ attempt.score }}%</td>
+                <td>{{ attempt.score }}</td>
                 <td>{{ attempt.objectivesCompleted }}/{{ attempt.objectivesCount }}</td>
                 <td>{{ attempt.emp }}</td>
                 <td>{{ attempt.hintsUsed ? attempt.hintsUsed : 0 }}</td>

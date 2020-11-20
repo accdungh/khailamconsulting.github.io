@@ -122,7 +122,7 @@
                       >
                     </td>
                     <td>{{ simulation.lastTried | timeParser }}</td>
-                    <td>{{ simulation.lastScore }}%</td>
+                    <td>{{ simulation.lastScore }}</td>
                     <td>{{ simulation.completed }}/{{ simulation.tried }}</td>
                     <td>{{ simulation.totalTimeSpent | toHHMMSS }}</td>
                   </tr>
