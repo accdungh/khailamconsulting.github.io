@@ -14,7 +14,7 @@
           <h2 class="modal-title">
             {{ activeDetail.simulation }}
             <span class="f-n-14 d-inline ml-5"
-              >Hover on any title for more information</span
+              >{{ $t("classDetail.hoverText") }}</span
             >
           </h2>
 
@@ -39,7 +39,7 @@
                     data-container="body"
                     data-placement="top"
                     title="Measure of accuracy and fluency."
-                    >Mastery Score</a
+                    >{{ $t("classStudent.masteryScore") }}</a
                   >
                 </th>
                 <th scope="col">
@@ -49,7 +49,7 @@
                     data-container="body"
                     data-placement="top"
                     title="Objectives completed/objectives available."
-                    >Objectives Met</a
+                    >{{ $t("classStudent.objectivesMet") }}</a
                   >
                 </th>
                 <th scope="col">
@@ -59,7 +59,7 @@
                     data-container="body"
                     data-placement="top"
                     title="Number of speaking turns each minute."
-                    >Turns per Minute</a
+                    >{{ $t("classStudent.turnsPerMinute") }}</a
                   >
                 </th>
                 <th scope="col">
@@ -69,7 +69,7 @@
                     data-container="body"
                     data-placement="top"
                     title="Number of time the transcript or utterances were accessed."
-                    >Hints Used</a
+                    >{{ $t("classStudent.hintsUsed") }}</a
                   >
                 </th>
                 <th scope="col">
@@ -79,7 +79,7 @@
                     data-container="body"
                     data-placement="top"
                     title="Total time spent on this sim."
-                    >Time Spent</a
+                    >{{ $t("classStudent.timeSpent") }}</a
                   >
                 </th>
               </tr>
@@ -101,7 +101,7 @@
             </tbody>
           </table>
           <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-            ><i class="fa fa-download"></i> Download</span
+            ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
           >
         </div>
       </div>

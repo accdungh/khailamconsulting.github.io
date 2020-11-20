@@ -62,6 +62,20 @@
     "enterNewPass": "Enter a new password"
   },
   "classStudent": {
-    "backToClassViewer": "Back to Class Viewer"
+    "backToClassViewer": "Back to Class Viewer",
+    "studentID": "Student ID:",
+    "email": "Email: ",
+    "otherInformation": "Other Information:",
+    "course(s)": "Course(s)",
+    "simulation": "Simulation",
+    "lastAttempt": "Last Attempt",
+    "lastScore": "Last Score",
+    "completedStarted": "Completed / Started",
+    "masteryScore": "Mastery Score",
+    "objectivesMet": "Objectives Met",
+    "turnsPerMinute": "Turns per Minute",
+    "timeSpent": "Time Spent",
+    "hintsUsed": "Hints Used",
+    "totalTime": "Total Time"
   }
 }
