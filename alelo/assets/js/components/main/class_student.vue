@@ -6,18 +6,18 @@
           href="javascript:void(0)"
           @click="$router.push({ name: 'ClassView', params: { id: $route.params.classId }})"
           class="f-m-20 d-line border-bottom border-secondary pb-2"
-          ><i class="fa fa-arrow-left"></i> Back to Class Viewer</a
+          ><i class="fa fa-arrow-left"></i> {{ $t('classStudent.backToClassViewer') }}</a
         >
       </div>
       <h2 class="f-m-20 mb-3 blue-bold">{{ $t("classList.summary") }}</h2>
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
         <h3 class="f-m-36">{{ studentDetail.name }}</h3>
-        <div><b>Student ID:</b> {{ studentDetail.studentId }}</div>
-        <div><b>Email:</b> {{ studentDetail.email }}</div>
-        <div><b>Other Information:</b> {{ studentDetail.otherInformation }}</div>
+        <div><b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.studentId }}</div>
+        <div><b>{{ $t("classStudent.email") }}</b> {{ studentDetail.email }}</div>
+        <div><b>{{ $t("classStudent.otherInformation") }}</b> {{ studentDetail.otherInformation }}</div>
       </div>
 
-      <h3 class="f-m-20 blue-bold mb-3">Course(s)</h3>
+      <h3 class="f-m-20 blue-bold mb-3">{{ $t("classStudent.course(s)") }}</h3>
       <ul class="nav nav-tabs nav-tab-course" id="coursetab" role="tablist">
         <li
           class="nav-item"
@@ -62,7 +62,7 @@
                         data-placement="top"
                         title="Hover on any title for more information"
                       >
-                        Simulation <i class="fa fa-chevron-down"></i>
+                        {{ $t("classStudent.simulation") }} <i class="fa fa-chevron-down"></i>
                       </a>
                     </th>
                     <th scope="col">
@@ -72,7 +72,7 @@
                         data-container="body"
                         data-placement="top"
                         title="Hover on any title for more information"
-                        >Last Attempt <i class="fa fa-chevron-down"></i>
+                        >{{ $t("classStudent.lastAttempt") }} <i class="fa fa-chevron-down"></i>
                       </a>
                     </th>
                     <th scope="col">
@@ -82,7 +82,7 @@
                         data-container="body"
                         data-placement="top"
                         title="Hover on any title for more information"
-                        >Last Score <i class="fa fa-chevron-down"></i>
+                        >{{ $t("classStudent.lastScore") }} <i class="fa fa-chevron-down"></i>
                       </a>
                     </th>
                     <th scope="col">
@@ -92,7 +92,7 @@
                         data-container="body"
                         data-placement="top"
                         title="Hover on any title for more information"
-                        >Completed / Started <i class="fa fa-chevron-down"></i>
+                        >{{ $t("classStudent.completedStarted") }} <i class="fa fa-chevron-down"></i>
                       </a>
                     </th>
                     <th scope="col">
@@ -102,7 +102,7 @@
                         data-container="body"
                         data-placement="top"
                         title="Hover on any title for more information"
-                        >Total Time <i class="fa fa-chevron-down"></i>
+                        >{{ $t("classStudent.totalTime") }} <i class="fa fa-chevron-down"></i>
                       </a>
                     </th>
                   </tr>
@@ -132,10 +132,10 @@
           </div>
           <div class="clearfix">
             <span class="d-inline float-left f-n-14 blue-light mr-4"
-              >Hover on any title for more information</span
+              >{{ $t("classDetail.hoverText") }}</span
             >
             <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-              ><i class="fa fa-download"></i> Download</span
+              ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
             >
           </div>
         </div>

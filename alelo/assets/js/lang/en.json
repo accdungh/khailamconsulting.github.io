@@ -60,5 +60,22 @@
     "receiveEmail": "Receive our newsletter to learn about new developments!",
     "enterCurrentPass": "Enter your current password",
     "enterNewPass": "Enter a new password"
+  },
+  "classStudent": {
+    "backToClassViewer": "Back to Class Viewer",
+    "studentID": "Student ID:",
+    "email": "Email: ",
+    "otherInformation": "Other Information:",
+    "course(s)": "Course(s)",
+    "simulation": "Simulation",
+    "lastAttempt": "Last Attempt",
+    "lastScore": "Last Score",
+    "completedStarted": "Completed / Started",
+    "masteryScore": "Mastery Score",
+    "objectivesMet": "Objectives Met",
+    "turnsPerMinute": "Turns per Minute",
+    "timeSpent": "Time Spent",
+    "hintsUsed": "Hints Used",
+    "totalTime": "Total Time"
   }
 }
