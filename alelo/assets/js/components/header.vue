@@ -16,13 +16,18 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Language <i class="fa fa-chevron-down"></i>
+                {{ $t('common.selectLang') }} <i class="fa fa-chevron-down"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">English</a>
-                <a class="dropdown-item" href="#">Español</a>
-                <a class="dropdown-item" href="#">Português</a>
-                <a class="dropdown-item" href="#">中文</a>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0)"
+                  v-for="l in langs"
+                  :key="l[0]"
+                  :class="{ hovered: l[0] == lang }"
+                  @click="setLang(l[0])"
+                  >{{ l[1] }}</a
+                >
               </div>
             </div>
           </div>
@@ -33,10 +38,28 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "Header",
   data() {
-    return {};
+    return {
+      allLang: {
+        en: "English",
+        es: "Español",
+        pt: "Português",
+        cn: "中文",
+      },
+    };
+  },
+  computed: {
+    ...mapGetters(["lang"]),
+    langs() {
+      return Object.entries(this.allLang);
+    },
+  },
+  methods: {
+    ...mapActions(["setLang"]),
   },
 };
 </script>

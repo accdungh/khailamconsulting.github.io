@@ -1,5 +1,4 @@
 <template>
-  <!-- Modal-delele-Class -->
   <div
     class="modal fade"
     id="notice-modal"
@@ -40,10 +39,19 @@ export default {
   computed: {
     ...mapGetters(["noticeMessage"]),
   },
-  methods: {},
+  methods: {
+    ...mapActions(["setNoticeMessage"]),
+  },
   watch: {
     noticeMessage(val) {
-      $("#notice-modal").modal("show");
+      if (val) {
+        $("#notice-modal").modal("show");
+        $("#notice-modal")
+          .off("hidden.bs.modal")
+          .on("hidden.bs.modal", () => {
+            this.setNoticeMessage("");
+          });
+      }
     },
   },
 };

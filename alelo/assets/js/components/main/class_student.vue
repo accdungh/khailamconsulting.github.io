@@ -9,7 +9,7 @@
           ><i class="fa fa-arrow-left"></i> Back to Class Viewer</a
         >
       </div>
-      <h2 class="f-m-20 mb-3 blue-bold">Summary</h2>
+      <h2 class="f-m-20 mb-3 blue-bold">{{ $t("classList.summary") }}</h2>
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
         <h3 class="f-m-36">{{ studentDetail.name }}</h3>
         <div><b>Student ID:</b> {{ studentDetail.studentId }}</div>

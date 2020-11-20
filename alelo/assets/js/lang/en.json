@@ -1,0 +1,64 @@
+{
+  "common": {
+    "selectLang": "Language",
+    "menu": {
+      "classList": "Class List",
+      "classView": "Class Viewer",
+      "archivedClass": "Archived Class",
+      "setting": "Settings"
+    },
+    "welcome": "Welcome",
+    "logOut": "Log Out",
+    "footer": {
+      "copyRight": "Copyright 2020 Alelo Inc. All rights reserved.",
+      "playLearnCommunicate": "Play. Learn. Communicate.",
+      "contactUs": "Contact Us",
+      "legal": "Legal"
+    }
+  },
+  "classList": {
+    "summary": "Summary",
+    "createClass": "Create A New Class"
+  },
+  "classDetail": {
+    "save": "Save",
+    "edit": "Edit",
+    "start": "Start",
+    "end": "End",
+    "addNewTitle": "Add new title",
+    "addNewSummary": "Add new summary",
+    "startDateShouldNotBefore": "Start Date should not be before End Date",
+    "hoverText": "Hover on any title for more information",
+    "courses": "Courses",
+    "accessible": "Accessible",
+    "accessibleHover": "Click a course name to see objectives and CEFR statements.",
+    "courseName": "Course Name",
+    "courseNameHover": "Click a course name to see objectives and CEFR statements.",
+    "playSimulations": "Play Simulations",
+    "playSimulationsHover": "Click the icon to play the simulations yourself.",
+    "studentList": "Student List",
+    "lastName": "Last Name",
+    "firstName": "First Name",
+    "lastLogin": "Last Login",
+    "totalTime": "Total Time",
+    "download": "Download",
+    "deleteClass": "Delete Your Class",
+    "addStudents": "Add Students",
+    "removeStudents": "Remove Student(s)",
+    "resendInvite": "Resend Invitation(s)",
+    "courseObjectives": "Course Objectives",
+    "selectSimulation": "Select a simulation for more information",
+    "objectives": "Objectives",
+    "skills": "Skills"
+  },
+  "setting": {
+    "profile": "Profile",
+    "save": "Save",
+    "submit": "Submit",
+    "edit": "Edit",
+    "changePassword": "Change Password",
+    "receiveEmail": "Receive our newsletter to learn about new developments!",
+    "enterCurrentPass": "Enter your current password",
+    "enterNewPass": "Enter a new password"
+  }
+}

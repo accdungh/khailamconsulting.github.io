@@ -11,7 +11,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">Create A New Class</h2>
+          <h2 class="modal-title">{{ $t("classList.createClass") }}</h2>
 
           <button
             type="button"
@@ -32,13 +32,13 @@
                     class="edit-link d-inline f-n-20 ml-2"
                     href="javascript:void(0)"
                     @click="editMode = true"
-                    >Edit</a
+                    >{{ $t('classDetail.edit') }}</a
                   >
                 </div>
                 <div class="col-md-24 mb-3" v-else>
                   <h2 class="class-title d-inline form-inline">
                     <input
-                      placeholder="Add new title"
+                      :placeholder="$t('classDetail.addNewTitle')"
                       type="text"
                       class="form-control"
                       v-model="classDetail.name"
@@ -50,7 +50,7 @@
                     class="edit-link d-inline f-n-20 ml-2"
                     href="javascript:void(0)"
                     @click="editMode = false"
-                    >Save</a
+                    >{{ $t("classDetail.save") }}</a
                   >
                   <div>
                     <small v-show="errors.has('title')" class="text-danger">{{
@@ -61,7 +61,9 @@
                 <div class="col-md-16 mb-3 clearfix">
                   <div class="wrap-date">
                     <div class="input-group start-date">
-                      <label class="f-m-14 blue-light ml-3">Start</label>
+                      <label class="f-m-14 blue-light ml-3">{{
+                        $t("classDetail.start")
+                      }}</label>
                       <KlDatepicker
                         v-model="classDetail.startDate"
                         v-validate="'required|date_format:MM/dd/yyyy'"
@@ -71,7 +73,9 @@
                     </div>
 
                     <div class="input-group end-date">
-                      <label class="f-m-14 blue-light ml-3">End</label>
+                      <label class="f-m-14 blue-light ml-3">{{
+                        $t("classDetail.end")
+                      }}</label>
                       <KlDatepicker
                         v-model="classDetail.endDate"
                         v-validate="
@@ -103,11 +107,13 @@
               </div>
 
               <div class="row">
-                <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+                <div class="col-md-12 mb-2 mt-2 f-m-20">
+                  {{ $t("classList.summary") }}
+                </div>
               </div>
 
               <textarea
-                placeholder="Add new summary"
+                :placeholder="$t('classDetail.addNewSummary')"
                 rows="1"
                 class="form-control auto-size"
                 v-model="classDetail.description"
@@ -126,7 +132,7 @@
             href="javascript:void(0)"
             class="btn-created float-right btn-invite"
             @click="saveClass()"
-            >Save</a
+            >{{ $t("classDetail.save") }}</a
           >
         </div>
       </div>
@@ -165,7 +171,7 @@ export default {
     this.$validator.localize("en", {
       custom: {
         "end date": {
-          after: "Start Date should not be before End Date",
+          after: this.$t("classDetail.startDateShouldNotBefore"),
         },
       },
     });

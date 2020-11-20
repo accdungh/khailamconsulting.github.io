@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import AjaxCaller from "./ajax_caller.js"
+import App from './app.js';
 
 Vue.use(Vuex)
 
@@ -11,7 +12,8 @@ export default new Vuex.Store({
     classDetailId: null,
     userSetting: {},
     studentDetail: {},
-    noticeMessage: null
+    noticeMessage: null,
+    lang: "en"
   },
 
   mutations: {
@@ -32,6 +34,10 @@ export default new Vuex.Store({
     },
     setNoticeMessage(state, message) {
       state.noticeMessage = message;
+    },
+    setLang(state, lang) {
+      state.lang = lang;
+      App.$i18n.locale = lang;
     },
   },
 
@@ -85,7 +91,7 @@ export default new Vuex.Store({
       AjaxCaller.userSetting(id).then((resp) => {
         let json = resp.data;
         if (json && json.success)
-          commit('fetchedUserSetting', json.data);
+          commit('fetchedUserSetting', json.data || {});
         else commit('setNoticeMessage', json.message);
       })
     },
@@ -108,6 +114,9 @@ export default new Vuex.Store({
     },
     setNoticeMessage({ commit, state }, message) {
       commit('setNoticeMessage', message);
+    },
+    setLang({ commit, state }, lang) {
+      commit('setLang', lang);
     }
   },
 
@@ -117,5 +126,6 @@ export default new Vuex.Store({
     userSetting: state => state.userSetting,
     studentDetail: state => state.studentDetail,
     noticeMessage: state => state.noticeMessage,
+    lang: state => state.lang,
   }
 })

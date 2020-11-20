@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row">
           <div class="col-19 col-md-12">
-            <h1 class="title-heading">Welcome, Walter Mitchell!</h1>
+            <h1 class="title-heading">{{ $t('common.welcome') }}, Walter Mitchell!</h1>
           </div>
           <div class="col-5 col-md-12 text-right">
-            <a href="" class="text-white f-n-18 align-middle">Log Out</a>
+            <a href="" class="text-white f-n-18 align-middle">{{ $t('common.logOut') }}</a>
           </div>
         </div>
       </div>
