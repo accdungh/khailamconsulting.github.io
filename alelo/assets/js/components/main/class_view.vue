@@ -15,7 +15,7 @@
               class="edit-link d-inline f-n-20 ml-2"
               href="javascript:void(0)"
               @click="editMode = true"
-              >Edit</a
+              >{{ $t("classDetail.edit") }}</a
             >
           </div>
           <div class="col-md-13" v-else>
@@ -31,13 +31,15 @@
               class="edit-link d-inline f-n-20 ml-2"
               href="javascript:void(0)"
               @click="save()"
-              >Save</a
+              >{{ $t("classDetail.save") }}</a
             >
           </div>
           <div class="col-md-11 clearfix">
             <div class="wrap-date float-right">
               <div class="input-group start-date">
-                <label class="f-m-14 blue-light ml-3">Start</label>
+                <label class="f-m-14 blue-light ml-3">{{
+                  $t("classDetail.start")
+                }}</label>
                 <input
                   class="datepicker-startdate"
                   :value="classDetail.startDate"
@@ -46,7 +48,9 @@
               </div>
 
               <div class="input-group end-date">
-                <label class="f-m-14 blue-light ml-3">End</label>
+                <label class="f-m-14 blue-light ml-3">{{
+                  $t("classDetail.end")
+                }}</label>
                 <input
                   class="datepicker-enddate"
                   :value="classDetail.endDate"
@@ -62,7 +66,9 @@
         </div>
 
         <div class="row">
-          <div class="col-md-12 mb-2 mt-2 f-m-20">Summary</div>
+          <div class="col-md-12 mb-2 mt-2 f-m-20">
+            {{ $t("classList.summary") }}
+          </div>
         </div>
         <textarea
           rows="1"
@@ -73,10 +79,10 @@
     </form>
 
     <div class="wrap-course mb-3">
-      <h3 class="f-m-20 d-inline blue-bold">Courses</h3>
-      <span class="d-inline float-right f-n-14 blue-light mr-4"
-        >Hover on any title for more information</span
-      >
+      <h3 class="f-m-20 d-inline blue-bold">{{ $t("classDetail.courses") }}</h3>
+      <span class="d-inline float-right f-n-14 blue-light mr-4">{{
+        $t("classDetail.hoverText")
+      }}</span>
     </div>
 
     <div class="wrap-item">
@@ -90,8 +96,8 @@
                   data-toggle="tooltip"
                   data-container="body"
                   data-placement="top"
-                  title="Click a course name to see objectives and CEFR statements."
-                  >Accessible</a
+                  :title="$t('classDetail.accessibleHover')"
+                  >{{ $t("classDetail.accessible") }}</a
                 >
               </th>
               <th>
@@ -100,8 +106,8 @@
                   data-toggle="tooltip"
                   data-container="body"
                   data-placement="top"
-                  title="Click a course name to see objectives and CEFR statements."
-                  >Course Name</a
+                  :title="$t('classDetail.courseNameHover')"
+                  >{{ $t("classDetail.courseName") }}</a
                 >
               </th>
               <th>
@@ -110,8 +116,8 @@
                   data-toggle="tooltip"
                   data-container="body"
                   data-placement="top"
-                  title="Click the icon to play the simulations yourself."
-                  >Play Simulations</a
+                  :title="$t('classDetail.playSimulationsHover')"
+                  >{{ $t("classDetail.playSimulations") }}</a
                 >
               </th>
             </tr>
@@ -149,9 +155,11 @@
     </div>
 
     <div class="wrap-student mb-3">
-      <h3 class="f-m-20 d-inline blue-bold">Student List</h3>
+      <h3 class="f-m-20 d-inline blue-bold">
+        {{ $t("classDetail.studentList") }}
+      </h3>
       <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-        ><i class="fa fa-download"></i> Download</span
+        ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
       >
     </div>
     <div class="wrap-item">
@@ -179,7 +187,7 @@
                   @click="sortStudent('lastName')"
                   class="student-sorter"
                 >
-                  Last Name
+                  {{ $t("classDetail.lastName") }}
                   <i
                     class="fa"
                     :class="{
@@ -195,7 +203,7 @@
                   @click="sortStudent('firstName')"
                   class="student-sorter"
                 >
-                  First Name
+                  {{ $t("classDetail.firstName") }}
                   <i
                     class="fa"
                     :class="{
@@ -211,7 +219,7 @@
                   @click="sortStudent('lastLogin', 'date')"
                   class="student-sorter"
                 >
-                  Last Login
+                  {{ $t("classDetail.lastLogin") }}
                   <i
                     class="fa"
                     :class="{
@@ -227,7 +235,7 @@
                   @click="sortStudent('totalTime', 'time')"
                   class="student-sorter"
                 >
-                  Total Time
+                  {{ $t("classDetail.totalTime") }}
                   <i
                     class="fa"
                     :class="{
@@ -282,7 +290,7 @@
         data-toggle="modal"
         data-target="#delete-class"
       >
-        Delete Your Class</a
+        {{ $t("classDetail.deleteClass") }}</a
       >
       <a
         v-if="!studentSelected"
@@ -290,7 +298,7 @@
         data-toggle="modal"
         data-target="#add_student_modal"
         class="btn-created float-right"
-        >Add Students</a
+        >{{ $t("classDetail.addStudents") }}</a
       >
 
       <a
@@ -299,7 +307,7 @@
         data-toggle="modal"
         data-target="#resent-invitation"
         class="btn-created btn-red float-right"
-        >Resend Invitation(s)</a
+        >{{ $t("classDetail.resendInvite") }}</a
       >
 
       <a
@@ -308,7 +316,7 @@
         data-toggle="modal"
         data-target="#removestudent"
         class="btn-created btn-red float-right"
-        >Remove Student(s)</a
+        >{{ $t("classDetail.removeStudents") }}</a
       >
     </div>
 
@@ -324,7 +332,9 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title" id="course-infoLabel">Course Objectives</h2>
+            <h2 class="modal-title" id="course-infoLabel">
+              {{ $t("classDetail.courseObjectives") }}
+            </h2>
             <button
               type="button"
               class="close"
@@ -335,7 +345,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <h3>Select a simulation for more information</h3>
+            <h3>{{ $t("classDetail.selectSimulation") }}</h3>
             <div id="accordion">
               <div
                 class="card"
@@ -380,8 +390,10 @@
                     <table class="table-modal">
                       <thead>
                         <tr>
-                          <th scope="col">Objectives</th>
-                          <th scope="col">Skills</th>
+                          <th scope="col">
+                            {{ $t("classDetail.objectives") }}
+                          </th>
+                          <th scope="col">{{ $t("classDetail.skills") }}</th>
                         </tr>
                       </thead>
                     </table>

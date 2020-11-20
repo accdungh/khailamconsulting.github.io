@@ -30,7 +30,6 @@ export default {
     });
   },
   updateClass(id, data) {
-    console.log(1, data)
     // FIXME: Use method PUT with real API
     return axios.post(`${API_PATH}/class/update/` + id, data, {
       withCredentials: true,

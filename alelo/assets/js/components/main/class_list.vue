@@ -19,7 +19,7 @@
         data-toggle="modal"
         data-target="#create-new-class"
         class="btn btn-created mt-5 mb-5"
-        >Create A New Class</a
+        >{{ $t("classList.createClass") }}</a
       >
     </form>
 

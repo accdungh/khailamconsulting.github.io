@@ -10,7 +10,7 @@ export default [
     component: ClassList,
     name: 'ClassList',
     meta: {
-      text: "Class List",
+      text: "common.menu.classList",
       hide: true
     }
   },
@@ -19,7 +19,7 @@ export default [
     component: ClassList,
     name: 'ClassList',
     meta: {
-      text: "Class List",
+      text: "common.menu.classList",
     }
   },
   {
@@ -27,7 +27,7 @@ export default [
     component: ClassView,
     name: 'ClassView',
     meta: {
-      text: "Class Viewer",
+      text: "common.menu.classView",
     }
   },
   {
@@ -35,7 +35,7 @@ export default [
     component: ArchivedClass,
     name: 'ArchivedClass',
     meta: {
-      text: "Archived Classes",
+      text: "common.menu.archivedClass",
     }
   },
   {
@@ -43,7 +43,7 @@ export default [
     component: Setting,
     name: 'Setting',
     meta: {
-      text: "Settings",
+      text: "common.menu.setting",
     }
   },
   {

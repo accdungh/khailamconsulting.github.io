@@ -6,7 +6,7 @@
     role="tabpanel"
     aria-labelledby="settings-tab"
   >
-    <h2 class="class-title mb-2">Profile</h2>
+    <h2 class="class-title mb-2">{{ $t("setting.profile") }}</h2>
     <form @submit.prevent="update()">
       <div class="form-setting">
         <div class="form-group">
@@ -18,7 +18,7 @@
               class="edit-link d-inline f-n-20 ml-2"
               href="javascript:void(0)"
               @click="editMode = true"
-              >Edit</a
+              >{{ $t("setting.edit") }}</a
             >
           </div>
           <div class="clearfix mb-3" v-else>
@@ -41,7 +41,7 @@
               class="edit-link d-inline f-n-20 ml-2"
               href="javascript:void(0)"
               @click="update()"
-              >Save</a
+              >{{ $t("setting.save") }}</a
             >
           </div>
           <div class="custom-select-group col-md-14">
@@ -82,14 +82,14 @@
           aria-expanded="false"
           aria-controls="passwordShow"
         >
-          Change Password
+          {{ $t("setting.changePassword") }}
         </button>
 
         <div id="passwordShow" class="wrap-password collapse">
           <div class="form-group">
-            <label for="current-password" class="f-n-16"
-              >Enter your current password</label
-            >
+            <label for="current-password" class="f-n-16">{{
+              $t("setting.enterCurrentPass")
+            }}</label>
             <input
               type="email"
               class="form-control col-md-10 p-2"
@@ -98,9 +98,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="new-password" class="f-n-16"
-              >Enter a new password</label
-            >
+            <label for="new-password" class="f-n-16">{{
+              $t("setting.enterNewPass")
+            }}</label>
             <input
               type="password"
               class="form-control col-md-10 mb-2 p-2"
@@ -113,16 +113,20 @@
             />
           </div>
 
-          <button type="submit" class="btn btn-created">Submit</button>
+          <button type="submit" class="btn btn-created">
+            {{ $t("setting.submit") }}
+          </button>
         </div>
       </div>
       <div class="form-check mt-3 mb-3">
         <input type="checkbox" class="form-check-input" id="receive" />
-        <label class="form-check-label" for="receive"
-          >Receive our newsletter to learn about new developments!</label
-        >
+        <label class="form-check-label" for="receive">{{
+          $t("setting.receiveEmail")
+        }}</label>
       </div>
-      <button type="submit" class="btn btn-created btn-save">Save</button>
+      <button type="submit" class="btn btn-created btn-save">
+        {{ $t("classDetail.save") }}
+      </button>
     </form>
   </div>
 </template>

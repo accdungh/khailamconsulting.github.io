@@ -229,6 +229,7 @@ a:hover {
   background: none;
 }
 
+.dropdown-item.hovered:after,
 .dropdown-item:hover:after {
   content: "\f00c";
   display: inline-block;
