@@ -12,7 +12,7 @@
       <h2 class="f-m-20 mb-3 blue-bold">{{ $t("classList.summary") }}</h2>
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
         <h3 class="f-m-36">{{ studentDetail.name }}</h3>
-        <div><b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.studentId }}</div>
+        <div><b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.id }}</div>
         <div><b>{{ $t("classStudent.email") }}</b> {{ studentDetail.email }}</div>
         <div><b>{{ $t("classStudent.otherInformation") }}</b> {{ studentDetail.otherInformation }}</div>
       </div>
@@ -109,7 +109,7 @@
                 </thead>
                 <tbody>
                   <tr
-                    v-for="(active, aIndex) in course.active"
+                    v-for="(simulation, aIndex) in course.simulations"
                     :key="`course-${index}-active-${aIndex}`"
                   >
                     <td>
@@ -117,14 +117,14 @@
                         href="#active-detail"
                         data-toggle="modal"
                         data-target="#active-detail"
-                        @click="activeDetail = active"
-                        >{{ active.simulation }}</a
+                        @click="simulationDetail = simulation"
+                        >{{ simulation.title }}</a
                       >
                     </td>
-                    <td>{{ active.lastAttempt }}</td>
-                    <td>{{ active.lastScore }}%</td>
-                    <td>{{ active.completed }}/{{ active.started }}</td>
-                    <td>{{ active.totalTime }}</td>
+                    <td>{{ simulation.lastTried | timeParser }}</td>
+                    <td>{{ simulation.lastScore }}%</td>
+                    <td>{{ simulation.completed }}/{{ simulation.tried }}</td>
+                    <td>{{ simulation.totalTimeSpent | toHHMMSS }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -142,19 +142,20 @@
       </div>
     </div>
 
-    <StudentActiveDetail :activeDetail="activeDetail" />
+    <StudentSimulationDetail :simulationDetail="simulationDetail" />
   </section>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import StudentActiveDetail from "./popup/student_active_detail.vue";
+import moment from "moment";
+import StudentSimulationDetail from "./popup/student_simulation_detail.vue";
 
 export default {
   name: "ClassStudent",
   data() {
     return {
-      activeDetail: {},
+      simulationDetail: {},
     };
   },
   computed: {
@@ -163,8 +164,27 @@ export default {
   methods: {
     ...mapActions(["fetchStudentDetail"]),
   },
-  components: { StudentActiveDetail },
+  filters: {
+    timeParser(value) {
+      if (value) {
+        return moment(String(value)).format("MM/DD/YYYY HH:mm");
+      }
+    },
+    toHHMMSS(sec) {
+      var sec_num = parseInt(sec, 10); // don't forget the second param
+      var hours   = Math.floor(sec_num / 3600);
+      var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+      var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+      if (hours   < 10) {hours   = "0"+hours;}
+      if (minutes < 10) {minutes = "0"+minutes;}
+      if (seconds < 10) {seconds = "0"+seconds;}
+      return hours+':'+minutes+':'+seconds;
+    }
+  },
+  components: { StudentSimulationDetail },
   created() {
+    console.log(this.$route.params.id, this.$route.params.classId)
     this.fetchStudentDetail({ id: this.$route.params.id, classId: this.$route.params.classId}).finally(() => {
       $(".scrollbar-inner").scrollbar();
     });

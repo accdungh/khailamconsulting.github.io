@@ -12,7 +12,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title">
-            {{ activeDetail.simulation }}
+            {{ simulationDetail.title }}
             <span class="f-n-14 d-inline ml-5"
               >{{ $t("classDetail.hoverText") }}</span
             >
@@ -88,15 +88,15 @@
           <table class="table table-striped table-custom style-col">
             <tbody>
               <tr
-                v-for="(log, index) in activeDetail.logs"
+                v-for="(attempt, index) in simulationDetail.attempts"
                 :key="'active-log-' + index"
               >
-                <td>{{ log.time }}</td>
-                <td>{{ log.masteryScore }}%</td>
-                <td>{{ log.objectivesMet }}/{{ log.objectives }}</td>
-                <td>{{ log.turnsPerMinute }}</td>
-                <td>{{ log.hintsUsed }}</td>
-                <td>{{ log.timeSpent }}</td>
+                <td>{{ attempt.date | timeParser }}</td>
+                <td>{{ attempt.score }}%</td>
+                <td>{{ attempt.objectivesCompleted }}/{{ attempt.objectivesCount }}</td>
+                <td>{{ attempt.emp }}</td>
+                <td>{{ attempt.hintsUsed ? attempt.hintsUsed : 0 }}</td>
+                <td>{{ attempt.timeSpent | toHHMMSS }}</td>
               </tr>
             </tbody>
           </table>
@@ -110,13 +110,33 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
-  name: "StudentActiveDetail",
+  name: "StudentSimulationDetail",
   props: {
-    activeDetail: {
+    simulationDetail: {
       type: Object,
       default: () => {},
     },
+  },
+  filters: {
+    timeParser(value) {
+      if (value) {
+        return moment(String(value)).format("MM/DD/YYYY HH:mm");
+      }
+    },
+    toHHMMSS(sec) {
+      var sec_num = parseInt(sec, 10); // don't forget the second param
+      var hours   = Math.floor(sec_num / 3600);
+      var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+      var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+      if (hours   < 10) {hours   = "0"+hours;}
+      if (minutes < 10) {minutes = "0"+minutes;}
+      if (seconds < 10) {seconds = "0"+seconds;}
+      return hours+':'+minutes+':'+seconds;
+    }
   },
 };
 </script>

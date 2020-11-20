@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_PATH = "https://sim-dev.alelo.com/api/dummy_instructor";
+const API_PATH = "https://sim-dev.alelo.com/api/dummy_instructor"
+/** for the production use */
+//const API_PATH = "/api/instructor";
 
 export default {
   classList() {
