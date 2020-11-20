@@ -4,10 +4,16 @@
       <div class="container">
         <div class="row">
           <div class="col-19 col-md-12">
-            <h1 class="title-heading">{{ $t('common.welcome') }}, Walter Mitchell!</h1>
+            <h1 class="title-heading" v-if="userName">
+              {{ $t("common.welcome") }}, {{ userName }}
+            </h1>
           </div>
           <div class="col-5 col-md-12 text-right">
-            <a href="" class="text-white f-n-18 align-middle">{{ $t('common.logOut') }}</a>
+            <a
+              href="javascript:void(0)"
+              class="text-white f-n-18 align-middle"
+              >{{ $t("common.logOut") }}</a
+            >
           </div>
         </div>
       </div>
@@ -27,6 +33,7 @@ import VueRouter from "vue-router";
 import TabList from "./main/tab_list.vue";
 import NoticeModal from "./main/popup/notice_modal.vue";
 import routes from "./main/routes.js";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Main",
@@ -41,6 +48,20 @@ export default {
         window.CommonJs.initJs();
       }, 50);
     },
+  },
+  computed: {
+    ...mapGetters(["userSetting"]),
+    userName() {
+      return [this.userSetting.firstName, this.userSetting.lastName]
+        .join(" ")
+        .trim();
+    },
+  },
+  methods: {
+    ...mapActions(["fetchUserSetting"]),
+  },
+  created() {
+    this.fetchUserSetting();
   },
 };
 </script>

@@ -150,10 +150,7 @@ export default {
       this.editMode = false;
       this.updateUserSetting();
     },
-  },
-  created() {
-    this.fetchUserSetting();
-  },
+  }
 };
 </script>
 
