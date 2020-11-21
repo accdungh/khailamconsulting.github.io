@@ -205,13 +205,7 @@
                   class="student-sorter"
                 >
                   {{ $t("classDetail.lastName") }}
-                  <i
-                    class="fa"
-                    :class="{
-                      'fa-chevron-down': studentOrder.lastName,
-                      'fa-chevron-up': !studentOrder.lastName,
-                    }"
-                  ></i>
+                  <SortArrow :flag="sorter.orderKeys.lastName.value" />
                 </a>
               </th>
               <th scope="col">
@@ -221,45 +215,27 @@
                   class="student-sorter"
                 >
                   {{ $t("classDetail.firstName") }}
-                  <i
-                    class="fa"
-                    :class="{
-                      'fa-chevron-down': studentOrder.firstName,
-                      'fa-chevron-up': !studentOrder.firstName,
-                    }"
-                  ></i>
+                  <SortArrow :flag="sorter.orderKeys.firstName.value" />
                 </a>
               </th>
               <th scope="col">
                 <a
                   href="javascript:void(0)"
-                  @click="sortStudent('lastLogin', 'date')"
+                  @click="sortStudent('lastLogin')"
                   class="student-sorter"
                 >
                   {{ $t("classDetail.lastLogin") }}
-                  <i
-                    class="fa"
-                    :class="{
-                      'fa-chevron-down': studentOrder.lastLogin,
-                      'fa-chevron-up': !studentOrder.lastLogin,
-                    }"
-                  ></i>
+                  <SortArrow :flag="sorter.orderKeys.lastLogin.value" />
                 </a>
               </th>
               <th scope="col">
                 <a
                   href="javascript:void(0)"
-                  @click="sortStudent('totalTime', 'time')"
+                  @click="sortStudent('totalTime')"
                   class="student-sorter"
                 >
                   {{ $t("classDetail.totalTime") }}
-                  <i
-                    class="fa"
-                    :class="{
-                      'fa-chevron-down': studentOrder.totalTime,
-                      'fa-chevron-up': !studentOrder.totalTime,
-                    }"
-                  ></i>
+                  <SortArrow :flag="sorter.orderKeys.totalTime.value" />
                 </a>
               </th>
             </tr>
@@ -455,6 +431,7 @@ import DeleteClassModal from "./popup/delete_class_modal.vue";
 import RemoveStudentModal from "./popup/remove_student_modal.vue";
 import ResendInvitationModal from "./popup/resend_invitation_modal.vue";
 import AddStudentModal from "./popup/add_student_modal.vue";
+import Sorter from "../../services/sorter.js";
 
 export default {
   name: "ClassView",
@@ -462,13 +439,13 @@ export default {
     return {
       selectedCourse: {},
       selectedAllStudent: false,
-      studentOrder: {
-        lastName: true,
-        firstName: true,
-        lastLogin: true,
-        totalTime: true,
-      },
       editMode: false,
+      sorter: new Sorter({
+        lastName: {},
+        firstName: {},
+        lastLogin: { type: "date" },
+        totalTime: { type: "time" },
+      }),
     };
   },
   components: {
@@ -491,40 +468,12 @@ export default {
         return s;
       });
     },
-    sortStudent(orderBy, type = "string", flag = undefined) {
-      if (flag == undefined) {
-        this.studentOrder[orderBy] = !this.studentOrder[orderBy];
-        var flag = this.studentOrder[orderBy];
-      }
-
-      this.classDetail.students = this.classDetail.students.sort((a, b) => {
-        if (flag) {
-          var o1 = a[orderBy];
-          var o2 = b[orderBy];
-        } else {
-          var o1 = b[orderBy];
-          var o2 = a[orderBy];
-        }
-
-        if (type == "date") {
-          o1 = moment(new Date(o1), "MM/DD/YYYY HH:mm").format();
-          o2 = moment(new Date(o2), "MM/DD/YYYY HH:mm").format();
-        }
-
-        if (type == "time") {
-          o1 = moment(o1, "HH:mm:ss").format();
-          o2 = moment(o2, "HH:mm:ss").format();
-        }
-
-        if (o1 < o2) {
-          return -1;
-        }
-        if (o1 > o2) {
-          return 1;
-        }
-
-        return 0;
-      });
+    sortStudent(orderBy, flag = undefined) {
+      this.classDetail.students = this.sorter.perform(
+        this.classDetail.students,
+        orderBy,
+        flag
+      );
     },
     removeStudent() {
       // TODO: maybe call API update here
@@ -557,6 +506,7 @@ export default {
         setTimeout(() => {
           autosize.update($(".auto-size"));
         });
+        if (this.classDetail.students) this.sortStudent("lastName", true);
       }
     },
   },
