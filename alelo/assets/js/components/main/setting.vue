@@ -50,7 +50,7 @@
               v-model="userSetting.currentInstitution"
             >
               <option
-                v-for="(item, index) in userSetting.Institution"
+                v-for="(item, index) in userSetting.institutions"
                 :key="'Institution' + index"
                 :value="item.id"
               >
@@ -65,7 +65,7 @@
               v-model="userSetting.currentLanguage"
             >
               <option
-                v-for="(item, index) in userSetting.Languages"
+                v-for="(item, index) in userSetting.languages"
                 :key="'Languages' + index"
                 :value="item.id"
               >

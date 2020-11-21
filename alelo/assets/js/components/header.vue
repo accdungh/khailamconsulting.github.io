@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-20">
-            <a href="#"><img src="assets/images/logo.jpg" alt="" /></a>
+            <a href="javascript:void(0)"><img src="assets/images/logo.jpg" alt="" /></a>
           </div>
           <div class="col-12 col-lg-4 text-right mt-md-4">
             <div class="dropdown">

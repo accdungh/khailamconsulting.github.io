@@ -11,7 +11,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">Add Students</h2>
+          <h2 class="modal-title">{{ $t("classDetail.addStudents") }}</h2>
 
           <button
             type="button"
@@ -24,10 +24,11 @@
         </div>
 
         <div class="modal-body">
-          <p class="f-m-20 blue-bold mb-1">Instructions</p>
+          <p class="f-m-20 blue-bold mb-1">
+            {{ $t("addStudents.instructions") }}
+          </p>
           <p class="f-m-20 gray-blur mb-5">
-            Enter email addresses separated by a comma or space. You may also
-            copy and paste a list into the box.
+            {{ $t("addStudents.instructionsText") }}
           </p>
           <div v-if="!sent">
             <div class="pb-5">
@@ -40,17 +41,17 @@
               href="javascript:void(0)"
               class="btn-created float-right"
               @click="invite()"
-              >Invite</a
+              >{{ $t("addStudents.invite") }}</a
             >
           </div>
           <div v-else>
             <div class="wrap-item text-center pb-5">
-              <h3 class="mt-5 mb-5">Invitations sent!</h3>
+              <h3 class="mt-5 mb-5">{{ $t("addStudents.invitationsSent") }}</h3>
               <a
                 href="javascript:void(0)"
                 class="btn-created"
                 @click="addMore()"
-                >Add More</a
+                >{{ $t("addStudents.addMore") }}</a
               >
             </div>
           </div>
