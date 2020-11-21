@@ -127,6 +127,7 @@ export default new Vuex.Store({
   getters: {
     classList: state => state.classList,
     classDetail: state => state.classDetail,
+    classDetailId: state => state.classDetailId,
     userSetting: state => state.userSetting,
     studentDetail: state => state.studentDetail,
     noticeMessage: state => state.noticeMessage,

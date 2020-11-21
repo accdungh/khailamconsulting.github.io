@@ -285,7 +285,10 @@
                   @click="
                     $router.push({
                       name: 'ClassStudent',
-                      params: { classId: $route.params.id, id: student.id },
+                      params: {
+                        classId: $route.params.id || classDetailId,
+                        id: student.id,
+                      },
                     })
                   "
                   >{{ student.lastName }}</a
@@ -475,7 +478,7 @@ export default {
     AddStudentModal,
   },
   computed: {
-    ...mapGetters(["classDetail"]),
+    ...mapGetters(["classDetail", "classDetailId"]),
     studentSelected() {
       return (this.classDetail.students || []).find((s) => s.selected);
     },
