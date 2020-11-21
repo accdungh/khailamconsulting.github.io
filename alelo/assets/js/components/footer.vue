@@ -12,12 +12,12 @@
           <div class="col-md-7">
             <ul class="list-inline f-20 mb-0 mt-md-0 text-center text-md-right">
               <li class="list-inline-item">
-                <a href="#" class="text-white">
+                <a href="javascript:void(0)" class="text-white">
                   {{ $t("common.footer.contactUs") }}
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#" class="text-white">
+                <a href="javascript:void(0)" class="text-white">
                   {{ $t("common.footer.legal") }}
                 </a>
               </li>

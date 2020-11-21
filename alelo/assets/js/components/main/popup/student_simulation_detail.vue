@@ -13,9 +13,9 @@
         <div class="modal-header">
           <h2 class="modal-title">
             {{ simulationDetail.title }}
-            <span class="f-n-14 d-inline ml-5"
-              >{{ $t("classDetail.hoverText") }}</span
-            >
+            <span class="f-n-14 d-inline ml-5">{{
+              $t("classDetail.hoverText")
+            }}</span>
           </h2>
 
           <button
@@ -38,7 +38,7 @@
                     data-toggle="tooltip"
                     data-container="body"
                     data-placement="top"
-                    title="Measure of accuracy and fluency."
+                    :title="$t('classStudent.masteryScoreHoverText')"
                     >{{ $t("classStudent.masteryScore") }}</a
                   >
                 </th>
@@ -48,7 +48,7 @@
                     data-toggle="tooltip"
                     data-container="body"
                     data-placement="top"
-                    title="Objectives completed/objectives available."
+                    :title="$t('classStudent.objectivesMetHoverText')"
                     >{{ $t("classStudent.objectivesMet") }}</a
                   >
                 </th>
@@ -58,7 +58,7 @@
                     data-toggle="tooltip"
                     data-container="body"
                     data-placement="top"
-                    title="Number of speaking turns each minute."
+                    :title="$t('classStudent.turnsPerMinuteHoverText')"
                     >{{ $t("classStudent.turnsPerMinute") }}</a
                   >
                 </th>
@@ -68,7 +68,7 @@
                     data-toggle="tooltip"
                     data-container="body"
                     data-placement="top"
-                    title="Number of time the transcript or utterances were accessed."
+                    :title="$t('classStudent.hintsUsedHoverText')"
                     >{{ $t("classStudent.hintsUsed") }}</a
                   >
                 </th>
@@ -78,7 +78,7 @@
                     data-toggle="tooltip"
                     data-container="body"
                     data-placement="top"
-                    title="Total time spent on this sim."
+                    :title="$t('classStudent.timeSpentHoverText')"
                     >{{ $t("classStudent.timeSpent") }}</a
                   >
                 </th>
@@ -93,7 +93,11 @@
               >
                 <td>{{ attempt.date | timeParser }}</td>
                 <td>{{ attempt.score }}</td>
-                <td>{{ attempt.objectivesCompleted }}/{{ attempt.objectivesCount }}</td>
+                <td>
+                  {{ attempt.objectivesCompleted }}/{{
+                    attempt.objectivesCount
+                  }}
+                </td>
                 <td>{{ attempt.emp }}</td>
                 <td>{{ attempt.hintsUsed ? attempt.hintsUsed : 0 }}</td>
                 <td>{{ attempt.timeSpent | toHHMMSS }}</td>
@@ -101,7 +105,8 @@
             </tbody>
           </table>
           <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-            ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
+            ><i class="fa fa-download"></i>
+            {{ $t("classDetail.download") }}</span
           >
         </div>
       </div>

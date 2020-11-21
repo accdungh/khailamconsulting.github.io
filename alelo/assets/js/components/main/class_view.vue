@@ -15,6 +15,7 @@
               class="edit-link d-inline f-n-20 ml-2"
               href="javascript:void(0)"
               @click="editMode = true"
+              v-if="classDetail.name"
               >{{ $t("classDetail.edit") }}</a
             >
           </div>
@@ -40,10 +41,11 @@
                 <label class="f-m-14 blue-light ml-3">{{
                   $t("classDetail.start")
                 }}</label>
-                <input
-                  class="datepicker-startdate"
-                  :value="classDetail.startDate"
-                  data-date-format="mm/dd/yyyy"
+                <KlDatepicker
+                  v-model="classDetail.startDate"
+                  v-validate="'required|date_format:MM/dd/yyyy'"
+                  data-vv-name="start date"
+                  ref="start date"
                 />
               </div>
 
@@ -51,15 +53,30 @@
                 <label class="f-m-14 blue-light ml-3">{{
                   $t("classDetail.end")
                 }}</label>
-                <input
-                  class="datepicker-enddate"
-                  :value="classDetail.endDate"
-                  data-date-format="mm/dd/yyyy"
+                <KlDatepicker
+                  v-model="classDetail.endDate"
+                  v-validate="
+                    'required|date_format:MM/dd/yyyy|after:start date,inclusion:true'
+                  "
+                  data-vv-name="end date"
+                  ref="end date"
                 />
               </div>
 
               <div class="text-danger">
                 <small class="date-error-message"></small>
+                <div>
+                  <small
+                    v-show="errors.has('start date')"
+                    class="text-danger"
+                    >{{ errors.first("start date") }}</small
+                  >
+                </div>
+                <div>
+                  <small v-show="errors.has('end date')" class="text-danger">{{
+                    errors.first("end date")
+                  }}</small>
+                </div>
               </div>
             </div>
           </div>
@@ -92,7 +109,7 @@
             <tr>
               <th class="text-center">
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   data-toggle="tooltip"
                   data-container="body"
                   data-placement="top"
@@ -102,7 +119,7 @@
               </th>
               <th>
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   data-toggle="tooltip"
                   data-container="body"
                   data-placement="top"
@@ -112,7 +129,7 @@
               </th>
               <th>
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   data-toggle="tooltip"
                   data-container="body"
                   data-placement="top"
@@ -147,7 +164,7 @@
                   >{{ course.name }}</a
                 >
               </td>
-              <td><a href="#" class="launch_ap"></a></td>
+              <td><a href="javascript:void(0)" class="launch_ap"></a></td>
             </tr>
           </tbody>
         </table>
@@ -534,14 +551,9 @@ export default {
   watch: {
     classDetail() {
       if (this.classDetail) {
-        $(".datepicker-startdate").datepicker(
-          "setDate",
-          moment(this.classDetail.startDate, "MM/DD/YYYY").toDate()
-        );
-        $(".datepicker-enddate").datepicker(
-          "setDate",
-          moment(this.classDetail.endDate, "MM/DD/YYYY").toDate()
-        );
+        setTimeout(() => {
+          autosize.update($(".auto-size"));
+        });
       }
     },
   },

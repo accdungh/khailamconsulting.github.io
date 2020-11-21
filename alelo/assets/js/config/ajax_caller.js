@@ -42,7 +42,7 @@ export default {
   },
   deleteClass(id) {
     // FIXME: Use method DELETE with real API
-    return axios.post(`${API_PATH}/class/delete/` + id, {
+    return axios.post(`${API_PATH}/class/delete/` + id, {}, {
       withCredentials: true,
       transformRequest: [(data) => {
         return JSON.stringify(data)
@@ -68,7 +68,7 @@ export default {
     });
   },
   userInvitation(data) {
-    return axios.post(`${API_PATH}/class/invite`, {
+    return axios.post(`${API_PATH}/class/invite`, {}, {
       withCredentials: true,
       transformRequest: [(data) => {
         return JSON.stringify(data)

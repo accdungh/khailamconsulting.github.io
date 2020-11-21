@@ -10,7 +10,9 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="notice-modalLabel">Notice</h2>
+          <h2 class="modal-title" id="notice-modalLabel">
+            {{ $t("common.noticeHeader") }}
+          </h2>
 
           <button
             type="button"

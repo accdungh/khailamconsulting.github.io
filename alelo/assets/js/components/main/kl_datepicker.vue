@@ -4,7 +4,7 @@
     :ref="refKey"
     v-model="dateValue"
     :class="inputClass"
-    data-date-format="mm/dd/yyyy"
+    :data-date-format="format.toLowerCase()"
   />
 </template>
 
@@ -47,24 +47,32 @@ export default {
       this.getDateValue();
     },
     dateValue(val) {
-      let datePickerValue = $(this.$refs[this.refKey]).datepicker("getDate");
+      let datePickerValue = $(this.$refs[this.refKey]).datepicker("getUTCDate");
+      if (val && !datePickerValue) {
+        $(this.$refs[this.refKey]).datepicker("setDate", val);
+        this.$emit("input", moment(val, this.format));
+        return;
+      }
       let datePickerValueFormat = moment(datePickerValue).format(this.format);
       if (datePickerValueFormat !== this.dateValue) {
-        $(this.$refs[this.refKey]).datepicker("setDate", datePickerValue);
+        $(this.$refs[this.refKey]).datepicker("setUTCDate", datePickerValue);
       } else {
         this.$emit("input", datePickerValue);
       }
     },
   },
   mounted() {
+    this.getDateValue();
     let self = this;
     $(self.$refs[self.refKey]).datepicker();
-    $(document).on("change", $(self.$refs[self.refKey]), function () {
-      let date = $(self.$refs[self.refKey]).datepicker("getDate");
-      if (!date) return;
+    $(self.$refs[self.refKey])
+      .off("change")
+      .on("change", function () {
+        let date = $(self.$refs[self.refKey]).datepicker("getUTCDate");
+        if (!date) return;
 
-      self.dateValue = moment(date).format(self.format);
-    });
+        self.dateValue = moment(date).format(self.format);
+      });
   },
 };
 </script>

@@ -11,7 +11,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">Resend Invitation</h2>
+          <h2 class="modal-title">{{ $t("resendInvitation.headerText") }}</h2>
 
           <button
             type="button"
@@ -24,21 +24,20 @@
         </div>
         <div class="modal-body">
           <p class="f-m-20 blue-bold mb-1">
-            You are about to resend an invitation to the following student(s):
+            {{ $t("resendInvitation.introText") }}
           </p>
           <p class="f-m-20 gray-blur mb-5">
-            Invitations will be sent to selected students. If a student has
-            already accepted an invitation, a new invitation will not be sent.
+            {{ $t("resendInvitation.infoText") }}
           </p>
 
           <div class="wrap-item text-center pb-5">
-            <h3 class="mt-5 mb-5">Resend Invitation?</h3>
+            <h3 class="mt-5 mb-5">{{ $t("resendInvitation.confirmText") }}</h3>
             <a
               href="javascript:void(0)"
               class="btn-created"
               data-dismiss="modal"
               @click="$emit('confirmed')"
-              >Yes, Resend</a
+              >{{ $t("resendInvitation.buttonText") }}</a
             >
           </div>
         </div>

@@ -14,7 +14,8 @@
       "playLearnCommunicate": "Play. Learn. Communicate.",
       "contactUs": "Contact Us",
       "legal": "Legal"
-    }
+    },
+    "noticeHeader": "Notice"
   },
   "classList": {
     "summary": "Summary",
@@ -76,6 +77,38 @@
     "turnsPerMinute": "Turns per Minute",
     "timeSpent": "Time Spent",
     "hintsUsed": "Hints Used",
-    "totalTime": "Total Time"
+    "totalTime": "Total Time",
+    "lastScoreHoverText": "This is the most recent Mastery Score the student received in each simulation",
+    "completedStartedHoverText": "This column records the amount of times the student has completed this simulation / compared to the amount of times the student has started this simulation",
+    "masteryScoreHoverText": "Measure of accuracy and fluency.",
+    "objectivesMetHoverText": "Objectives completed/objectives available.",
+    "turnsPerMinuteHoverText": "Number of speaking turns each minute.",
+    "hintsUsedHoverText": "Number of time the transcript or utterances were accessed.",
+    "timeSpentHoverText": "Total time spent on this sim."
+  },
+  "addStudents": {
+    "instructions": "Instructions",
+    "instructionsText": "Enter email addresses separated by a comma or space. You may also copy and paste a list into the box.",
+    "invite": "Invite",
+    "invitationsSent": "Invitations sent!",
+    "addMore": "Add More"
+  },
+  "deleteClass": {
+    "headerText": "Delete Class",
+    "introText": "This class and all of its data will be deleted forever.",
+    "confirmText": "Are you sure you want to delete this class?",
+    "buttonText": "Yes, Delete"
+  },
+  "removeStudent": {
+    "introText": "This will permanently remove student(s) from your class!",
+    "confirmText": "Are you sure you want to remove the selected student(s)?",
+    "buttonText": "Yes, Remove"
+  },
+  "resendInvitation": {
+    "headerText": "Resend Invitation",
+    "introText": "You are about to resend an invitation to the following student(s):",
+    "infoText": "Invitations will be sent to selected students. If a student has already accepted an invitation, a new invitation will not be sent.",
+    "confirmText": "Resend Invitation?",
+    "buttonText": "Yes, Resend"
   }
 }
