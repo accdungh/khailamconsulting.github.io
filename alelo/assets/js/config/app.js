@@ -6,7 +6,8 @@ import VeeValidate from "vee-validate";
 import AppHeader from "../components/header.vue";
 import AppMain from "../components/main.vue";
 import AppFooter from "../components/footer.vue";
-import KlDatepicker from "../components/main/kl_datepicker.vue";
+import KlDatepicker from "../components/common/kl_datepicker.vue";
+import SortArrow from "../components/common/sort_arrow.vue";
 
 import VueI18n from 'vue-i18n';
 import enMessage from '../lang/en.json';
@@ -19,6 +20,7 @@ Vue.use(VeeValidate);
 Vue.use(VueI18n);
 
 Vue.component('KlDatepicker', KlDatepicker);
+Vue.component('SortArrow', SortArrow);
 
 const messages = {
   en: enMessage,
