@@ -18,6 +18,8 @@ export default class Sorter {
       var flag = this.orderKeys[orderBy].value;
     }
 
+    this.orderKeys[orderBy].value = flag;
+
     let type = this.orderKeys[orderBy].type;
 
     let result = array.sort((a, b) => {

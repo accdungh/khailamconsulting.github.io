@@ -102,74 +102,10 @@
       }}</span>
     </div>
 
-    <div class="wrap-item">
-      <div class="scrollbar scrollbar-inner">
-        <table class="table table-striped table-custom header-fixed">
-          <thead>
-            <tr>
-              <th class="text-center">
-                <a
-                  href="javascript:void(0)"
-                  data-toggle="tooltip"
-                  data-container="body"
-                  data-placement="top"
-                  :title="$t('classDetail.accessibleHover')"
-                  >{{ $t("classDetail.accessible") }}</a
-                >
-              </th>
-              <th>
-                <a
-                  href="javascript:void(0)"
-                  data-toggle="tooltip"
-                  data-container="body"
-                  data-placement="top"
-                  :title="$t('classDetail.courseNameHover')"
-                  >{{ $t("classDetail.courseName") }}</a
-                >
-              </th>
-              <th>
-                <a
-                  href="javascript:void(0)"
-                  data-toggle="tooltip"
-                  data-container="body"
-                  data-placement="top"
-                  :title="$t('classDetail.playSimulationsHover')"
-                  >{{ $t("classDetail.playSimulations") }}</a
-                >
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="(course, index) in classDetail.activeCourse"
-              :key="'active-course' + index"
-            >
-              <td align="center">
-                <div class="form-check">
-                  <input
-                    class="form-check-input position-static"
-                    type="checkbox"
-                    id="blankCheckbox"
-                    value="option1"
-                    aria-label="..."
-                  />
-                </div>
-              </td>
-              <td class="f-m-18 blue-bold">
-                <a
-                  href="#course-info"
-                  data-toggle="modal"
-                  data-target="#course-info"
-                  @click="selectedCourse = course"
-                  >{{ course.name }}</a
-                >
-              </td>
-              <td><a href="javascript:void(0)" class="launch_ap"></a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <ActiveCourseList
+      :courses="classDetail.activeCourse"
+      v-model="selectedCourse"
+    />
 
     <div class="wrap-student mb-3">
       <h3 class="f-m-20 d-inline blue-bold">
@@ -316,106 +252,7 @@
       >
     </div>
 
-    <!-- Modal-delele-Class -->
-    <div
-      class="modal fade"
-      id="course-info"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="course-infoLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="course-infoLabel">
-              {{ $t("classDetail.courseObjectives") }}
-            </h2>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <h3>{{ $t("classDetail.selectSimulation") }}</h3>
-            <div id="accordion">
-              <div
-                class="card"
-                v-for="(simulation, index) in selectedCourse.simulations"
-                :key="'simulation' + index"
-              >
-                <div class="card-header" id="headingOne">
-                  <h3 class="mb-0">
-                    <button
-                      class="btn btn-link"
-                      data-toggle="collapse"
-                      :data-target="'#simulation' + index"
-                      aria-expanded="true"
-                      :aria-controls="'simulation' + index"
-                    >
-                      {{ simulation.title }}
-                    </button>
-                  </h3>
-                </div>
-
-                <div
-                  :id="'simulation' + index"
-                  class="collapse"
-                  aria-labelledby="headingOne"
-                  data-parent="#accordion"
-                >
-                  <div class="card-body">
-                    <div v-html="simulation.description"></div>
-                    <!-- <h4 class="f-m-18 blue-bold">
-                      CEFR Statements / Students can:
-                    </h4>
-                    <ul>
-                      <li>
-                        Understand what people say to me in simple, everyday
-                        conversation.
-                      </li>
-                      <li>Communicate in everyday situations.</li>
-                      <li>
-                        Politely talk to people in short social exchanges.
-                      </li>
-                    </ul> -->
-                    <table class="table-modal">
-                      <thead>
-                        <tr>
-                          <th scope="col">
-                            {{ $t("classDetail.objectives") }}
-                          </th>
-                          <th scope="col">{{ $t("classDetail.skills") }}</th>
-                        </tr>
-                      </thead>
-                    </table>
-                    <table class="table table-striped table-custom">
-                      <tbody>
-                        <tr
-                          v-for="(objective, jIndex) in simulation.objectives"
-                          :key="'objectives' + index + '-' + jIndex"
-                        >
-                          <td>{{ objective.name }}</td>
-                          <td v-html="objective.skills">
-                            Appetizer Vocabulary<br />Articles with Countable
-                            and Uncountable Nouns
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <CourseSimulationList :simulations="selectedCourse.simulations" />
     <DeleteClassModal />
     <RemoveStudentModal @confirmed="removeStudent()" />
     <ResendInvitationModal @confirmed="resendInviteStudent()" />
@@ -432,6 +269,8 @@ import RemoveStudentModal from "./popup/remove_student_modal.vue";
 import ResendInvitationModal from "./popup/resend_invitation_modal.vue";
 import AddStudentModal from "./popup/add_student_modal.vue";
 import Sorter from "../../services/sorter.js";
+import ActiveCourseList from "./class_view/active_course_list.vue";
+import CourseSimulationList from "./class_view/course_simulation_list.vue";
 
 export default {
   name: "ClassView",
@@ -453,6 +292,8 @@ export default {
     RemoveStudentModal,
     ResendInvitationModal,
     AddStudentModal,
+    ActiveCourseList,
+    CourseSimulationList
   },
   computed: {
     ...mapGetters(["classDetail", "classDetailId"]),
@@ -506,7 +347,7 @@ export default {
         setTimeout(() => {
           autosize.update($(".auto-size"));
         });
-        if (this.classDetail.students) this.sortStudent("lastName", true);
+        if (this.classDetail.students) this.sortStudent("lastLogin", false);
       }
     },
   },
