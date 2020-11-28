@@ -110,5 +110,12 @@
     "infoText": "Invitations will be sent to selected students. If a student has already accepted an invitation, a new invitation will not be sent.",
     "confirmText": "Resend Invitation?",
     "buttonText": "Yes, Resend"
+  },
+  "validations": {
+    "custom": {
+      "end date": {
+        "after": "Start Date should not be before End Date"
+      }
+    }
   }
 }

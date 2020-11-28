@@ -32,7 +32,7 @@
                     class="edit-link d-inline f-n-20 ml-2"
                     href="javascript:void(0)"
                     @click="editMode = true"
-                    >{{ $t('classDetail.edit') }}</a
+                    >{{ $t("classDetail.edit") }}</a
                   >
                 </div>
                 <div class="col-md-24 mb-3" v-else>
@@ -167,15 +167,7 @@ export default {
       });
     },
   },
-  created() {
-    this.$validator.localize("en", {
-      custom: {
-        "end date": {
-          after: this.$t("classDetail.startDateShouldNotBefore"),
-        },
-      },
-    });
-  },
+  created() {},
 };
 </script>
 
