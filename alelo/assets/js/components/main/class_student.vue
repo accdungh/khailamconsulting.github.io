@@ -191,7 +191,7 @@ export default {
     ...mapActions(["fetchStudentDetail"]),
     selectActiveCourse(index) {
       this.activeCourseIndex = index;
-      this.sortSimulation();
+      this.sortSimulation("title", true);
     },
     sortSimulation(orderBy = null, flag = undefined) {
       this.studentDetail.courses[
@@ -235,7 +235,7 @@ export default {
     }).finally(() => {
       $(".scrollbar-inner").scrollbar();
       window.CommonJs.initJs();
-      this.sortSimulation();
+      this.sortSimulation("title", true);
     });
   },
 };
