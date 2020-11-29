@@ -37,7 +37,7 @@ export default new Vuex.Store({
     },
     setLang(state, lang) {
       state.lang = lang;
-      App.$i18n.locale = lang;
+      App.changeLang(lang);
     },
   },
 
