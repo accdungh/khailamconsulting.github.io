@@ -238,8 +238,7 @@ export default {
     this.fetchStudentDetail({
       id: this.$route.params.id,
       classId: this.$route.params.classId,
-    }).finally(() => {      
-      $('.scrollbar-horizontal').scrollbar();
+    }).finally(() => {
       $(".scrollbar-inner").scrollbar();
       window.CommonJs.initJs();
       this.sortSimulation("title", true);
