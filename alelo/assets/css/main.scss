@@ -1,4 +1,50 @@
 /*************** SCROLLBAR BASE CSS ***************/
+.scrollbar-nav {
+  position: relative;
+}
+.wrap-scrollbar-nav {
+    position:relative;
+    margin:0 auto;
+    overflow:hidden;
+    height:42px;
+}
+
+.nav.list-nav {
+    position:absolute;
+    left:0px;
+    top:0px;
+    min-width:3500px;
+    margin-top:0px;
+}
+
+.nav.list-nav li{
+  display:table-cell;
+    position:relative;
+    text-align:center;
+    cursor:grab;
+    cursor:-webkit-grab;
+    color:#efefef;
+    vertical-align:middle;
+}
+
+.scroller {
+  text-align:center;
+  cursor:pointer;
+  display:none;
+  white-space:no-wrap;
+  vertical-align:middle;
+  background-color:#fff;
+  position: absolute;
+  top: 12px;
+}
+
+.scroller-left {
+  left: -30px;
+}
+
+.scroller-right {
+  right: -30px;
+}
 
 .scroll-wrapper {
   overflow: hidden !important;

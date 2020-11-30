@@ -31,21 +31,27 @@
       </div>
 
       <h3 class="f-m-20 blue-bold mb-3">{{ $t("classStudent.course(s)") }}</h3>
-      <ul class="nav nav-tabs nav-tab-course" id="coursetab" role="tablist">
-        <li
-          class="nav-item"
-          v-for="(course, index) in studentDetail.courses"
-          :key="'student-course-' + index"
-        >
-          <a
-            class="nav-link"
-            href="javascript:void(0);"
-            :class="{ active: index == activeCourseIndex }"
-            @click="selectActiveCourse(index)"
-            >{{ course.name }}</a
-          >
-        </li>
-      </ul>
+      <div class="scrollbar-nav">
+        <div class="scroller scroller-left"><i class="fa fa-chevron-left"></i></div>
+        <div class="scroller scroller-right"><i class="fa fa-chevron-right"></i></div>
+        <div class="wrap-scrollbar-nav">
+          <ul class="nav nav-tabs list-nav nav-tab-course" id="coursetab" role="tablist">
+            <li
+              class="nav-item"
+              v-for="(course, index) in studentDetail.courses"
+              :key="'student-course-' + index"
+            >
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                :class="{ active: index == activeCourseIndex }"
+                @click="selectActiveCourse(index)"
+                >{{ course.name }}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <div class="wrap-item wrap-item-custom">
         <div class="scrollbar scrollbar-inner">
@@ -232,7 +238,8 @@ export default {
     this.fetchStudentDetail({
       id: this.$route.params.id,
       classId: this.$route.params.classId,
-    }).finally(() => {
+    }).finally(() => {      
+      $('.scrollbar-horizontal').scrollbar();
       $(".scrollbar-inner").scrollbar();
       window.CommonJs.initJs();
       this.sortSimulation("title", true);
