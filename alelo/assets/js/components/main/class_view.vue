@@ -207,7 +207,9 @@
                 >
               </td>
               <td class="font-weight-bold">{{ student.firstName }}</td>
-              <td>{{ student.lastLogin | timeParser }}</td>
+              <td>
+                {{ student.lastLogin | timeParser("MMMM DD, YYYY HH:mm") }}
+              </td>
               <td>{{ student.totalTime }}</td>
             </tr>
           </tbody>
@@ -293,7 +295,7 @@ export default {
     ResendInvitationModal,
     AddStudentModal,
     ActiveCourseList,
-    CourseSimulationList
+    CourseSimulationList,
   },
   computed: {
     ...mapGetters(["classDetail", "classDetailId"]),
@@ -329,13 +331,6 @@ export default {
       this.updateClass(this.classDetail).then(() => {
         this.editMode = false;
       });
-    },
-  },
-  filters: {
-    timeParser(value) {
-      if (value) {
-        return moment(String(value)).format("MMMM DD, YYYY HH:mm");
-      }
     },
   },
   created() {

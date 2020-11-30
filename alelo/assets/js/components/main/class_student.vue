@@ -32,10 +32,18 @@
 
       <h3 class="f-m-20 blue-bold mb-3">{{ $t("classStudent.course(s)") }}</h3>
       <div class="scrollbar-nav">
-        <div class="scroller scroller-left"><i class="fa fa-chevron-left"></i></div>
-        <div class="scroller scroller-right"><i class="fa fa-chevron-right"></i></div>
+        <div class="scroller scroller-left">
+          <i class="fa fa-chevron-left"></i>
+        </div>
+        <div class="scroller scroller-right">
+          <i class="fa fa-chevron-right"></i>
+        </div>
         <div class="wrap-scrollbar-nav">
-          <ul class="nav nav-tabs list-nav nav-tab-course" id="coursetab" role="tablist">
+          <ul
+            class="nav nav-tabs list-nav nav-tab-course"
+            id="coursetab"
+            role="tablist"
+          >
             <li
               class="nav-item"
               v-for="(course, index) in studentDetail.courses"
@@ -207,30 +215,6 @@ export default {
         orderBy,
         flag
       );
-    },
-  },
-  filters: {
-    timeParser(value) {
-      if (value) {
-        return moment(String(value)).format("MM/DD/YYYY HH:mm");
-      }
-    },
-    toHHMMSS(sec) {
-      var sec_num = parseInt(sec, 10); // don't forget the second param
-      var hours = Math.floor(sec_num / 3600);
-      var minutes = Math.floor((sec_num - hours * 3600) / 60);
-      var seconds = sec_num - hours * 3600 - minutes * 60;
-
-      if (hours < 10) {
-        hours = "0" + hours;
-      }
-      if (minutes < 10) {
-        minutes = "0" + minutes;
-      }
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
-      return hours + ":" + minutes + ":" + seconds;
     },
   },
   components: { StudentSimulationDetail },

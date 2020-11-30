@@ -88,7 +88,7 @@
           <table class="table table-striped table-custom style-col">
             <tbody>
               <tr
-                v-for="(attempt, index) in simulationDetail.attempts"
+                v-for="(attempt, index) in currentPageAttempts"
                 :key="'active-log-' + index"
               >
                 <td>{{ attempt.date | timeParser }}</td>
@@ -104,6 +104,24 @@
               </tr>
             </tbody>
           </table>
+          <paginate
+            v-if="totalAttempts"
+            :page-count="pageCount"
+            :container-class="'pagination pagination-sm justify-content-end'"
+            :page-class="'page-item'"
+            page-link-class="page-link"
+            prev-class="page-item"
+            prev-link-class="page-link"
+            next-class="page-item"
+            next-link-class="page-link"
+            break-view-class="page-item"
+            break-view-link-class="page-link"
+            prev-text="&laquo;"
+            next-text="&raquo;"
+            v-model="page"
+            :page-range="9"
+          >
+          </paginate>
           <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
             ><i class="fa fa-download"></i>
             {{ $t("classDetail.download") }}</span
@@ -116,6 +134,7 @@
 
 <script>
 import moment from "moment";
+import Sorter from "../../../services/sorter.js";
 
 export default {
   name: "StudentSimulationDetail",
@@ -125,23 +144,34 @@ export default {
       default: () => {},
     },
   },
-  filters: {
-    timeParser(value) {
-      if (value) {
-        return moment(String(value)).format("MM/DD/YYYY HH:mm");
-      }
+  data() {
+    return {
+      page: 1,
+      perPage: 10,
+    };
+  },
+  computed: {
+    sortedAttempts() {
+      return new Sorter({ date: { type: "date" } }).perform(
+        this.simulationDetail.attempts || [],
+        "date"
+      );
     },
-    toHHMMSS(sec) {
-      var sec_num = parseInt(sec, 10); // don't forget the second param
-      var hours   = Math.floor(sec_num / 3600);
-      var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-      var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-      if (hours   < 10) {hours   = "0"+hours;}
-      if (minutes < 10) {minutes = "0"+minutes;}
-      if (seconds < 10) {seconds = "0"+seconds;}
-      return hours+':'+minutes+':'+seconds;
-    }
+    currentPageAttempts() {
+      let start = this.perPage * (this.page - 1);
+      return this.sortedAttempts.slice(start, start + this.perPage);
+    },
+    totalAttempts() {
+      return (this.simulationDetail.attempts || []).length;
+    },
+    pageCount() {
+      return Math.ceil(this.totalAttempts / this.perPage);
+    },
+  },
+  watch: {
+    simulationDetail() {
+      this.page = 1;
+    },
   },
 };
 </script>

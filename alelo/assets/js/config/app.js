@@ -2,6 +2,7 @@ import Vue from "vue";
 import Store from "./store";
 import VueRouter from "vue-router";
 import VeeValidate from "vee-validate";
+import Paginate from 'vuejs-paginate';
 
 import AppHeader from "../components/header.vue";
 import AppMain from "../components/main.vue";
@@ -19,6 +20,8 @@ import enValidationMessages from 'vee-validate/dist/locale/en';
 import esValidationMessages from 'vee-validate/dist/locale/es';
 import ptValidationMessages from 'vee-validate/dist/locale/pt_BR';
 import cnValidationMessages from 'vee-validate/dist/locale/zh_CN';
+
+import Filters from './filters';
 
 Vue.use(VueI18n);
 
@@ -49,6 +52,9 @@ Vue.use(VeeValidate, {
 
 Vue.component('KlDatepicker', KlDatepicker);
 Vue.component('SortArrow', SortArrow);
+Vue.component('paginate', Paginate);
+
+for (let key in Filters) Vue.filter(key, Filters[key]);
 
 const app = new Vue({
   i18n,
