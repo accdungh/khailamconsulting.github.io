@@ -3,45 +3,45 @@
   position: relative;
 }
 .wrap-scrollbar-nav {
-    position:relative;
-    margin:0 auto;
-    overflow:hidden;
-    height:42px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 42px;
 }
 
 .nav.list-nav {
-    position:absolute;
-    left:0px;
-    top:0px;
-    min-width:2500px;
-    margin-top:0px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  min-width: 2500px;
+  margin-top: 0px;
 }
 
-.nav.list-nav li{
-  display:table-cell;
-    position:relative;
-    text-align:center;
-    cursor:grab;
-    cursor:-webkit-grab;
-    color:#efefef;
-    vertical-align:middle;
+.nav.list-nav li {
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  cursor: grab;
+  cursor: -webkit-grab;
+  color: #efefef;
+  vertical-align: middle;
 }
 
 .scroller {
-  text-align:center;
-  cursor:pointer;
-  display:none;
-  white-space:no-wrap;
-  vertical-align:middle;
-  background-color:#fff;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #fff;
 }
 
 .scroller-left {
-  margin-left: -30px;
+  margin-left: -1.25em;
 }
 
 .scroller-right {
-  margin-right: -30px;
+  margin-right: -1.25em;
 }
 
 .scroll-wrapper {
@@ -870,7 +870,9 @@ a:hover {
   border-bottom-color: #707070;
 }
 
-.group-button a {margin-left: 32px;}
+.group-button a {
+  margin-left: 32px;
+}
 
 @media (min-width: 576px) {
   .modal-dialog {
