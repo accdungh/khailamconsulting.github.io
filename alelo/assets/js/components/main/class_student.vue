@@ -32,32 +32,28 @@
 
       <h3 class="f-m-20 blue-bold mb-3">{{ $t("classStudent.course(s)") }}</h3>
       <div class="scrollbar-nav">
-        <div class="scroller scroller-left">
+        <div class="scroller scroller-left float-left">
           <i class="fa fa-chevron-left"></i>
         </div>
-        <div class="scroller scroller-right">
+        <div class="scroller scroller-right float-right">
           <i class="fa fa-chevron-right"></i>
         </div>
         <div class="wrap-scrollbar-nav">
-          <ul
+          <nav
             class="nav nav-tabs list-nav nav-tab-course"
             id="coursetab"
             role="tablist"
           >
-            <li
-              class="nav-item"
+            <a
+              class="nav-item nav-link"
               v-for="(course, index) in studentDetail.courses"
               :key="'student-course-' + index"
+              href="javascript:void(0);"
+              :class="{ active: index == activeCourseIndex }"
+              @click="selectActiveCourse(index)"
+              >{{ course.name }}</a
             >
-              <a
-                class="nav-link"
-                href="javascript:void(0);"
-                :class="{ active: index == activeCourseIndex }"
-                @click="selectActiveCourse(index)"
-                >{{ course.name }}</a
-              >
-            </li>
-          </ul>
+          </nav>
         </div>
       </div>
 
@@ -226,6 +222,7 @@ export default {
       $(".scrollbar-inner").scrollbar();
       window.CommonJs.initJs();
       this.sortSimulation("title", true);
+      window.CommonJs.initHorizontalScrollBar();
     });
   },
 };

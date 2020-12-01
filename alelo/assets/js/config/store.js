@@ -109,6 +109,8 @@ export default new Vuex.Store({
       commit('selectedClass', id);
     },
     fetchStudentDetail({ commit, state }, queries) {
+      commit('fetchedStudentDetail', {});
+
       return AjaxCaller.studentDetail(queries.id, queries.classId).then((resp) => {
         let json = resp.data;
         if (json && json.success)
