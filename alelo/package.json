@@ -45,6 +45,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vee-validate": "^2.1.7",
     "vue-i18n": "^8.22.2",
+    "vuejs-paginate": "^2.1.0",
     "webpack": "^4.44.0",
     "webpack-merge": "^5.0.9"
   }
