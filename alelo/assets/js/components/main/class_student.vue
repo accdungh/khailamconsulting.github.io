@@ -32,10 +32,10 @@
 
       <h3 class="f-m-20 blue-bold mb-3">{{ $t("classStudent.course(s)") }}</h3>
       <div class="scrollbar-nav">
-        <div class="scroller scroller-left float-left mt-2">
+        <div class="scroller scroller-left float-left">
           <i class="fa fa-chevron-left"></i>
         </div>
-        <div class="scroller scroller-right float-right mt-2">
+        <div class="scroller scroller-right float-right">
           <i class="fa fa-chevron-right"></i>
         </div>
         <div class="wrap-scrollbar-nav">
