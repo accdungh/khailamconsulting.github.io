@@ -46,7 +46,7 @@
           >
             <a
               class="nav-item nav-link"
-              v-for="(course, index) in studentDetail.courses"
+              v-for="(course, index) in sortedCourses"
               :key="'student-course-' + index"
               href="javascript:void(0);"
               :class="{ active: index == activeCourseIndex }"
@@ -195,6 +195,16 @@ export default {
         this.studentDetail.courses &&
         this.studentDetail.courses[this.activeCourseIndex]
       );
+    },
+    sortedCourses() {
+      if (!this.studentDetail || !this.studentDetail.courses) return [];
+      return new Sorter(
+        { name: {} },
+        {
+          by: "name",
+          value: true,
+        }
+      ).perform(this.studentDetail.courses);
     },
   },
   methods: {
