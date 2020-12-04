@@ -229,10 +229,9 @@ export default {
       id: this.$route.params.id,
       classId: this.$route.params.classId,
     }).finally(() => {
-      $(".scrollbar-inner").scrollbar();
-      window.CommonJs.initJs();
       this.sortSimulation("title", true);
-      window.CommonJs.initHorizontalScrollBar();
+      this.$commonJs.initJs();
+      this.$commonJs.initHorizontalScrollBar();
     });
   },
 };

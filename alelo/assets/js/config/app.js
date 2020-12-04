@@ -3,6 +3,7 @@ import Store from "./store";
 import VueRouter from "vue-router";
 import VeeValidate from "vee-validate";
 import Paginate from 'vuejs-paginate';
+import CommonJs from '../plugins/common.js';
 
 import AppHeader from "../components/header.vue";
 import AppMain from "../components/main.vue";
@@ -24,6 +25,7 @@ import cnValidationMessages from 'vee-validate/dist/locale/zh_CN';
 import Filters from './filters';
 
 Vue.use(VueI18n);
+Vue.use(CommonJs);
 
 const messages = {
   en: enMessage,
