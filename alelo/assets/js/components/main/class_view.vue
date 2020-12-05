@@ -9,6 +9,9 @@
     <form>
       <div class="form-group">
         <div class="row">
+          <div class="col-md-12">
+            <EditClassModal />
+          </div>
           <div class="col-md-13" v-if="!editMode">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
             <a
@@ -106,6 +109,7 @@
       :courses="classDetail.activeCourse"
       v-model="selectedCourse"
     />
+    <AddCoursesModal />
 
     <div class="wrap-student mb-3">
       <h3 class="f-m-20 d-inline blue-bold">
@@ -273,6 +277,8 @@ import AddStudentModal from "./popup/add_student_modal.vue";
 import Sorter from "../../services/sorter.js";
 import ActiveCourseList from "./class_view/active_course_list.vue";
 import CourseSimulationList from "./class_view/course_simulation_list.vue";
+import EditClassModal from "./popup/edit_class_modal.vue";
+import AddCoursesModal from "./popup/add_courses_modal.vue";
 
 export default {
   name: "ClassView",
@@ -296,6 +302,8 @@ export default {
     AddStudentModal,
     ActiveCourseList,
     CourseSimulationList,
+    EditClassModal,
+    AddCoursesModal,
   },
   computed: {
     ...mapGetters(["classDetail", "classDetailId"]),

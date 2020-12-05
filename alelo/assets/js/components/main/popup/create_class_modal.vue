@@ -23,6 +23,7 @@
           </button>
         </div>
         <div class="modal-body">
+          <NewClassWizard />
           <form>
             <div class="form-group">
               <div class="row">
@@ -142,6 +143,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import NewClassWizard from "../new_class/new_class_wizard.vue";
 
 export default {
   name: "CreateClassModal",
@@ -151,6 +153,7 @@ export default {
       classDetail: {},
     };
   },
+  components: { NewClassWizard },
   methods: {
     ...mapActions(["createClass"]),
     saveClass() {
