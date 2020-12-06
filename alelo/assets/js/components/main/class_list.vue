@@ -8,7 +8,7 @@
   >
     <form>
       <ClassListItem
-        v-for="(item, index) in classList"
+        v-for="(item, index) in activeClasses"
         :key="'class-list-item' + index"
         :classData="item"
         @selected="select"
@@ -35,7 +35,7 @@ import CreateClassModal from "./popup/create_class_modal.vue";
 export default {
   name: "ClassList",
   computed: {
-    ...mapGetters(["classList"]),
+    ...mapGetters(["activeClasses"]),
   },
   components: {
     ClassListItem,
@@ -49,7 +49,9 @@ export default {
     },
   },
   created() {
-    this.fetchClassList();
+    if (!this.activeClasses || !this.activeClasses.length) {
+      this.fetchClassList();
+    }
   },
 };
 </script>

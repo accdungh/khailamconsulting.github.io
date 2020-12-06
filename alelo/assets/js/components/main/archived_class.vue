@@ -8,7 +8,7 @@
   >
     <form>
       <ClassListItem
-        v-for="(item, index) in archivedClassList"
+        v-for="(item, index) in archivedClasses"
         :key="'class-list-item' + index"
         :classData="item"
       />
@@ -24,18 +24,16 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "ArchivedClass",
   components: { ClassListItem },
-  data() {
-    return { archivedClassList: [] };
+  computed: {
+    ...mapGetters(["archivedClasses"]),
   },
   methods: {
-    ...mapActions(["setNoticeMessage"]),
+    ...mapActions(["setNoticeMessage", "fetchClassList"]),
   },
   created() {
-    AjaxCaller.archivedClassList().then((resp) => {
-      let json = resp.data;
-      if (json && json.success) this.archivedClassList = json.data;
-      else this.setNoticeMessage(json.message);
-    });
+    if (!this.archivedClasses || !this.archivedClasses.length) {
+      this.fetchClassList();
+    }
   },
 };
 </script>
