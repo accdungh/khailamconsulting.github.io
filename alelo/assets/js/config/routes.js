@@ -1,8 +1,8 @@
-import ClassList from "./class_list.vue";
-import ClassView from "./class_view.vue";
-import ArchivedClass from "./archived_class.vue";
-import ClassStudent from "./class_student.vue";
-import Setting from "./setting.vue";
+import ClassList from "../components/main/class_list.vue";
+import ClassView from "../components/main/class_view.vue";
+import ArchivedClass from "../components/main/archived_class.vue";
+import ClassStudent from "../components/main/class_student.vue";
+import Setting from "../components/main/setting.vue";
 
 export default [
   {
