@@ -26,7 +26,7 @@
     "edit": "Edit",
     "start": "Start",
     "end": "End",
-    "addNewTitle": "Add new title",
+    "addNewTitle": "Class title",
     "addNewSummary": "Add new summary",
     "startDateShouldNotBefore": "Start Date should not be before End Date",
     "hoverText": "Hover on any title for more information",

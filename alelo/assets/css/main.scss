@@ -925,3 +925,61 @@ table th a:focus,
 table th a {
   color: #fff;
 }
+
+// CREATE CLASS WIZARD
+.create-class__buttons {
+  a {
+    &.create-class__buttons__back {
+      color: #cbcbcb;
+    }
+
+    i {
+      color: rgb(252, 72, 40);
+    }
+  }
+}
+
+.information-form {
+  input.information-form__name {
+    padding: 0.375rem 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  .wrap-date {
+    input {
+      font-weight: normal;
+    }
+  }
+
+  input {
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #cbcbcb;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #cbcbcb;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #cbcbcb;
+    }
+  }
+
+  .dropdown-toggle {
+    width: fit-content;
+    padding-right: 23px;
+  }
+  .dropdown-menu.show {
+    width: fit-content;
+    padding-right: 10px;
+  }
+  .dropdown-item.hovered:after,
+  .dropdown-item:hover:after {
+    position: absolute;
+    right: 10px;
+  }
+}

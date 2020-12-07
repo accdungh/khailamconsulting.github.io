@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="information-form">
     <form>
       <div class="form-group">
         <div class="row">
@@ -38,7 +38,7 @@
             <input
               :placeholder="$t('classDetail.addNewTitle')"
               type="text"
-              class="form-control"
+              class="form-control information-form__name"
               v-model="formData.name"
               v-validate="'required'"
               data-vv-name="title"
@@ -78,7 +78,8 @@
                 />
               </div>
 
-              <div class="text-danger">
+              <div class="clearfix"></div>
+              <div class="text-danger error-message">
                 <div>
                   <small
                     v-show="errors.has('start date')"
