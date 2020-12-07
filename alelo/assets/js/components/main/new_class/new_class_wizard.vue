@@ -2,24 +2,24 @@
   <div>
     <ProgressBar :step="currentStep" />
     <InformationForm
-      v-show="currentStep == 'information'"
+      v-if="currentStep == 'information'"
       v-model="formData"
       @nextStepClick="stepChange('courses')"
     />
     <CoursesForm
-      v-show="currentStep == 'courses'"
+      v-if="currentStep == 'courses'"
       v-model="formData"
       @backStepClick="stepChange('information')"
       @nextStepClick="stepChange('students')"
     />
     <StudentsForm
-      v-show="currentStep == 'students'"
+      v-if="currentStep == 'students'"
       v-model="formData"
       @backStepClick="stepChange('courses')"
       @nextStepClick="stepChange('review')"
     />
     <ReviewForm
-      v-show="currentStep == 'review'"
+      v-if="currentStep == 'review'"
       v-model="formData"
       @backStepClick="stepChange('students')"
       @nextStepClick="saveForm()"
