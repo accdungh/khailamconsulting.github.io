@@ -4,7 +4,9 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-16 mb-3">
-            <label class="f-m-14 blue-light">Select your institution.</label>
+            <label class="f-m-14 blue-light">{{
+              $t("informationForm.selectInstitution")
+            }}</label>
             <div class="dropdown">
               <button
                 class="btn dropdown-toggle button-gray-100"
@@ -14,7 +16,8 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Institution <i class="fa fa-chevron-down"></i>
+                {{ $t("informationForm.institution") }}
+                <i class="fa fa-chevron-down"></i>
               </button>
               <div
                 class="dropdown-menu"
@@ -34,7 +37,9 @@
           </div>
 
           <div class="col-md-16 mb-3">
-            <label class="f-m-14 blue-light">Add a title for your class.</label>
+            <label class="f-m-14 blue-light">
+              {{ $t("informationForm.addTitle") }}
+            </label>
             <input
               :placeholder="$t('classDetail.addNewTitle')"
               type="text"
@@ -96,9 +101,9 @@
             </div>
 
             <div class="f-m-14 ml-3">
-              <label
-                >Note: This class will be archived after the end date.</label
-              >
+              <label>
+                {{ $t("informationForm.note") }}
+              </label>
             </div>
           </div>
         </div>

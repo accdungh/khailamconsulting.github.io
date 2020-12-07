@@ -52,6 +52,12 @@
     "objectives": "Objectives",
     "skills": "Skills"
   },
+  "informationForm": {
+    "selectInstitution": "Select your institution.",
+    "institution": "Institution",
+    "note": "Note: This class will be archived after the end date.",
+    "addTitle": "Add a title for your class."
+  },
   "setting": {
     "profile": "Profile",
     "save": "Save",
