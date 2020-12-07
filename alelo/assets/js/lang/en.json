@@ -56,7 +56,9 @@
     "selectInstitution": "Select your institution.",
     "institution": "Institution",
     "note": "Note: This class will be archived after the end date.",
-    "addTitle": "Add a title for your class."
+    "addTitle": "Add a title for your class.",
+    "addStartDate": "Add a Start Date",
+    "addEndDate": "Add an End Date."
   },
   "setting": {
     "profile": "Profile",

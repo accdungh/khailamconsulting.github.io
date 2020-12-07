@@ -58,9 +58,9 @@
           <div class="col-md-16 mb-3 clearfix">
             <div class="wrap-date">
               <div class="input-group start-date">
-                <label class="f-m-14 blue-light">{{
-                  $t("classDetail.start")
-                }}</label>
+                <label class="f-m-14 blue-light">
+                  {{ $t("informationForm.addStartDate") }}
+                </label>
                 <KlDatepicker
                   v-model="formData.startDate"
                   v-validate="'required|date_format:MM/dd/yyyy'"
@@ -70,9 +70,9 @@
               </div>
 
               <div class="input-group end-date">
-                <label class="f-m-14 blue-light">{{
-                  $t("classDetail.end")
-                }}</label>
+                <label class="f-m-14 blue-light">
+                  {{ $t("informationForm.addEndDate") }}
+                </label>
                 <KlDatepicker
                   v-model="formData.endDate"
                   v-validate="
