@@ -1,11 +1,30 @@
 <template>
-  <div>
-    WizardButtons
-    <button type="button" @click="changeStep('information')">
-      information
-    </button>
-    <button type="button" @click="changeStep('courses')">courses</button>
-    <!-- Base on the step variable to show the active step -->
+  <div class="row">
+    <div class="col-sm-12">
+      <a
+        v-if="backStep"
+        href="javascript:void(0)"
+        @click="emit('backStepClick')"
+      >
+        {{ backStep }}
+      </a>
+    </div>
+    <div class="col-sm-12 text-right">
+      <a
+        v-if="nextStep"
+        href="javascript:void(0)"
+        @click="emit('nextStepClick')"
+      >
+        {{ nextStep }}
+      </a>
+      <a
+        v-if="confirmStep"
+        href="javascript:void(0)"
+        @click="emit('confirmStepClick')"
+      >
+        {{ confirmStep }}
+      </a>
+    </div>
   </div>
 </template>
 
@@ -13,14 +32,19 @@
 export default {
   name: "WizardButtons",
   props: {
-    step: {
+    nextStep: {
       type: String,
-      default: "information", // [information, courses, students, review]
+    },
+    backStep: {
+      type: String,
+    },
+    confirmStep: {
+      type: String,
     },
   },
   methods: {
-    changeStep(step) {
-      this.$emit("stepChange", step);
+    emit(step) {
+      this.$emit(step);
     },
   },
 };
