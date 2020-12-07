@@ -1,8 +1,7 @@
 <template>
   <div>
     <label class="f-m-14 blue-light">
-      Check courses to include in your class (you can edit your selections
-      later)
+      {{ $t("coursesForm.infoText") }}
     </label>
     <div class="wrap-item">
       <div class="scrollbar scrollbar-inner">
