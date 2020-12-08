@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="courses-form">
     <label class="f-m-14 blue-light">
       {{ $t("coursesForm.infoText") }}
     </label>
