@@ -42,9 +42,9 @@
     </div>
 
     <WizardButtons
-      backStep="Back"
+      :backStep="$t('wizardButtons.back')"
       @backStepClick="emit('backStepClick')"
-      nextStep="Invite Students"
+      :nextStep="$t('wizardButtons.inviteStudents')"
       @nextStepClick="submit"
     />
   </div>

@@ -69,7 +69,9 @@
   "wizardButtons": {
     "back": "Back",
     "review": "Review",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "addCourses": "Add Courses",
+    "inviteStudents": "Invite Students"
   },
   "reviewForm": {
     "classTitle": "Class Title",

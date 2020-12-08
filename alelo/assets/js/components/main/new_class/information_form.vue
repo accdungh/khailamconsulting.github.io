@@ -101,7 +101,10 @@
       </div>
     </form>
 
-    <WizardButtons nextStep="Add Courses" @nextStepClick="submit" />
+    <WizardButtons
+      :nextStep="$t('wizardButtons.addCourses')"
+      @nextStepClick="submit"
+    />
   </div>
 </template>
 
