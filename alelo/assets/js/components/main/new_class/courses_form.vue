@@ -26,7 +26,7 @@
                   <input
                     class="form-check-input position-static"
                     type="checkbox"
-                    :value="course.id"
+                    :value="course"
                     v-model="formData.activeCourse"
                     @change="$forceUpdate()"
                   />

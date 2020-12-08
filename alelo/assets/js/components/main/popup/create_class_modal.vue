@@ -23,7 +23,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <NewClassWizard v-model="classDetail" />
+          <NewClassWizard v-model="classDetail" @submit="saveClass()" />
         </div>
       </div>
     </div>

@@ -989,3 +989,36 @@ table th a {
     border: unset;
   }
 }
+
+.review-form {
+  .included-course {
+    font-size: 1rem;
+    background-color: #61aae8;
+    padding: 0.25em 1em;
+    margin-right: 1em;
+  }
+
+  .invited-students {
+    min-height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 230px;
+
+    .invited-students__content {
+      padding: 15px;
+    }
+
+    .scroll-y {
+      top: 0;
+      height: 230px;
+    }
+  }
+
+  .info-text {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: rgb(238, 68, 40);
+    font-weight: 400;
+  }
+}
