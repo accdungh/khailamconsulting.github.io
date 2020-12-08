@@ -13,9 +13,9 @@
     </div>
 
     <WizardButtons
-      backStep="Back"
+      :backStep="$t('wizardButtons.back')"
       @backStepClick="emit('backStepClick')"
-      nextStep="Review"
+      :nextStep="$t('wizardButtons.review')"
       @nextStepClick="submit()"
     />
   </div>
