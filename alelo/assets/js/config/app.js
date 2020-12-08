@@ -10,6 +10,7 @@ import AppMain from "../components/main.vue";
 import AppFooter from "../components/footer.vue";
 import KlDatepicker from "../components/common/kl_datepicker.vue";
 import SortArrow from "../components/common/sort_arrow.vue";
+import DropdownButton from "../components/common/dropdown_button.vue";
 
 import VueI18n from 'vue-i18n';
 import enMessage from '../lang/en.json';
@@ -54,6 +55,7 @@ Vue.use(VeeValidate, {
 
 Vue.component('KlDatepicker', KlDatepicker);
 Vue.component('SortArrow', SortArrow);
+Vue.component('DropdownButton', DropdownButton);
 Vue.component('paginate', Paginate);
 
 for (let key in Filters) Vue.filter(key, Filters[key]);

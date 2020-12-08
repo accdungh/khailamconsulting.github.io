@@ -7,33 +7,11 @@
             <label class="f-m-14 blue-light">{{
               $t("informationForm.selectInstitution")
             }}</label>
-            <div class="dropdown">
-              <button
-                class="btn dropdown-toggle button-gray-100"
-                type="button"
-                id="institutions-dropdown"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                {{ $t("informationForm.institution") }}
-                <i class="fa fa-chevron-down"></i>
-              </button>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="institutions-dropdown"
-              >
-                <a
-                  class="dropdown-item"
-                  href="javascript:void(0)"
-                  v-for="i in userSetting.institutions"
-                  :key="i.id"
-                  :class="{ hovered: i.id == formData.institution }"
-                  @click="changeInstitution(i.id)"
-                  >{{ i.name }}</a
-                >
-              </div>
-            </div>
+            <DropdownButton
+              v-model="formData.institution"
+              :options="userSetting.institutions"
+              :label="$t('informationForm.institution')"
+            />
           </div>
 
           <div class="col-md-16 mb-3">
@@ -153,11 +131,7 @@ export default {
           this.$emit("nextStepClick", this.formData);
         }
       });
-    },
-    changeInstitution(id) {
-      this.formData.institution = id;
-      this.$forceUpdate();
-    },
+    }
   },
 };
 </script>
