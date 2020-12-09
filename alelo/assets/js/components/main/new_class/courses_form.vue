@@ -26,7 +26,7 @@
                   <input
                     class="form-check-input position-static"
                     type="checkbox"
-                    :value="course.id"
+                    :value="course"
                     v-model="formData.activeCourse"
                     @change="$forceUpdate()"
                   />
@@ -42,9 +42,9 @@
     </div>
 
     <WizardButtons
-      backStep="Back"
+      :backStep="$t('wizardButtons.back')"
       @backStepClick="emit('backStepClick')"
-      nextStep="Invite Students"
+      :nextStep="$t('wizardButtons.inviteStudents')"
       @nextStepClick="submit"
     />
   </div>

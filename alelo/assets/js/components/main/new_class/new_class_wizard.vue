@@ -64,6 +64,7 @@ export default {
     },
     saveForm() {
       this.$emit("input", this.formData);
+      this.$emit("submit");
     },
   },
 };

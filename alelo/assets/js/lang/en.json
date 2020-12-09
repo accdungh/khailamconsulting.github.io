@@ -68,7 +68,17 @@
   },
   "wizardButtons": {
     "back": "Back",
-    "review": "Review"
+    "review": "Review",
+    "confirm": "Confirm",
+    "addCourses": "Add Courses",
+    "inviteStudents": "Invite Students"
+  },
+  "reviewForm": {
+    "classTitle": "Class Title",
+    "classDates": "Class Dates",
+    "includedCourses": "Included Courses",
+    "studentInvited": "Student Invited",
+    "infoText": "Click “confirm” to create your class. To make changes, click on a heading above, or use the back arrow"
   },
   "setting": {
     "profile": "Profile",
