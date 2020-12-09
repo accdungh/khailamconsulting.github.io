@@ -63,6 +63,13 @@
   "coursesForm": {
     "infoText": "Check courses to include in your class (you can edit your selections later)"
   },
+  "studentsForm": {
+    "infoText": "Enter email addresses separated by a common or space. You may also copy ans parse a list into the box"
+  },
+  "wizardButtons": {
+    "back": "Back",
+    "review": "Review"
+  },
   "setting": {
     "profile": "Profile",
     "save": "Save",
