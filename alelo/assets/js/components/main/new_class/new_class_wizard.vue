@@ -1,16 +1,29 @@
 <template>
   <div>
     <ProgressBar :step="currentStep" />
-    <InformationForm v-model="formData" />
-    <CoursesForm v-model="formData" />
-    <StudentsForm v-model="formData" />
-    <ReviewForm v-model="formData" />
-    <WizardButtons
-      :step="currentStep"
-      @stepChange="stepChange"
-      @formSubmit="formSubmit"
+    <InformationForm
+      v-show="currentStep == 'information'"
+      v-model="formData"
+      @nextStepClick="stepChange('courses')"
     />
-    Current step: {{ currentStep }}
+    <CoursesForm
+      v-show="currentStep == 'courses'"
+      v-model="formData"
+      @backStepClick="stepChange('information')"
+      @nextStepClick="stepChange('students')"
+    />
+    <StudentsForm
+      v-show="currentStep == 'students'"
+      v-model="formData"
+      @backStepClick="stepChange('courses')"
+      @nextStepClick="stepChange('review')"
+    />
+    <ReviewForm
+      v-show="currentStep == 'review'"
+      v-model="formData"
+      @backStepClick="stepChange('students')"
+      @nextStepClick="saveForm()"
+    />
   </div>
 </template>
 
@@ -24,9 +37,16 @@ import ReviewForm from "./review_form.vue";
 
 export default {
   name: "NewClassWizard",
+  props: {
+    value: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
   components: {
     ProgressBar,
-    WizardButtons,
     InformationForm,
     CoursesForm,
     StudentsForm,
@@ -35,15 +55,15 @@ export default {
   data() {
     return {
       currentStep: "information",
-      formData: {},
+      formData: this.value,
     };
   },
   methods: {
     stepChange(step) {
       this.currentStep = step;
     },
-    formSubmit() {
-      // TODO: do the submit
+    saveForm() {
+      this.$emit("input", this.formData);
     },
   },
 };

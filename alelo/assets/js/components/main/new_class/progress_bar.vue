@@ -1,6 +1,5 @@
 <template>
   <div>
-    ProgressBar
     <!-- Base on the step variable to show the active step -->
   </div>
 </template>
