@@ -112,7 +112,7 @@ export default {
       return this.formData.activeCourse.map((i) => i.name);
     },
     invitedStudents() {
-      return this.formData.students.replace(/\n/gi, "<br/>");
+      return this.formData.students && this.formData.students.replace(/\n/gi, "<br/>");
     },
   },
   methods: {
