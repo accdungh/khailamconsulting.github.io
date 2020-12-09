@@ -116,6 +116,12 @@
       "end date": {
         "after": "Start Date should not be before End Date"
       }
+    },
+    "attributes": {
+      "title": "Title",
+      "summary": "Summary",
+      "start date": "Start Date",
+      "end date": "End Date"
     }
   }
 }

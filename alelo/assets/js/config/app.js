@@ -3,6 +3,7 @@ import Store from "./store";
 import VueRouter from "vue-router";
 import VeeValidate from "vee-validate";
 import Paginate from 'vuejs-paginate';
+import moment from 'moment';
 
 import AppHeader from "../components/header.vue";
 import AppMain from "../components/main.vue";
@@ -18,7 +19,7 @@ import cnMessage from '../lang/cn.json';
 
 import enValidationMessages from 'vee-validate/dist/locale/en';
 import esValidationMessages from 'vee-validate/dist/locale/es';
-import ptValidationMessages from 'vee-validate/dist/locale/pt_BR';
+import ptValidationMessages from 'vee-validate/dist/locale/pt_PT';
 import cnValidationMessages from 'vee-validate/dist/locale/zh_CN';
 
 import Filters from './filters';
@@ -68,6 +69,7 @@ const app = new Vue({
   methods: {
     changeLang(lang) {
       this.$i18n.locale = lang;
+      moment.locale({ cn: 'zh_cn' }[lang] || lang);
     }
   }
 }).$mount('#app')
