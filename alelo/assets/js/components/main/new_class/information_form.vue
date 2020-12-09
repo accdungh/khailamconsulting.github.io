@@ -85,7 +85,7 @@
               </div>
             </div>
 
-            <div class="f-m-14 ml-3">
+            <div class="class-dates__note f-m-14 ml-3">
               <label>
                 {{ $t("informationForm.note") }}
               </label>
@@ -101,10 +101,7 @@
       </div>
     </form>
 
-    <WizardButtons
-      :nextStep="$t('wizardButtons.addCourses')"
-      @nextStepClick="submit"
-    />
+    <slot name="buttons" v-bind:validator="$validator"></slot>
   </div>
 </template>
 
@@ -124,7 +121,7 @@ export default {
   },
   data() {
     return {
-      formData: this.value,
+      formData: {},
     };
   },
   computed: {
@@ -133,18 +130,17 @@ export default {
   components: {
     WizardButtons,
   },
-  methods: {
-    submit() {
-      this.$validator.validateAll().then((valid) => {
-        if (valid) {
-          this.$emit("input", this.formData);
-          this.$emit("nextStepClick");
-        }
-      });
-    },
-  },
+  methods: {},
   created() {
-    this.formData = this.value;
+    this.formData = Object.assign({}, this.value);
+  },
+  watch: {
+    formData: {
+      deep: true,
+      handler() {
+        this.$emit("input", this.formData);
+      },
+    },
   },
 };
 </script>

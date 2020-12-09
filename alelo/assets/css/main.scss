@@ -926,6 +926,13 @@ table th a {
   color: #fff;
 }
 
+// EDIT CLASS MODAL
+#edit-class-modal {
+  .class-dates__note {
+    display: none;
+  }
+}
+
 // CREATE CLASS WIZARD
 .create-class__buttons {
   a {

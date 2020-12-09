@@ -31,9 +31,19 @@
             </button>
           </div>
           <div class="modal-body">
-            <div>Check courses to include in your class</div>
-            <InformationForm v-model="classDetail" />
-            <button type="button" @click="save()">Confirm</button>
+            <InformationForm
+              v-model="formData"
+              v-if="formData && formData.name"
+            >
+              <template v-slot:buttons="props">
+                <a
+                  href="javascript:void(0)"
+                  class="btn-created float-right"
+                  @click="save(props)"
+                  >Confirm</a
+                >
+              </template>
+            </InformationForm>
           </div>
         </div>
       </div>
@@ -47,18 +57,37 @@ import InformationForm from "../new_class/information_form.vue";
 
 export default {
   name: "EditClassModal",
+  props: {
+    value: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
+  },
   data() {
     return {
-      classDetail: {},
+      formData: {},
     };
   },
   components: { InformationForm },
   methods: {
-    save() {
-      // TODO: Do the save function
+    ...mapActions(["updateClass"]),
+    save(props) {
+      props.validator.validateAll().then((valid) => {
+        if (!valid) return;
+
+        this.updateClass(this.formData).then(() => {
+          $("#edit-class-modal").modal("hide");
+        });
+      });
     },
   },
-  created() {},
+  watch: {
+    value() {
+      this.formData = Object.assign({}, this.value);
+    },
+  },
 };
 </script>
 

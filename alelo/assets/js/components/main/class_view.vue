@@ -10,7 +10,7 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-12">
-            <EditClassModal />
+            <EditClassModal v-model="classDetail" />
           </div>
           <div class="col-md-13" v-if="!editMode">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
@@ -37,51 +37,6 @@
               @click="save()"
               >{{ $t("classDetail.save") }}</a
             >
-          </div>
-          <div class="col-md-11 clearfix">
-            <div class="wrap-date float-right">
-              <div class="input-group start-date">
-                <label class="f-m-14 blue-light ml-3">{{
-                  $t("classDetail.start")
-                }}</label>
-                <KlDatepicker
-                  v-model="classDetail.startDate"
-                  v-validate="'required|date_format:MM/dd/yyyy'"
-                  data-vv-name="start date"
-                  ref="start date"
-                />
-              </div>
-
-              <div class="input-group end-date">
-                <label class="f-m-14 blue-light ml-3">{{
-                  $t("classDetail.end")
-                }}</label>
-                <KlDatepicker
-                  v-model="classDetail.endDate"
-                  v-validate="
-                    'required|date_format:MM/dd/yyyy|after:start date,inclusion:true'
-                  "
-                  data-vv-name="end date"
-                  ref="end date"
-                />
-              </div>
-
-              <div class="text-danger">
-                <small class="date-error-message"></small>
-                <div>
-                  <small
-                    v-show="errors.has('start date')"
-                    class="text-danger"
-                    >{{ errors.first("start date") }}</small
-                  >
-                </div>
-                <div>
-                  <small v-show="errors.has('end date')" class="text-danger">{{
-                    errors.first("end date")
-                  }}</small>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

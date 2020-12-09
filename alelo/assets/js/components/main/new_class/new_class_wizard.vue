@@ -1,11 +1,14 @@
 <template>
   <div>
     <ProgressBar :step="currentStep" />
-    <InformationForm
-      v-if="currentStep == 'information'"
-      v-model="formData"
-      @nextStepClick="stepChange('courses')"
-    />
+    <InformationForm v-if="currentStep == 'information'" v-model="formData">
+      <template v-slot:buttons="props">
+        <WizardButtons
+          :nextStep="$t('wizardButtons.addCourses')"
+          @nextStepClick="gotoCourse(props)"
+        />
+      </template>
+    </InformationForm>
     <CoursesForm
       v-if="currentStep == 'courses'"
       v-model="formData"
@@ -51,6 +54,7 @@ export default {
     CoursesForm,
     StudentsForm,
     ReviewForm,
+    WizardButtons,
   },
   data() {
     return {
@@ -65,6 +69,12 @@ export default {
     saveForm() {
       this.$emit("input", this.formData);
       this.$emit("submit");
+    },
+    gotoCourse(props) {
+      props.validator.validateAll().then((valid) => {
+        if (!valid) return;
+        this.stepChange("courses");
+      });
     },
   },
 };
