@@ -11,7 +11,14 @@
               v-model="formData.institution"
               :options="userSetting.institutions"
               :label="$t('informationForm.institution')"
+              v-validate="'required'"
+              data-vv-name="institution"
             />
+            <div>
+              <small v-show="errors.has('institution')" class="text-danger">{{
+                errors.first("institution")
+              }}</small>
+            </div>
           </div>
 
           <div class="col-md-16 mb-3">
@@ -128,10 +135,13 @@ export default {
       this.$validator.validateAll().then((valid) => {
         if (valid) {
           this.$emit("input", this.formData);
-          this.$emit("nextStepClick", this.formData);
+          this.$emit("nextStepClick");
         }
       });
-    }
+    },
+  },
+  created() {
+    this.formData = this.value;
   },
 };
 </script>

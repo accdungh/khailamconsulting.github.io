@@ -60,6 +60,9 @@
     "addStartDate": "Add a Start Date",
     "addEndDate": "Add an End Date."
   },
+  "coursesForm": {
+    "infoText": "Check courses to include in your class (you can edit your selections later)"
+  },
   "setting": {
     "profile": "Profile",
     "save": "Save",
