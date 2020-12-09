@@ -11,6 +11,10 @@
 <script>
 import _ from "lodash";
 import moment from "moment";
+import { mapGetters, mapActions } from "vuex";
+import "../../../scripts/bootstrap-datepicker.es.min.js";
+import "../../../scripts/bootstrap-datepicker.pt.min.js";
+import "../../../scripts/bootstrap-datepicker.zh-CN.min.js";
 
 export default {
   name: "KlDatepicker",
@@ -37,9 +41,26 @@ export default {
       endWatch: false,
     };
   },
+  computed: {
+    ...mapGetters(["lang"]),
+  },
   methods: {
     getDateValue() {
       if (this.value) this.dateValue = moment(this.value).format(this.format);
+    },
+    initDatepicker() {
+      let self = this;
+      $(this.$refs[this.refKey]).datepicker("destroy");
+      $(this.$refs[this.refKey]).datepicker({
+        language: { cn: "zh-CN" }[this.lang] || this.lang,
+      });
+      $(this.$refs[this.refKey])
+        .off("change")
+        .on("change", function () {
+          let date = $(self.$refs[self.refKey]).datepicker("getUTCDate");
+          if (!date) return;
+          self.dateValue = moment(date).format(self.format);
+        });
     },
   },
   watch: {
@@ -60,19 +81,13 @@ export default {
         this.$emit("input", datePickerValue);
       }
     },
+    lang() {
+      this.initDatepicker();
+    },
   },
   mounted() {
     this.getDateValue();
-    let self = this;
-    $(self.$refs[self.refKey]).datepicker();
-    $(self.$refs[self.refKey])
-      .off("change")
-      .on("change", function () {
-        let date = $(self.$refs[self.refKey]).datepicker("getUTCDate");
-        if (!date) return;
-
-        self.dateValue = moment(date).format(self.format);
-      });
+    this.initDatepicker();
   },
 };
 </script>
