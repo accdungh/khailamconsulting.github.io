@@ -64,7 +64,8 @@
       :courses="classDetail.activeCourse"
       v-model="selectedCourse"
     />
-    <AddCoursesModal />
+
+    <AddCoursesModal :classObject="classDetail" />
 
     <div class="wrap-student mb-3">
       <h3 class="f-m-20 d-inline blue-bold">
