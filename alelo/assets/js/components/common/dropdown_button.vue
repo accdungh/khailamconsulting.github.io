@@ -29,7 +29,9 @@
 export default {
   name: "DropdownButton",
   props: {
-    value: {},
+    value: {
+      type: String,
+    },
     options: {
       type: Array,
       default: () => [],
