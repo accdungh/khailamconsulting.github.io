@@ -995,6 +995,15 @@ table th a {
   .table-custom {
     border: unset;
   }
+  .first-heading-text {
+    visibility: hidden;
+  }
+
+  &#add-courses-modal {
+    .first-heading-text {
+      visibility: unset;
+    }
+  }
 }
 
 .review-form {

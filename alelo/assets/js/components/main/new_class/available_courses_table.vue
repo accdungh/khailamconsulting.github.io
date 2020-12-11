@@ -4,7 +4,9 @@
       <table class="table table-striped table-custom header-fixed">
         <thead>
           <tr>
-            <th class="text-center"></th>
+            <th class="text-center">
+              <span class="first-heading-text">Include</span>
+            </th>
             <th>
               <a href="javascript:void(0)">{{
                 $t("classDetail.courseName")
