@@ -4,7 +4,7 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-16 mb-3">
-            <label class="f-m-14 blue-light">{{
+            <label class="f-m-14 blue-bold">{{
               $t("informationForm.selectInstitution")
             }}</label>
             <DropdownButton
@@ -22,7 +22,7 @@
           </div>
 
           <div class="col-md-16 mb-3">
-            <label class="f-m-14 blue-light">
+            <label class="f-m-14 blue-bold">
               {{ $t("informationForm.addTitle") }}
             </label>
             <input
@@ -43,7 +43,7 @@
           <div class="col-md-16 mb-3 clearfix">
             <div class="wrap-date">
               <div class="input-group start-date">
-                <label class="f-m-14 blue-light">
+                <label class="f-m-14 blue-bold">
                   {{ $t("informationForm.addStartDate") }}
                 </label>
                 <KlDatepicker
@@ -55,7 +55,7 @@
               </div>
 
               <div class="input-group end-date">
-                <label class="f-m-14 blue-light">
+                <label class="f-m-14 blue-bold">
                   {{ $t("informationForm.addEndDate") }}
                 </label>
                 <KlDatepicker
@@ -85,7 +85,7 @@
               </div>
             </div>
 
-            <div class="class-dates__note f-m-14 ml-3">
+            <div class="class-dates__note f-m-14 mt-1 ml-3">
               <label>
                 {{ $t("informationForm.note") }}
               </label>

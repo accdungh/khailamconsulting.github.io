@@ -1,5 +1,5 @@
 <template>
-  <div class="row create-class__buttons f-m-20">
+  <div class="row create-class__buttons f-n-25">
     <div class="col-sm-12">
       <a
         v-if="backStep"

@@ -432,6 +432,11 @@ a:hover {
   font-weight: 500;
 }
 
+.f-n-25 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
 /**
    * Nav-tab
    */
@@ -662,16 +667,31 @@ a:hover {
 }
 .wrap-date {
   position: relative;
+
+  .start-date {
+    input {
+      border-radius: 6px 0 0 6px;
+      border-right: 0;
+    }
+  }
+
+  .end-date {
+    input {
+      border-radius: 0 6px 6px 0;
+      
+    }
+  }
 }
 .wrap-date input {
   border: none;
   font-size: 20px;
   font-weight: 500;
-  border: 1px solid #cbcbcb;
+  border: 1px solid #61AAE8;
   border-radius: 6px;
   padding: 5px;
   color: #707070;
   width: 100%;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 .wrap-date .datepicker-startdate {
   border-right: 0;
@@ -1032,7 +1052,10 @@ table th a {
     }
 
     i {
-      color: rgb(252, 72, 40);
+      color: #ee6945;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
     }
   }
 }
