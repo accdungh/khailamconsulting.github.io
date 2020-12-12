@@ -11,7 +11,7 @@
     <div class="clearfix"></div>
 
     <div
-      class="modal fade"
+      class="modal fade courses-form"
       id="add-courses-modal"
       tabindex="-1"
       role="dialog"
@@ -33,8 +33,21 @@
             </button>
           </div>
           <div class="modal-body">
-            <CoursesForm v-model="classDetail" />
-            <button type="button" @click="save()">Confirm</button>
+            <label class="f-m-14 blue-light">
+              Check courses to include in your class.
+            </label>
+
+            <AvailableCoursesTable
+              v-model="classDetail.selectedCourse"
+              :availableCourses="classDetail.activeCourse"
+            />
+
+            <a
+              href="javascript:void(0)"
+              class="btn-created float-right"
+              @click="save()"
+              >Confirm</a
+            >
           </div>
         </div>
       </div>
@@ -44,22 +57,37 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import CoursesForm from "../new_class/courses_form.vue";
+import AvailableCoursesTable from "../new_class/available_courses_table.vue";
 
 export default {
   name: "EditClassModal",
+  props: {
+    classObject: {
+      type: Object,
+      default: () => {
+        return {};
+      },
+    },
+  },
   data() {
     return {
       classDetail: {},
     };
   },
-  components: { CoursesForm },
+  components: { AvailableCoursesTable },
   methods: {
+    ...mapActions(["updateClass"]),
     save() {
-      // TODO: Do the save function
+      this.updateClass(this.classDetail).then(() => {
+        $("#add-courses-modal").modal("hide");
+      });
     },
   },
-  created() {},
+  watch: {
+    classObject() {
+      this.classDetail = Object.assign({}, this.classObject);
+    },
+  },
 };
 </script>
 

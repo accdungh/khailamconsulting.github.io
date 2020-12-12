@@ -3,43 +3,11 @@
     <label class="f-m-14 blue-light">
       {{ $t("coursesForm.infoText") }}
     </label>
-    <div class="wrap-item">
-      <div class="scrollbar scrollbar-inner">
-        <table class="table table-striped table-custom header-fixed">
-          <thead>
-            <tr>
-              <th class="text-center"></th>
-              <th>
-                <a href="javascript:void(0)">{{
-                  $t("classDetail.courseName")
-                }}</a>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="(course, index) in availableCourses"
-              :key="'available-course' + index"
-            >
-              <td align="center">
-                <div class="form-check">
-                  <input
-                    class="form-check-input position-static"
-                    type="checkbox"
-                    :value="course"
-                    v-model="formData.activeCourse"
-                    @change="$forceUpdate()"
-                  />
-                </div>
-              </td>
-              <td class="f-m-18 blue-bold">
-                {{ course.name }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+
+    <AvailableCoursesTable
+      v-model="formData.activeCourse"
+      :availableCourses="availableCourses"
+    />
 
     <WizardButtons
       :backStep="$t('wizardButtons.back')"
@@ -52,6 +20,7 @@
 
 <script>
 import WizardButtons from "./wizard_buttons.vue";
+import AvailableCoursesTable from "./available_courses_table.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -87,7 +56,7 @@ export default {
       return [];
     },
   },
-  components: { WizardButtons },
+  components: { WizardButtons, AvailableCoursesTable },
   methods: {
     submit() {
       this.$validator.validateAll().then((valid) => {
@@ -104,9 +73,6 @@ export default {
   created() {
     this.formData = this.value;
     if (!this.formData.activeCourse) this.formData.activeCourse = [];
-  },
-  mounted() {
-    $(".scrollbar-inner").scrollbar();
   },
 };
 </script>
