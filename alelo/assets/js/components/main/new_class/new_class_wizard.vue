@@ -1,9 +1,14 @@
 <template>
   <div>
-    <ProgressBar :step="currentStep" />
-    <InformationForm v-if="currentStep == 'information'" v-model="formData">
+    <ProgressBar :step="currentStep" @stepChanged="progressBarChangeStep" />
+    <InformationForm
+      v-if="currentStep == 'information'"
+      v-model="formData"
+      ref="informationForm"
+    >
       <template v-slot:buttons="props">
         <WizardButtons
+          ref="wizardButtons"
           :nextStep="$t('wizardButtons.addCourses')"
           @nextStepClick="gotoCourse(props)"
         />
@@ -14,18 +19,21 @@
       v-model="formData"
       @backStepClick="stepChange('information')"
       @nextStepClick="stepChange('students')"
+      ref="coursesForm"
     />
     <StudentsForm
       v-if="currentStep == 'students'"
       v-model="formData"
       @backStepClick="stepChange('courses')"
       @nextStepClick="stepChange('review')"
+      ref="studentsForm"
     />
     <ReviewForm
       v-if="currentStep == 'review'"
       v-model="formData"
       @backStepClick="stepChange('students')"
       @nextStepClick="saveForm()"
+      ref="reviewForm"
     />
   </div>
 </template>
@@ -65,6 +73,27 @@ export default {
   methods: {
     stepChange(step) {
       this.currentStep = step;
+    },
+    progressBarChangeStep(step) {
+      let allSteps = ["information", "courses", "students"];
+      let currentIndex = allSteps.indexOf(this.currentStep);
+      let stepIndex = allSteps.indexOf(step);
+
+      if (stepIndex > currentIndex) {
+        (
+          this.$refs[`${this.currentStep}Form`].$refs.wizardButtons ||
+          this.$refs.wizardButtons
+        ).emit("nextStepClick");
+      } else if (stepIndex < currentIndex) {
+        (
+          this.$refs[`${this.currentStep}Form`].$refs.wizardButtons ||
+          this.$refs.wizardButtons
+        ).emit("backStepClick");
+      }
+
+      if (this.currentStep == "review") {
+        this.stepChange(step);
+      }
     },
     saveForm() {
       this.$emit("input", this.formData);

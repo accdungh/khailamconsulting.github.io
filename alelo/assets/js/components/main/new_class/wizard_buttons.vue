@@ -6,6 +6,7 @@
         class="create-class__buttons__back"
         href="javascript:void(0)"
         @click="emit('backStepClick')"
+        ref="backButton"
       >
         <i class="fa fa-chevron-left"></i>
         {{ backStep }}
@@ -17,6 +18,7 @@
         class="create-class__buttons__next"
         href="javascript:void(0)"
         @click="emit('nextStepClick')"
+        ref="nextButton"
       >
         {{ nextStep }}
         <i class="fa fa-chevron-right"></i>
@@ -26,6 +28,7 @@
         class="create-class__buttons__confirm"
         href="javascript:void(0)"
         @click="emit('confirmStepClick')"
+        ref="confirmButton"
       >
         {{ confirmStep }}
         <i class="fa fa-check"></i>

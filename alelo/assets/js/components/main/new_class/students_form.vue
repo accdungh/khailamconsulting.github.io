@@ -13,6 +13,7 @@
     </div>
 
     <WizardButtons
+      ref="wizardButtons"
       :backStep="$t('wizardButtons.back')"
       @backStepClick="emit('backStepClick')"
       :nextStep="$t('wizardButtons.review')"

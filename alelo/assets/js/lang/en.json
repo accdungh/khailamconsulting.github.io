@@ -52,6 +52,11 @@
     "objectives": "Objectives",
     "skills": "Skills"
   },
+  "progressBarForm": {
+    "information": "Information",
+    "courses": "Courses",
+    "students": "Students"
+  },
   "informationForm": {
     "selectInstitution": "Select your institution.",
     "institution": "Institution",
