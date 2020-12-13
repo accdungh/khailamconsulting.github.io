@@ -58,7 +58,7 @@
       </div>
 
       <div class="wrap-item wrap-item-custom">
-        <div class="scrollbar scrollbar-inner">
+        <div class="scrollbar">
           <table
             class="table table-striped table-custom table-lst-student table-lst-student-custom"
             v-if="activeCourse"

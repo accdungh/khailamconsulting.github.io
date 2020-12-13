@@ -37,6 +37,10 @@ export default function () {
       autosize($('.auto-size'));
     },
 
+    initListScrollbar() {
+      $('.class-list .scrollbar-list').scrollbar();
+    },
+    
     initHorizontalScrollBar() {
       new HorizontalScrollBarHandler($('.nav-tab-course')).perform();
     }

@@ -5,7 +5,7 @@
       data-toggle="modal"
       data-target="#add-courses-modal"
       class="btn-created float-right"
-      >Add Courses</a
+      >{{ $t("wizardButtons.addCourses") }}</a
     >
 
     <div class="clearfix"></div>
@@ -21,7 +21,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title">Edit Courses</h2>
+            <h2 class="modal-title">{{ $t("classDetail.editCourses") }}</h2>
 
             <button
               type="button"
@@ -33,8 +33,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <label class="f-m-14 blue-light">
-              Check courses to include in your class.
+            <label class="f-m-14 blue-bold">
+              {{ $t("classDetail.infoText") }}
             </label>
 
             <AvailableCoursesTable
@@ -46,7 +46,7 @@
               href="javascript:void(0)"
               class="btn-created float-right"
               @click="save()"
-              >Confirm</a
+              >{{ $t("wizardButtons.confirm") }}</a
             >
           </div>
         </div>
