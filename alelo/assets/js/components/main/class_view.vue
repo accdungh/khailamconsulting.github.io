@@ -9,40 +9,23 @@
     <form>
       <div class="form-group">
         <div class="row">
-          <div class="col-md-12">
-            <EditClassModal v-model="classDetail" />
-          </div>
-          <div class="col-md-13" v-if="!editMode">
+          
+          <div class="col-md-24 border-bottom pb-1">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
-            <a
-              class="edit-link d-inline f-n-20 ml-2"
-              href="javascript:void(0)"
-              @click="editMode = true"
-              v-if="classDetail.name"
-              >{{ $t("classDetail.edit") }}</a
-            >
+            <div class="d-inline float-right mt-2">
+              <EditClassModal v-model="classDetail" />
+            </div>
           </div>
-          <div class="col-md-13" v-else>
-            <h2 class="class-title d-inline form-inline">
-              <input
-                type="text"
-                id=""
-                class="form-control"
-                v-model="classDetail.name"
-              />
-            </h2>
-            <a
-              class="edit-link d-inline f-n-20 ml-2"
-              href="javascript:void(0)"
-              @click="save()"
-              >{{ $t("classDetail.save") }}</a
-            >
-          </div>
+          
+          
         </div>
 
         <div class="row">
-          <div class="col-md-12 mb-2 mt-2 f-m-20">
+          <div class="col-md-12 mb-2 mt-3 f-m-20">
             {{ $t("classList.summary") }}
+          </div>
+           <div class="col-md-12 mb-2 mt-3 f-n-16 text-right">
+            {{ classDetail.startDate | toMMDDYYYY }} - {{ classDetail.endDate | toMMDDYYYY }}
           </div>
         </div>
         <textarea
@@ -55,7 +38,7 @@
 
     <div class="wrap-course mb-3">
       <h3 class="f-m-20 d-inline blue-bold">{{ $t("classDetail.courses") }}</h3>
-      <span class="d-inline float-right f-n-14 blue-light mr-4">{{
+      <span class="d-inline float-right f-n-14 blue-light">{{
         $t("classDetail.hoverText")
       }}</span>
     </div>
@@ -71,7 +54,7 @@
       <h3 class="f-m-20 d-inline blue-bold">
         {{ $t("classDetail.studentList") }}
       </h3>
-      <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
+      <span class="d-inline f-n-14 m-3 mt-1 mr-4 blue-light"
         ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
       >
     </div>
@@ -238,6 +221,15 @@ import AddCoursesModal from "./popup/add_courses_modal.vue";
 
 export default {
   name: "ClassView",
+ 
+  filters: {
+    toMMDDYYYY(value) {
+      if (value) {
+        return moment(String(value)).format("MMMM DD, YYYY");
+      }
+    },
+  },
+
   data() {
     return {
       selectedCourse: {},

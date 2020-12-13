@@ -113,6 +113,8 @@
 }
 /*************** SIMPLE INNER SCROLLBAR ***************/
 
+.scrollbar-list > .scroll-element div,
+.scrollbar-list > .scroll-element,
 .scrollbar-inner > .scroll-element,
 .scrollbar-inner > .scroll-element div {
   border: none;
@@ -122,6 +124,7 @@
   z-index: 10;
 }
 
+.scrollbar-list > .scroll-element div,
 .scrollbar-inner > .scroll-element div {
   display: block;
   height: 100%;
@@ -138,6 +141,44 @@
   width: 100%;
 }
 
+.scrollbar-list-wrapper {
+  margin-right: -60px;
+  .scrollbar-list {
+    padding: 0 60px 0 6px;
+    max-height: 600px;
+
+    .scroll-element {
+      .scroll-element_outer {
+        height: 560px;
+        right: 0px;
+        top: 20px;
+        width: 30px;
+      }
+
+      &scroll-x {
+        display: none;
+      }
+
+      &.scroll-y {
+        height: 600px;
+        right: 0px;
+        top: 0;
+        width: 30px;
+        border: 0;
+        background-color: #ededed;
+        border-radius: 10px;
+      }
+
+      .scroll-bar {
+        background-color: #cbcbcb;
+        height: 190px!important;
+      }
+      
+    }
+  }
+}
+
+.scrollbar-list > .scroll-element.scroll-y,
 .scrollbar-inner > .scroll-element.scroll-y {
   height: 240px;
   right: 1px;
@@ -148,12 +189,14 @@
   border-left: 3px solid #ededed;
 }
 
+.scrollbar-list > .scroll-element.scroll-element_outer,
 .scrollbar-inner > .scroll-element .scroll-element_outer {
   top: 20px;
   height: 190px;
   bottom: 20px;
 }
 
+.scrollbar-list > .scroll-element .scroll-element_outer:after,
 .scrollbar-inner > .scroll-element .scroll-element_outer:after {
   content: "\f077";
   display: inline-block;
@@ -163,6 +206,7 @@
   top: -20px;
   z-index: 100;
 }
+.scrollbar-list > .scroll-element .scroll-element_outer:before,
 .scrollbar-inner > .scroll-element .scroll-element_outer:before {
   content: "\f078";
   display: inline-block;
@@ -173,6 +217,10 @@
   z-index: 100;
 }
 
+.scrollbar-list > .scroll-element .scroll-element_outer,
+.scrollbar-list > .scroll-element .scroll-element_track,
+.scrollbar-list > .scroll-element .scroll-bar,
+
 .scrollbar-inner > .scroll-element .scroll-element_outer,
 .scrollbar-inner > .scroll-element .scroll-element_track,
 .scrollbar-inner > .scroll-element .scroll-bar {
@@ -181,6 +229,7 @@
   border-radius: 8px;
 }
 
+.scrollbar-list > .scroll-element .scroll-bar,
 .scrollbar-inner > .scroll-element .scroll-bar {
   width: 8px;
   margin-left: 12px;
@@ -344,6 +393,10 @@ a:hover {
 .btn-created:hover {
   background: #3177b2;
   color: #fff;
+}
+
+.btn-orange {
+  background: #ee6945;
 }
 
 .btn-created.btn-save {

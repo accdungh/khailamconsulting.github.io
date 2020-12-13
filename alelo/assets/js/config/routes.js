@@ -44,6 +44,7 @@ export default [
     name: 'Setting',
     meta: {
       text: "common.menu.setting",
+      hide: true
     }
   },
   {

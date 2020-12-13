@@ -2,7 +2,7 @@
   "common": {
     "selectLang": "Language",
     "menu": {
-      "classList": "Class List",
+      "classList": "Active Classes",
       "classView": "Class Viewer",
       "archivedClass": "Archived Class",
       "setting": "Settings"
@@ -50,7 +50,9 @@
     "courseObjectives": "Course Objectives",
     "selectSimulation": "Select a simulation for more information",
     "objectives": "Objectives",
-    "skills": "Skills"
+    "skills": "Skills",
+    "editCourses": "Edit Courses",
+    "infoText": "Check courses to include in your class."
   },
   "informationForm": {
     "selectInstitution": "Select your institution.",
