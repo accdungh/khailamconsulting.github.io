@@ -63106,7 +63106,9 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("AvailableCoursesTable", {
-                    attrs: { availableCourses: _vm.classDetail.activeCourse },
+                    attrs: {
+                      availableCourses: _vm.classDetail.availableCourse
+                    },
                     model: {
                       value: _vm.classDetail.selectedCourse,
                       callback: function($$v) {
