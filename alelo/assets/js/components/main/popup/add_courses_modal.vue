@@ -39,7 +39,7 @@
 
             <AvailableCoursesTable
               v-model="classDetail.selectedCourse"
-              :availableCourses="classDetail.activeCourse"
+              :availableCourses="classDetail.availableCourse"
             />
 
             <a
