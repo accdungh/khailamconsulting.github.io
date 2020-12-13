@@ -1,6 +1,6 @@
 <template>
   <div class="courses-form">
-    <label class="f-m-14 blue-light">
+    <label class="f-m-14 blue-bold">
       {{ $t("coursesForm.infoText") }}
     </label>
 

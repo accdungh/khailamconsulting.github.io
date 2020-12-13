@@ -5,8 +5,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12">
-        <label class="f-m-14 blue-light">
+      <div class="col-sm-12 mb-2">
+        <label class="f-m-14 blue-bold mb-0">
           {{ $t("informationForm.institution") }}:
         </label>
         <div>
@@ -14,8 +14,8 @@
         </div>
       </div>
 
-      <div class="col-sm-12">
-        <label class="f-m-14 blue-light">
+      <div class="col-sm-12 mb-2">
+        <label class="f-m-14 blue-bold mb-0">
           {{ $t("reviewForm.classTitle") }}:
         </label>
         <div>
@@ -24,7 +24,7 @@
       </div>
 
       <div class="col-sm-24">
-        <label class="f-m-14 blue-light">
+        <label class="f-m-14 blue-bold mb-0">
           {{ $t("reviewForm.classDates") }}:
         </label>
         <div>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="col-sm-24 mt-4">
-        <label class="f-m-14 blue-light">
+        <label class="f-m-14 blue-bold mb-0">
           {{ $t("reviewForm.includedCourses") }}:
         </label>
         <span
@@ -49,7 +49,7 @@
 
     <div class="row mt-4">
       <div class="col-sm-6">
-        <label class="f-m-14 blue-light">
+        <label class="f-m-14 blue-bold mb-0">
           {{ $t("reviewForm.studentInvited") }}:
         </label>
       </div>

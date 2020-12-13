@@ -433,6 +433,10 @@ a:hover {
   color: #cbcbcb;
 }
 
+.color-orange {
+  color: #ee6945;
+}
+
 .line-height-40 {
   line-height: 40px;
 }
@@ -1102,6 +1106,10 @@ table th a {
   a {
     &.create-class__buttons__back {
       color: #cbcbcb;
+
+      i {
+        margin: 0 10px 0 0;
+      }
     }
 
     i {
@@ -1194,13 +1202,19 @@ table th a {
       top: 0;
       height: 230px;
     }
+
+    .scroll-element {
+      .scroll-element_outer:before {
+        bottom: -16px;
+      }
+    } 
   }
 
   .info-text {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px 15px;
-    color: rgb(238, 68, 40);
+    color: #ee6945;
     font-weight: 400;
   }
 }
