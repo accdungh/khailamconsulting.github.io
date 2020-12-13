@@ -71,7 +71,7 @@
     "infoText": "Check courses to include in your class (you can edit your selections later)."
   },
   "studentsForm": {
-    "infoText": "Enter email addresses separated by a common or space. You may also copy ans parse a list into the box"
+    "infoText": "Enter email addresses separated by a common or space. You may also copy ans parse a list into the box."
   },
   "wizardButtons": {
     "back": "Back",
@@ -85,7 +85,7 @@
     "classDates": "Class Dates",
     "includedCourses": "Included Courses",
     "studentInvited": "Student Invited",
-    "infoText": "Click “confirm” to create your class. To make changes, click on a heading above, or use the back arrow"
+    "infoText": "Click “confirm” to create your class. To make changes, click on a heading above, or use the back arrow."
   },
   "setting": {
     "profile": "Profile",
