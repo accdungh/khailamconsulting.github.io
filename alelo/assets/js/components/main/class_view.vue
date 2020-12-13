@@ -25,7 +25,7 @@
             {{ $t("classList.summary") }}
           </div>
            <div class="col-md-12 mb-2 mt-3 f-n-16 text-right">
-            {{ classDetail.startDate | toMMDDYYYY }} - {{ classDetail.endDate | toMMDDYYYY }}
+            {{ classDetail.startDate | timeParser("MMMM DD, YYYY")  }} - {{ classDetail.endDate | timeParser("MMMM DD, YYYY")  }}
           </div>
         </div>
         <textarea
@@ -221,14 +221,6 @@ import AddCoursesModal from "./popup/add_courses_modal.vue";
 
 export default {
   name: "ClassView",
- 
-  filters: {
-    toMMDDYYYY(value) {
-      if (value) {
-        return moment(String(value)).format("MMMM DD, YYYY");
-      }
-    },
-  },
 
   data() {
     return {
