@@ -173,7 +173,7 @@
         background-color: #cbcbcb;
         height: 190px!important;
       }
-      
+
     }
   }
 }
@@ -683,7 +683,7 @@ a:hover {
 }
 
 .launch_ap {
-  background: url(../images/launch_ap.png) no-repeat 0px 3px;
+  background: url(/assets/images/launch_ap.png) no-repeat 0px 3px;
   background-size: 100%;
   width: 18px;
   display: block;
@@ -735,7 +735,7 @@ a:hover {
   .end-date {
     input {
       border-radius: 0 6px 6px 0;
-      
+
     }
   }
 }
@@ -762,7 +762,7 @@ a:hover {
 }
 
 .wrap-date .end-date:after {
-  background: url("../images/calendar.png") no-repeat 0 0;
+  background: url("/assets/images/calendar.png") no-repeat 0 0;
   width: 56px;
   height: 42px;
   position: absolute;
@@ -1207,7 +1207,7 @@ table th a {
       .scroll-element_outer:before {
         bottom: -16px;
       }
-    } 
+    }
   }
 
   .info-text {
