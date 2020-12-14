@@ -54,7 +54,7 @@ module.exports = function (env) {
                             loader: MiniCssExtractPlugin.loader
                         },
                         {
-                            loader: 'css-loader',
+                            loader: 'css-loader?url=false',
                         },
                         {
                             loader: 'postcss-loader',
