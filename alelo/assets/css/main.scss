@@ -171,9 +171,8 @@
 
       .scroll-bar {
         background-color: #cbcbcb;
-        height: 190px!important;
+        height: 190px !important;
       }
-      
     }
   }
 }
@@ -220,7 +219,6 @@
 .scrollbar-list > .scroll-element .scroll-element_outer,
 .scrollbar-list > .scroll-element .scroll-element_track,
 .scrollbar-list > .scroll-element .scroll-bar,
-
 .scrollbar-inner > .scroll-element .scroll-element_outer,
 .scrollbar-inner > .scroll-element .scroll-element_track,
 .scrollbar-inner > .scroll-element .scroll-bar {
@@ -683,7 +681,7 @@ a:hover {
 }
 
 .launch_ap {
-  background: url(../images/launch_ap.png) no-repeat 0px 3px;
+  background: url(/assets/images/launch_ap.png) no-repeat 0px 3px;
   background-size: 100%;
   width: 18px;
   display: block;
@@ -735,7 +733,6 @@ a:hover {
   .end-date {
     input {
       border-radius: 0 6px 6px 0;
-      
     }
   }
 }
@@ -743,7 +740,7 @@ a:hover {
   border: none;
   font-size: 20px;
   font-weight: 500;
-  border: 1px solid #61AAE8;
+  border: 1px solid #61aae8;
   border-radius: 6px;
   padding: 5px;
   color: #707070;
@@ -762,7 +759,7 @@ a:hover {
 }
 
 .wrap-date .end-date:after {
-  background: url("../images/calendar.png") no-repeat 0 0;
+  background: url("/assets/images/calendar.png") no-repeat 0 0;
   width: 56px;
   height: 42px;
   position: absolute;
@@ -1008,7 +1005,6 @@ a:hover {
         background: #3177b2;
         border: 1px solid #3177b2;
       }
-
     }
 
     span {
@@ -1207,7 +1203,7 @@ table th a {
       .scroll-element_outer:before {
         bottom: -16px;
       }
-    } 
+    }
   }
 
   .info-text {
