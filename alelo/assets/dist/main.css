@@ -684,7 +684,7 @@ a:hover {
 }
 
 .launch_ap {
-  background: url(/Users/phongnguyen/Develops/Nodejs/khailam/aleloimages/launch_ap.png) no-repeat 0px 3px;
+  background: url(/assets/images/launch_ap.png) no-repeat 0px 3px;
   background-size: 100%;
   width: 18px;
   display: block;
@@ -741,7 +741,7 @@ a:hover {
   border: none;
   font-size: 20px;
   font-weight: 500;
-  border: 1px solid #61AAE8;
+  border: 1px solid #61aae8;
   border-radius: 6px;
   padding: 5px;
   color: #707070;
@@ -761,7 +761,7 @@ a:hover {
 }
 
 .wrap-date .end-date:after {
-  background: url(/Users/phongnguyen/Develops/Nodejs/khailam/aleloimages/calendar.png) no-repeat 0 0;
+  background: url("/assets/images/calendar.png") no-repeat 0 0;
   width: 56px;
   height: 42px;
   position: absolute;
