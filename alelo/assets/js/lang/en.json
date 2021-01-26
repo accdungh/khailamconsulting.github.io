@@ -2,7 +2,7 @@
   "common": {
     "selectLang": "Language",
     "menu": {
-      "classList": "Class List",
+      "classList": "Active Classes",
       "classView": "Class Viewer",
       "archivedClass": "Archived Class",
       "setting": "Settings"
@@ -26,7 +26,7 @@
     "edit": "Edit",
     "start": "Start",
     "end": "End",
-    "addNewTitle": "Add new title",
+    "addNewTitle": "Class title",
     "addNewSummary": "Add new summary",
     "startDateShouldNotBefore": "Start Date should not be before End Date",
     "hoverText": "Hover on any title for more information",
@@ -50,7 +50,42 @@
     "courseObjectives": "Course Objectives",
     "selectSimulation": "Select a simulation for more information",
     "objectives": "Objectives",
-    "skills": "Skills"
+    "skills": "Skills",
+    "editCourses": "Edit Courses",
+    "infoText": "Check courses to include in your class."
+  },
+  "progressBarForm": {
+    "information": "Information",
+    "courses": "Courses",
+    "students": "Students"
+  },
+  "informationForm": {
+    "selectInstitution": "Select your institution.",
+    "institution": "Institution",
+    "note": "Note: This class will be archived after the end date.",
+    "addTitle": "Add a title for your class.",
+    "addStartDate": "Add a Start Date",
+    "addEndDate": "Add an End Date."
+  },
+  "coursesForm": {
+    "infoText": "Check courses to include in your class (you can edit your selections later)."
+  },
+  "studentsForm": {
+    "infoText": "Enter email addresses separated by a common or space. You may also copy ans parse a list into the box."
+  },
+  "wizardButtons": {
+    "back": "Back",
+    "review": "Review",
+    "confirm": "Confirm",
+    "addCourses": "Add Courses",
+    "inviteStudents": "Invite Students"
+  },
+  "reviewForm": {
+    "classTitle": "Class Title",
+    "classDates": "Class Dates",
+    "includedCourses": "Included Courses",
+    "studentInvited": "Student Invited",
+    "infoText": "Click “confirm” to create your class. To make changes, click on a heading above, or use the back arrow."
   },
   "setting": {
     "profile": "Profile",

@@ -9,82 +9,23 @@
     <form>
       <div class="form-group">
         <div class="row">
-          <div class="col-md-13" v-if="!editMode">
+          
+          <div class="col-md-24 border-bottom pb-1">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
-            <a
-              class="edit-link d-inline f-n-20 ml-2"
-              href="javascript:void(0)"
-              @click="editMode = true"
-              v-if="classDetail.name"
-              >{{ $t("classDetail.edit") }}</a
-            >
-          </div>
-          <div class="col-md-13" v-else>
-            <h2 class="class-title d-inline form-inline">
-              <input
-                type="text"
-                id=""
-                class="form-control"
-                v-model="classDetail.name"
-              />
-            </h2>
-            <a
-              class="edit-link d-inline f-n-20 ml-2"
-              href="javascript:void(0)"
-              @click="save()"
-              >{{ $t("classDetail.save") }}</a
-            >
-          </div>
-          <div class="col-md-11 clearfix">
-            <div class="wrap-date float-right">
-              <div class="input-group start-date">
-                <label class="f-m-14 blue-light ml-3">{{
-                  $t("classDetail.start")
-                }}</label>
-                <KlDatepicker
-                  v-model="classDetail.startDate"
-                  v-validate="'required|date_format:MM/dd/yyyy'"
-                  data-vv-name="start date"
-                  ref="start date"
-                />
-              </div>
-
-              <div class="input-group end-date">
-                <label class="f-m-14 blue-light ml-3">{{
-                  $t("classDetail.end")
-                }}</label>
-                <KlDatepicker
-                  v-model="classDetail.endDate"
-                  v-validate="
-                    'required|date_format:MM/dd/yyyy|after:start date,inclusion:true'
-                  "
-                  data-vv-name="end date"
-                  ref="end date"
-                />
-              </div>
-
-              <div class="text-danger">
-                <small class="date-error-message"></small>
-                <div>
-                  <small
-                    v-show="errors.has('start date')"
-                    class="text-danger"
-                    >{{ errors.first("start date") }}</small
-                  >
-                </div>
-                <div>
-                  <small v-show="errors.has('end date')" class="text-danger">{{
-                    errors.first("end date")
-                  }}</small>
-                </div>
-              </div>
+            <div class="d-inline float-right mt-2">
+              <EditClassModal v-model="classDetail" />
             </div>
           </div>
+          
+          
         </div>
 
         <div class="row">
-          <div class="col-md-12 mb-2 mt-2 f-m-20">
+          <div class="col-md-12 mb-2 mt-3 f-m-20">
             {{ $t("classList.summary") }}
+          </div>
+           <div class="col-md-12 mb-2 mt-3 f-n-16 text-right">
+            {{ classDetail.startDate | timeParser("MMMM DD, YYYY")  }} - {{ classDetail.endDate | timeParser("MMMM DD, YYYY")  }}
           </div>
         </div>
         <textarea
@@ -97,7 +38,7 @@
 
     <div class="wrap-course mb-3">
       <h3 class="f-m-20 d-inline blue-bold">{{ $t("classDetail.courses") }}</h3>
-      <span class="d-inline float-right f-n-14 blue-light mr-4">{{
+      <span class="d-inline float-right f-n-14 blue-light">{{
         $t("classDetail.hoverText")
       }}</span>
     </div>
@@ -107,11 +48,13 @@
       v-model="selectedCourse"
     />
 
+    <AddCoursesModal :classObject="classDetail" />
+
     <div class="wrap-student mb-3">
       <h3 class="f-m-20 d-inline blue-bold">
         {{ $t("classDetail.studentList") }}
       </h3>
-      <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
+      <span class="d-inline f-n-14 m-3 mt-1 mr-4 blue-light"
         ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
       >
     </div>
@@ -273,9 +216,12 @@ import AddStudentModal from "./popup/add_student_modal.vue";
 import Sorter from "../../services/sorter.js";
 import ActiveCourseList from "./class_view/active_course_list.vue";
 import CourseSimulationList from "./class_view/course_simulation_list.vue";
+import EditClassModal from "./popup/edit_class_modal.vue";
+import AddCoursesModal from "./popup/add_courses_modal.vue";
 
 export default {
   name: "ClassView",
+
   data() {
     return {
       selectedCourse: {},
@@ -296,6 +242,8 @@ export default {
     AddStudentModal,
     ActiveCourseList,
     CourseSimulationList,
+    EditClassModal,
+    AddCoursesModal,
   },
   computed: {
     ...mapGetters(["classDetail", "classDetailId"]),

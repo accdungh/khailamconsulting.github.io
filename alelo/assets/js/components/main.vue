@@ -32,7 +32,7 @@
 import VueRouter from "vue-router";
 import TabList from "./main/tab_list.vue";
 import NoticeModal from "./main/popup/notice_modal.vue";
-import routes from "./main/routes.js";
+import routes from "../config/routes.js";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -45,7 +45,7 @@ export default {
   watch: {
     $route(to, from) {
       setTimeout(() => {
-        window.CommonJs.initJs();
+        this.$commonJs.initJs();
       }, 50);
     },
   },

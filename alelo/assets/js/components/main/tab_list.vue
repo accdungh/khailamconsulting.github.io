@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import routes from "./routes";
+import routes from "../../config/routes.js";
 
 export default {
   name: "TabList",

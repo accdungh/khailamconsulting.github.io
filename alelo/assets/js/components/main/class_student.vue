@@ -58,7 +58,7 @@
       </div>
 
       <div class="wrap-item wrap-item-custom">
-        <div class="scrollbar scrollbar-inner">
+        <div class="scrollbar">
           <table
             class="table table-striped table-custom table-lst-student table-lst-student-custom"
             v-if="activeCourse"
@@ -229,10 +229,9 @@ export default {
       id: this.$route.params.id,
       classId: this.$route.params.classId,
     }).finally(() => {
-      $(".scrollbar-inner").scrollbar();
-      window.CommonJs.initJs();
       this.sortSimulation("title", true);
-      window.CommonJs.initHorizontalScrollBar();
+      this.$commonJs.initJs();
+      this.$commonJs.initHorizontalScrollBar();
     });
   },
 };

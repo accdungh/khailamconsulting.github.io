@@ -113,6 +113,8 @@
 }
 /*************** SIMPLE INNER SCROLLBAR ***************/
 
+.scrollbar-list > .scroll-element div,
+.scrollbar-list > .scroll-element,
 .scrollbar-inner > .scroll-element,
 .scrollbar-inner > .scroll-element div {
   border: none;
@@ -122,6 +124,7 @@
   z-index: 10;
 }
 
+.scrollbar-list > .scroll-element div,
 .scrollbar-inner > .scroll-element div {
   display: block;
   height: 100%;
@@ -138,6 +141,43 @@
   width: 100%;
 }
 
+.scrollbar-list-wrapper {
+  margin-right: -60px;
+  .scrollbar-list {
+    padding: 0 60px 0 6px;
+    max-height: 600px;
+
+    .scroll-element {
+      .scroll-element_outer {
+        height: 560px;
+        right: 0px;
+        top: 20px;
+        width: 30px;
+      }
+
+      &scroll-x {
+        display: none;
+      }
+
+      &.scroll-y {
+        height: 600px;
+        right: 0px;
+        top: 0;
+        width: 30px;
+        border: 0;
+        background-color: #ededed;
+        border-radius: 10px;
+      }
+
+      .scroll-bar {
+        background-color: #cbcbcb;
+        height: 190px !important;
+      }
+    }
+  }
+}
+
+.scrollbar-list > .scroll-element.scroll-y,
 .scrollbar-inner > .scroll-element.scroll-y {
   height: 240px;
   right: 1px;
@@ -148,12 +188,14 @@
   border-left: 3px solid #ededed;
 }
 
+.scrollbar-list > .scroll-element.scroll-element_outer,
 .scrollbar-inner > .scroll-element .scroll-element_outer {
   top: 20px;
   height: 190px;
   bottom: 20px;
 }
 
+.scrollbar-list > .scroll-element .scroll-element_outer:after,
 .scrollbar-inner > .scroll-element .scroll-element_outer:after {
   content: "\f077";
   display: inline-block;
@@ -163,6 +205,7 @@
   top: -20px;
   z-index: 100;
 }
+.scrollbar-list > .scroll-element .scroll-element_outer:before,
 .scrollbar-inner > .scroll-element .scroll-element_outer:before {
   content: "\f078";
   display: inline-block;
@@ -173,6 +216,9 @@
   z-index: 100;
 }
 
+.scrollbar-list > .scroll-element .scroll-element_outer,
+.scrollbar-list > .scroll-element .scroll-element_track,
+.scrollbar-list > .scroll-element .scroll-bar,
 .scrollbar-inner > .scroll-element .scroll-element_outer,
 .scrollbar-inner > .scroll-element .scroll-element_track,
 .scrollbar-inner > .scroll-element .scroll-bar {
@@ -181,6 +227,7 @@
   border-radius: 8px;
 }
 
+.scrollbar-list > .scroll-element .scroll-bar,
 .scrollbar-inner > .scroll-element .scroll-bar {
   width: 8px;
   margin-left: 12px;
@@ -346,6 +393,10 @@ a:hover {
   color: #fff;
 }
 
+.btn-orange {
+  background: #ee6945;
+}
+
 .btn-created.btn-save {
   padding: 5px 30px;
 }
@@ -378,6 +429,10 @@ a:hover {
 
 .gray-blur {
   color: #cbcbcb;
+}
+
+.color-orange {
+  color: #ee6945;
 }
 
 .line-height-40 {
@@ -432,63 +487,65 @@ a:hover {
   font-weight: 500;
 }
 
+.f-n-25 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
 /**
    * Nav-tab
    */
 
 .nav-tabs-list {
   padding: 30px 0 0;
-}
 
-.nav-tabs-list .nav-item {
-  border-bottom: 1px solid #000;
-}
+  .nav-item {
+    border-bottom: 1px solid #000;
+    padding: 0px 40px;
+    text-align: center;
+  }
 
-.nav-tabs-list .nav-item {
-  padding: 0px 40px;
-  text-align: center;
-}
+  .nav-item:first-child {
+    padding-left: 0px;
+  }
 
-.nav-tabs-list .nav-item:first-child {
-  padding-left: 0px;
-}
+  .nav-item:last-child {
+    padding-right: 0px;
+  }
 
-.nav-tabs-list .nav-item:last-child {
-  padding-right: 0px;
-}
+  .nav-link {
+    font-size: 20px;
+    color: #cbcbcb;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    padding: 0 2px 10px;
+  }
 
-.nav-tabs-list .nav-link {
-  font-size: 20px;
-  color: #cbcbcb;
-  padding: 0;
-  display: inline-block;
-  position: relative;
-  padding: 0 2px 10px;
-}
+  .nav-link.active {
+    color: #3177b2;
+  }
 
-.nav-tabs-list .nav-link.active {
-  color: #3177b2;
-}
+  .nav-link:after {
+    content: "";
+    display: inline-block;
+    border-bottom: 3px solid #3177b2;
+    width: 0;
+    opacity: 0;
+    left: 0;
+    position: absolute;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    bottom: -1px;
+    z-index: 2;
+  }
 
-.nav-tabs-list .nav-link:after {
-  content: "";
-  display: inline-block;
-  border-bottom: 3px solid #3177b2;
-  width: 0;
-  opacity: 0;
-  left: 0;
-  position: absolute;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  bottom: -1px;
-  z-index: 2;
-}
-
-.nav-tabs-list .nav-link.active:after {
-  width: 100%;
-  opacity: 1;
+  .nav-link.active:after {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 .footer {
@@ -665,16 +722,30 @@ a:hover {
 }
 .wrap-date {
   position: relative;
+
+  .start-date {
+    input {
+      border-radius: 6px 0 0 6px;
+      border-right: 0;
+    }
+  }
+
+  .end-date {
+    input {
+      border-radius: 0 6px 6px 0;
+    }
+  }
 }
 .wrap-date input {
   border: none;
   font-size: 20px;
   font-weight: 500;
-  border: 1px solid #cbcbcb;
+  border: 1px solid #61aae8;
   border-radius: 6px;
   padding: 5px;
   color: #707070;
   width: 100%;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 .wrap-date .datepicker-startdate {
   border-right: 0;
@@ -875,6 +946,96 @@ a:hover {
   margin-left: 32px;
 }
 
+/* Progress_bar */
+.progressbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding-bottom: 30px;
+
+  li {
+    font-size: 20px;
+    color: #cbcbcb;
+    position: relative;
+    border-bottom: 1px solid #cbcbcb;
+
+    &.linked {
+      cursor: pointer;
+    }
+
+    &:first-child {
+      padding-left: 0px;
+    }
+
+    &:last-child {
+      padding-right: 0px;
+    }
+
+    &:nth-child(2) {
+      padding-left: 80px;
+      padding-right: 50px;
+    }
+
+    &:nth-child(3) {
+      padding-left: 30px;
+    }
+
+    &.active {
+      color: #3177b2;
+      font-weight: 700;
+
+      &:before {
+        border-top: 3px solid #3177b2;
+        content: "";
+        display: inline-block;
+        margin: 0 auto 10px;
+        width: 100%;
+        position: absolute;
+        bottom: calc(0% - 12px);
+        left: 0;
+        z-index: 0;
+      }
+
+      span:after {
+        background: #3177b2;
+        border: 1px solid #3177b2;
+      }
+    }
+
+    span {
+      position: relative;
+    }
+
+    span:after {
+      background: #cbcbcb;
+      border: 1px solid #c1c1c1;
+      border-radius: 50%;
+      display: inline-block;
+      content: "";
+      position: absolute;
+      bottom: calc(0% - 18px);
+      left: calc(50% - 5px);
+      font-weight: 700;
+      height: 10px;
+      line-height: 8px;
+      margin: 0 auto 10px;
+      width: 10px;
+      z-index: 1;
+    }
+  }
+}
+
+#create-new-class {
+  .modal-body {
+    padding: 30px 50px;
+  }
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 752px;
@@ -927,4 +1088,129 @@ table th a:hover,
 table th a:focus,
 table th a {
   color: #fff;
+}
+
+// EDIT CLASS MODAL
+#edit-class-modal {
+  .class-dates__note {
+    display: none;
+  }
+}
+
+// CREATE CLASS WIZARD
+.create-class__buttons {
+  a {
+    &.create-class__buttons__back {
+      color: #cbcbcb;
+
+      i {
+        margin: 0 10px 0 0;
+      }
+    }
+
+    i {
+      color: #ee6945;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  }
+}
+
+.information-form {
+  input.information-form__name {
+    padding: 0.375rem 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  .wrap-date {
+    input {
+      font-weight: normal;
+    }
+  }
+
+  input {
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #cbcbcb;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #cbcbcb;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #cbcbcb;
+    }
+  }
+
+  .dropdown-toggle {
+    width: fit-content;
+    padding-right: 23px;
+  }
+  .dropdown-menu.show {
+    width: fit-content;
+    padding-right: 10px;
+  }
+  .dropdown-item.hovered:after,
+  .dropdown-item:hover:after {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.courses-form {
+  .table-custom {
+    border: unset;
+  }
+  .first-heading-text {
+    visibility: hidden;
+  }
+
+  &#add-courses-modal {
+    .first-heading-text {
+      visibility: unset;
+    }
+  }
+}
+
+.review-form {
+  .included-course {
+    font-size: 1rem;
+    background-color: #61aae8;
+    padding: 0.25em 1em;
+    margin-right: 1em;
+  }
+
+  .invited-students {
+    height: 230px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    .invited-students__content {
+      padding: 15px;
+    }
+
+    .scroll-y {
+      top: 0;
+      height: 230px;
+    }
+
+    .scroll-element {
+      .scroll-element_outer:before {
+        bottom: -16px;
+      }
+    }
+  }
+
+  .info-text {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #ee6945;
+    font-weight: 400;
+  }
 }

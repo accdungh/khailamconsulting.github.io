@@ -4,6 +4,7 @@ const Autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const Webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = function (env) {
     return {
@@ -24,7 +25,7 @@ module.exports = function (env) {
             publicPath: ROOT_PATH
         },
         plugins: [
-            new ExtractTextPlugin("[name].css"),
+            new MiniCssExtractPlugin(),
             new VueLoaderPlugin(),
         ],
         externals: {
@@ -47,38 +48,32 @@ module.exports = function (env) {
                     use: 'file-loader?name=images/[name].[ext]'
                 },
                 {
-                    test: /\.css$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [{
+                    test: /\.(sa|sc|c)ss$/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader
+                        },
+                        {
                             loader: 'css-loader?url=false'
                         },
                         {
                             loader: 'postcss-loader',
                             options: {
-                                plugins: function () {
-                                    return [Autoprefixer('last 2 versions', 'ie 10')];
+                                postcssOptions: {
+                                    plugins: function () {
+                                        return [
+                                            require('precss'),
+                                            require('autoprefixer')
+                                        ];
+                                    }
                                 }
                             }
-                        }]
-                    })
+                        },
+                        {
+                            loader: 'sass-loader'
+                        }
+                    ]
                 },
-                {
-                    test: /\.scss$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [{
-                            loader: 'css-loader?url=false'
-                        }, {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: function () {
-                                    return [Autoprefixer('last 2 versions', 'ie 10')];
-                                }
-                            }
-                        }]
-                    })
-                }
             ]
         }
 

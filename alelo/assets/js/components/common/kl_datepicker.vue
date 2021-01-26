@@ -1,6 +1,6 @@
 <template>
   <input
-    :placeholder="placeholder"
+    :placeholder="placeholder || format"
     :ref="refKey"
     v-model="dateValue"
     :class="inputClass"

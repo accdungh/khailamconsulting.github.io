@@ -4,7 +4,7 @@
       <table class="table table-striped table-custom header-fixed">
         <thead>
           <tr>
-            <th class="text-center">
+            <!--<th class="text-center">
               <a
                 href="javascript:void(0)"
                 data-toggle="tooltip"
@@ -13,8 +13,8 @@
                 :title="$t('classDetail.accessibleHover')"
                 >{{ $t("classDetail.accessible") }}</a
               >
-            </th>
-            <th>
+            </th>-->
+            <th class="pl-5">
               <a
                 href="javascript:void(0)"
                 data-toggle="tooltip"
@@ -41,7 +41,7 @@
             v-for="(course, index) in sortedCourses"
             :key="'active-course' + index"
           >
-            <td align="center">
+            <!--<td align="center">
               <div class="form-check">
                 <input
                   class="form-check-input position-static"
@@ -51,8 +51,8 @@
                   aria-label="..."
                 />
               </div>
-            </td>
-            <td class="f-m-18 blue-bold">
+            </td>-->
+            <td class="f-m-18 blue-bold pl-5">
               <a
                 href="#course-info"
                 data-toggle="modal"

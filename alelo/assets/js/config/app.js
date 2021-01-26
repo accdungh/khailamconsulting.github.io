@@ -3,6 +3,7 @@ import Store from "./store";
 import VueRouter from "vue-router";
 import VeeValidate from "vee-validate";
 import Paginate from 'vuejs-paginate';
+import CommonJs from '../plugins/common.js';
 import moment from 'moment';
 
 import AppHeader from "../components/header.vue";
@@ -10,6 +11,7 @@ import AppMain from "../components/main.vue";
 import AppFooter from "../components/footer.vue";
 import KlDatepicker from "../components/common/kl_datepicker.vue";
 import SortArrow from "../components/common/sort_arrow.vue";
+import DropdownButton from "../components/common/dropdown_button.vue";
 
 import VueI18n from 'vue-i18n';
 import enMessage from '../lang/en.json';
@@ -25,6 +27,7 @@ import cnValidationMessages from 'vee-validate/dist/locale/zh_CN';
 import Filters from './filters';
 
 Vue.use(VueI18n);
+Vue.use(CommonJs);
 
 const messages = {
   en: enMessage,
@@ -53,6 +56,7 @@ Vue.use(VeeValidate, {
 
 Vue.component('KlDatepicker', KlDatepicker);
 Vue.component('SortArrow', SortArrow);
+Vue.component('DropdownButton', DropdownButton);
 Vue.component('paginate', Paginate);
 
 for (let key in Filters) Vue.filter(key, Filters[key]);
