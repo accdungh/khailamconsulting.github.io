@@ -110,13 +110,27 @@ export default {
       return;
     },
     includedCourses() {
-      return this.formData.activeCourse.map((i) => i.name);
+      return this.availableCourses
+        .filter((i) => this.formData.activeCourse.includes(i.id))
+        .map((i) => i.name);
     },
     invitedStudents() {
-      return (
-        this.formData.students &&
-        this.formData.students.replace(/\n/gi, "<br/>")
-      );
+      return this.formData.students && this.formData.students.join("<br/>");
+    },
+    availableCourses() {
+      if (
+        this.userSetting &&
+        this.userSetting.institutions &&
+        this.userSetting.institutions
+      ) {
+        let record = this.userSetting.institutions.find(
+          (i) => i.id == this.formData.institution
+        );
+
+        return (record && record.courses) || [];
+      }
+
+      return [];
     },
   },
   methods: {
