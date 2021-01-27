@@ -24,7 +24,7 @@
                 <input
                   class="form-check-input position-static"
                   type="checkbox"
-                  :value="course"
+                  :value="course.id"
                   v-model="selectedCourses"
                   @change="changeSelectedCourses()"
                 />
