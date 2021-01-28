@@ -4,6 +4,12 @@ const API_PATH = "https://sim-dev.alelo.com/api/dummy_instructor"
 /** for the production use */
 //const API_PATH = "/api/instructor";
 
+const configHeaders = {
+  "Content-Type": "application/json",
+  "Accept": "application/json"
+};
+
+
 export default {
   classList() {
     //return axios.get(`${API_PATH}/example_data/list.json`, {
@@ -26,6 +32,7 @@ export default {
     // FIXME: Use method POST with real API
     return axios.post(`${API_PATH}/class/create`, data, {
       withCredentials: true,
+      headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
       }]
@@ -35,6 +42,7 @@ export default {
     // FIXME: Use method PUT with real API
     return axios.post(`${API_PATH}/class/update/` + id, data, {
       withCredentials: true,
+      headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
       }]
@@ -44,6 +52,7 @@ export default {
     // FIXME: Use method DELETE with real API
     return axios.post(`${API_PATH}/class/delete/` + id, {}, {
       withCredentials: true,
+      headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
       }]
@@ -57,6 +66,7 @@ export default {
   updateUserSetting(id, data) {
     return axios.post(`${API_PATH}/user/info`, data, {
       withCredentials: true,
+      headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
       }]
@@ -70,9 +80,11 @@ export default {
   userInvitation(data) {
     return axios.post(`${API_PATH}/class/invite`, {}, {
       withCredentials: true,
+      headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
       }]
     });
   }
 }
+
