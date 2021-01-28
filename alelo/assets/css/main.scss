@@ -302,6 +302,10 @@ a:hover {
 
 .button-gray-100 i {
   font-size: 14px;
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-60%);
 }
 
 .show > .btn-secondary.dropdown-toggle {
@@ -1148,12 +1152,13 @@ table th a {
   }
 
   .dropdown-toggle {
-    width: fit-content;
     padding-right: 23px;
+    position: relative;
+    text-align: left;
   }
   .dropdown-menu.show {
     width: fit-content;
-    padding-right: 10px;
+    padding-right: 20px;
   }
   .dropdown-item.hovered:after,
   .dropdown-item:hover:after {
