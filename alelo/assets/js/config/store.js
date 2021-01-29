@@ -48,7 +48,7 @@ export default new Vuex.Store({
         if (json && json.success) {
           if (json.message)
             commit('setNoticeMessage', json.message);
-          commit('fetchedClassList', json.data);
+          commit('fetchedClassList', json.data.activeClasses);
         } else commit('setNoticeMessage', json.message);
       })
     },
