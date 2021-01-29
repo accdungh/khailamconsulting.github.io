@@ -45,9 +45,11 @@ export default new Vuex.Store({
     fetchClassList({ commit, state }) {
       AjaxCaller.classList().then((resp) => {
         let json = resp.data;
-        if (json && json.success)
+        if (json && json.success) {
+          if (json.message)
+            commit('setNoticeMessage', json.message);
           commit('fetchedClassList', json.data);
-        else commit('setNoticeMessage', json.message);
+        } else commit('setNoticeMessage', json.message);
       })
     },
     fetchClassDetail({ commit, state }, id) {
@@ -55,6 +57,8 @@ export default new Vuex.Store({
       AjaxCaller.classDetail(id || state.classDetailId).then((resp) => {
         let json = resp.data;
         if (json && json.success) {
+          if (json.message)
+            commit('setNoticeMessage', json.message);
           commit('fetchedClassDetail', json.data);
           commit('selectedClass', id || state.classDetailId);
         }
@@ -65,7 +69,9 @@ export default new Vuex.Store({
       return AjaxCaller.createClass(classData).then((resp) => {
         let json = resp.data;
         if (json && json.success) {
-          commit('fetchedClassDetail', json.data);
+          if (json.message)
+            commit('setNoticeMessage', json.message);
+          commit('fetchedClassDetail', {});
           commit('selectedClass', json.data.id);
         }
         else commit('setNoticeMessage', json.message);
@@ -75,15 +81,19 @@ export default new Vuex.Store({
     updateClass({ commit, state }, classData) {
       return AjaxCaller.updateClass(state.classDetailId, classData).then((resp) => {
         let json = resp.data;
-        if (json && json.success)
+        if (json && json.success){
+          if (json.message)
+            commit('setNoticeMessage', json.message);
           commit('fetchedClassDetail', json.data);
-        else commit('setNoticeMessage', json.message);
+        } else commit('setNoticeMessage', json.message);
       })
     },
     deleteClass({ commit, state }) {
       return AjaxCaller.deleteClass(state.classDetailId).then((resp) => {
         let json = resp.data;
         if (json && json.success) {
+          if (json.message)
+            commit('setNoticeMessage', json.message);
           commit('fetchedClassDetail', {});
           commit('selectedClass', null);
         }
@@ -93,16 +103,19 @@ export default new Vuex.Store({
     fetchUserSetting({ commit, state }, id) {
       AjaxCaller.userSetting(id).then((resp) => {
         let json = resp.data;
-        if (json && json.success)
+        if (json && json.success) {
+          if (json.message)
+            commit('setNoticeMessage', json.message);
           commit('fetchedUserSetting', json.data || {});
-        else commit('setNoticeMessage', json.message);
+        } else commit('setNoticeMessage', json.message);
       })
     },
     updateUserSetting({ commit, state }) {
       AjaxCaller.updateUserSetting(state.userSetting.id, state.userSetting).then((resp) => {
         let json = resp.data;
-        if (!(json && json.success))
+        if (!(json && json.success)) {
           commit('setNoticeMessage', json.message);
+        }
       })
     },
     selectClass({ commit, state }, id) {
