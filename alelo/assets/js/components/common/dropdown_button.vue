@@ -1,6 +1,7 @@
 <template>
   <div class="dropdown">
     <button
+      ref="dropdown-button"
       class="btn dropdown-toggle button-gray-100"
       type="button"
       id="institutions-dropdown"
@@ -8,10 +9,14 @@
       aria-haspopup="true"
       aria-expanded="false"
     >
-      {{ label }}
+      {{ dropDownLabel }}
       <i class="fa fa-chevron-down"></i>
     </button>
-    <div class="dropdown-menu" aria-labelledby="institutions-dropdown">
+    <div
+      ref="dropdown-menu"
+      class="dropdown-menu dddddd"
+      aria-labelledby="institutions-dropdown"
+    >
       <a
         class="dropdown-item"
         href="javascript:void(0)"
@@ -43,7 +48,20 @@ export default {
   data() {
     return {
       selectedValue: null,
+      dropDropMenuVisible: false,
     };
+  },
+  computed: {
+    dropDownLabel() {
+      if (this.selectedValue) {
+        return this.options.find((i) => i.id == this.selectedValue).name;
+      }
+
+      return this.label;
+    },
+    dropDownMenuWidth() {
+      return $(this.$refs["dropdown-menu"]).width();
+    },
   },
   created() {
     this.selectedValue = this.value;
@@ -53,6 +71,21 @@ export default {
       this.selectedValue = id;
       this.$emit("input", this.selectedValue);
     },
+    setDropdownWidth() {
+      if (!$(this.$refs["dropdown-button"]).is(":visible")) {
+        return setTimeout(() => {
+          this.setDropdownWidth();
+        }, 500);
+      }
+
+      $(this.$refs["dropdown-button"]).css(
+        "width",
+        $(this.$refs["dropdown-menu"]).width() + 8
+      );
+    },
+  },
+  mounted() {
+    this.setDropdownWidth();
   },
 };
 </script>
