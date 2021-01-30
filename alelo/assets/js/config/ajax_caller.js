@@ -85,6 +85,18 @@ export default {
         return JSON.stringify(data)
       }]
     });
-  }
+  },
+  addCourse(id, data) {
+    return axios.post(`${API_PATH}/class/addcourse/${id}`, data, {
+      withCredentials: true,
+      headers: configHeaders,
+    });
+  },
+  addStudent(id, data) {
+    return axios.post(`${API_PATH}/class/addstudent/${id}`, data, {
+      withCredentials: true,
+      headers: configHeaders,
+    });
+  },
 }
 

@@ -78,13 +78,33 @@ export default new Vuex.Store({
         return resp;
       })
     },
-    updateClass({ commit, state }, classData) {
+    updateClass({ commit, state, dispatch }, classData) {
       return AjaxCaller.updateClass(state.classDetailId, classData).then((resp) => {
         let json = resp.data;
-        if (json && json.success){
+        if (json && json.success) {
           if (json.message)
             commit('setNoticeMessage', json.message);
-          commit('fetchedClassDetail', json.data);
+          dispatch('fetchClassDetail', json.data.id)
+        } else commit('setNoticeMessage', json.message);
+      })
+    },
+    addCourse({ commit, state, dispatch }, classData) {
+      return AjaxCaller.addCourse(state.classDetailId, classData).then((resp) => {
+        let json = resp.data;
+        if (json && json.success) {
+          if (json.message)
+            commit('setNoticeMessage', json.message);
+          dispatch('fetchClassDetail', json.data.id)
+        } else commit('setNoticeMessage', json.message);
+      })
+    },
+    addStudent({ commit, state, dispatch }, classData) {
+      return AjaxCaller.addStudent(state.classDetailId, classData).then((resp) => {
+        let json = resp.data;
+        if (json && json.success) {
+          if (json.message)
+            commit('setNoticeMessage', json.message);
+          dispatch('fetchClassDetail', json.data.id)
         } else commit('setNoticeMessage', json.message);
       })
     },

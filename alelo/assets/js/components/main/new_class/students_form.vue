@@ -28,10 +28,11 @@
 
 <script>
 import WizardButtons from "./wizard_buttons.vue";
-import { compact } from "lodash";
+import StudentEmailMixin from "../../../mixins/student_email";
 
 export default {
   name: "StudentsForm",
+  mixins: [StudentEmailMixin],
   props: {
     value: {
       type: Object,
@@ -42,39 +43,10 @@ export default {
   },
   data() {
     return {
-      studentEmails: "",
       formData: null,
     };
   },
   components: { WizardButtons },
-  computed: {
-    students() {
-      return compact(this.studentEmails.split("\n") || []);
-    },
-    invalidEmails() {
-      const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      let invalidEmails = [];
-
-      for (let email of this.students) {
-        if (email && !re.test(email)) {
-          invalidEmails.push(email);
-        }
-      }
-
-      return invalidEmails;
-    },
-    invalidEmailMessage() {
-      if (!this.invalidEmails || !this.invalidEmails.length) return;
-
-      return this.$t("studentsForm.invalidEmail", {
-        emails: this.invalidEmails.map((email) => `“${email}”`).join(", "),
-        beVerb:
-          this.invalidEmails.length > 1
-            ? this.$t("studentsForm.are")
-            : this.$t("studentsForm.is"),
-      });
-    },
-  },
   created() {
     this.formData = this.value;
     this.studentEmails =
