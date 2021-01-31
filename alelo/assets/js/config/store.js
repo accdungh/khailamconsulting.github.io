@@ -80,33 +80,22 @@ export default new Vuex.Store({
     },
     updateClass({ commit, state, dispatch }, classData) {
       return AjaxCaller.updateClass(state.classDetailId, classData).then((resp) => {
-        let json = resp.data;
-        if (json && json.success) {
-          if (json.message)
-            commit('setNoticeMessage', json.message);
-          dispatch('fetchClassDetail', json.data.id)
-        } else commit('setNoticeMessage', json.message);
+        dispatch('classDetailPostAction', resp.data)
       })
     },
     addCourse({ commit, state, dispatch }, classData) {
       return AjaxCaller.addCourse(state.classDetailId, classData).then((resp) => {
-        let json = resp.data;
-        if (json && json.success) {
-          if (json.message)
-            commit('setNoticeMessage', json.message);
-          dispatch('fetchClassDetail', json.data.id)
-        } else commit('setNoticeMessage', json.message);
+        dispatch('classDetailPostAction', resp.data)
       })
     },
     addStudent({ commit, state, dispatch }, classData) {
       return AjaxCaller.addStudent(state.classDetailId, classData).then((resp) => {
-        let json = resp.data;
-        if (json && json.success) {
-          if (json.message)
-            commit('setNoticeMessage', json.message);
-          dispatch('fetchClassDetail', json.data.id)
-        } else commit('setNoticeMessage', json.message);
+        dispatch('classDetailPostAction', resp.data)
       })
+    },
+    classDetailPostAction({ commit, dispatch }, json) {
+      if (json && json.success) dispatch('fetchClassDetail', json.data.id)
+      if (json && json.message) commit('setNoticeMessage', json.message);
     },
     deleteClass({ commit, state }) {
       return AjaxCaller.deleteClass(state.classDetailId).then((resp) => {

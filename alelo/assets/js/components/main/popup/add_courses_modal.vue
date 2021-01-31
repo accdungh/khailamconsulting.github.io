@@ -79,7 +79,11 @@ export default {
   methods: {
     ...mapActions(["addCourse"]),
     save() {
-      this.addCourse(pick(this.classDetail, ["selectedCourses"])).then(() => {
+      let params = pick(this.classDetail, ["selectedCourses"]);
+      if (!params.selectedCourses || !params.selectedCourses.length)
+        return $("#add-courses-modal").modal("hide");
+
+      this.addCourse(params).then(() => {
         $("#add-courses-modal").modal("hide");
       });
     },

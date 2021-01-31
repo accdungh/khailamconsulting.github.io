@@ -79,6 +79,7 @@ export default {
   methods: {
     ...mapActions(["addStudent"]),
     invite() {
+      if (!this.students.length) return $("#add_student_modal").modal("hide");
       if (this.invalidEmails.length) return;
 
       this.addStudent({ students: this.students }).then(() => {
