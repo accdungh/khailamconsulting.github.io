@@ -9,29 +9,20 @@ const configHeaders = {
   "Accept": "application/json"
 };
 
-
 export default {
   classList() {
     //return axios.get(`${API_PATH}/example_data/list.json`, {
-    return axios.get(`${API_PATH}/class/list`, {
-      withCredentials: true
-    });
+    return axios.get(`${API_PATH}/class/list`, {});
   },
   archivedClassList() {
-    return axios.get(`${API_PATH}/class/archive/list`, {
-      withCredentials: true
-    });
+    return axios.get(`${API_PATH}/class/archive/list`, {});
   },
   classDetail(id) {
     //  return axios.get(`${API_PATH}/example_data/detail.json`, {
-    return axios.get(`${API_PATH}/class/view/` + id, {
-      withCredentials: true
-    });
+    return axios.get(`${API_PATH}/class/view/` + id, {});
   },
   createClass(data) {
-    // FIXME: Use method POST with real API
     return axios.post(`${API_PATH}/class/create`, data, {
-      withCredentials: true,
       headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
@@ -39,9 +30,7 @@ export default {
     });
   },
   updateClass(id, data) {
-    // FIXME: Use method PUT with real API
     return axios.post(`${API_PATH}/class/update/` + id, data, {
-      withCredentials: true,
       headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
@@ -49,9 +38,7 @@ export default {
     });
   },
   deleteClass(id) {
-    // FIXME: Use method DELETE with real API
     return axios.post(`${API_PATH}/class/delete/` + id, {}, {
-      withCredentials: true,
       headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
@@ -59,13 +46,10 @@ export default {
     });
   },
   userSetting(id) {
-    return axios.get(`${API_PATH}/user/info`, {
-      withCredentials: true
-    });
+    return axios.get(`${API_PATH}/user/info`, {});
   },
   updateUserSetting(id, data) {
     return axios.post(`${API_PATH}/user/info`, data, {
-      withCredentials: true,
       headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
@@ -73,13 +57,10 @@ export default {
     });
   },
   studentDetail(id, classId) {
-    return axios.get(`${API_PATH}/student/` + id + '/' + classId, {
-      withCredentials: true
-    });
+    return axios.get(`${API_PATH}/student/` + id + '/' + classId, {});
   },
   userInvitation(data) {
     return axios.post(`${API_PATH}/class/invite`, {}, {
-      withCredentials: true,
       headers: configHeaders,
       transformRequest: [(data) => {
         return JSON.stringify(data)
@@ -88,15 +69,12 @@ export default {
   },
   addCourse(id, data) {
     return axios.post(`${API_PATH}/class/addcourse/${id}`, data, {
-      withCredentials: true,
       headers: configHeaders,
     });
   },
   addStudent(id, data) {
     return axios.post(`${API_PATH}/class/addstudent/${id}`, data, {
-      withCredentials: true,
       headers: configHeaders,
     });
   },
 }
-
