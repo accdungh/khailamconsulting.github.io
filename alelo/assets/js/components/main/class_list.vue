@@ -14,17 +14,16 @@
         class="btn btn-created btn-orange mt-2 mb-5"
         >{{ $t("classList.createClass") }}</a
       >
-      <div v-bind:class="{'scrollbar-list-wrapper': activeClasses.length > 5}">
-      <div class="scrollbar-list"> 
-        <ClassListItem
-          v-for="(item, index) in activeClasses"
-          :key="'class-list-item' + index"
-          :classData="item"
-          @selected="select"
-        />
+      <div :class="{ 'scrollbar-list-wrapper': activeClasses.length > 5 }">
+        <div class="scrollbar-list">
+          <ClassListItem
+            v-for="(item, index) in activeClasses"
+            :key="'class-list-item' + index"
+            :classData="item"
+            @selected="select"
+          />
+        </div>
       </div>
-      </div>
-      
     </form>
 
     <CreateClassModal />
@@ -51,21 +50,24 @@ export default {
       this.selectClass(id);
       this.$router.push({ name: "ClassView", params: { id } });
     },
+    checkAndInitScrollBar() {
+      if (this.activeClasses.length > 5) {
+        this.$commonJs.initListScrollbar();
+      }
+    },
   },
   created() {
     if (!this.activeClasses || !this.activeClasses.length) {
       this.fetchClassList();
     }
   },
-
   watch: {
     activeClasses() {
-
-       if (this.activeClasses.length > 5) 
-        {
-          this.$commonJs.initListScrollbar();
-        }
+      this.checkAndInitScrollBar();
     },
+  },
+  mounted() {
+    this.checkAndInitScrollBar();
   },
 };
 </script>

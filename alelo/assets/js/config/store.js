@@ -97,7 +97,7 @@ export default new Vuex.Store({
       if (json && json.success) dispatch('fetchClassDetail', json.data.id)
       if (json && json.message) commit('setNoticeMessage', json.message);
     },
-    deleteClass({ commit, state }) {
+    deleteClass({ commit, state, dispatch }) {
       return AjaxCaller.deleteClass(state.classDetailId).then((resp) => {
         let json = resp.data;
         if (json && json.success) {
@@ -105,6 +105,7 @@ export default new Vuex.Store({
             commit('setNoticeMessage', json.message);
           commit('fetchedClassDetail', {});
           commit('selectedClass', null);
+          dispatch('fetchClassList');
         }
         else commit('setNoticeMessage', json.message);
       })
