@@ -10,7 +10,7 @@
           </div>
           <div class="col-5 col-md-12 text-right">
             <a
-              href="javascript:void(0)"
+              href="/"
               class="text-white f-n-18 align-middle"
               >{{ $t("common.logOut") }}</a
             >
