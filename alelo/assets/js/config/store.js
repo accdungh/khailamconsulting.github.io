@@ -65,16 +65,15 @@ export default new Vuex.Store({
         else commit('setNoticeMessage', json.message);
       })
     },
-    createClass({ commit, state }, classData) {
+    createClass({ commit, dispatch }, classData) {
       return AjaxCaller.createClass(classData).then((resp) => {
         let json = resp.data;
         if (json && json.success) {
-          if (json.message)
-            commit('setNoticeMessage', json.message);
           commit('fetchedClassDetail', {});
           commit('selectedClass', json.data.id);
+          dispatch('fetchClassList');
         }
-        else commit('setNoticeMessage', json.message);
+        if (json && json.message) commit('setNoticeMessage', json.message);
         return resp;
       })
     },
