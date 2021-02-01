@@ -33,14 +33,17 @@
           <div v-if="!sent">
             <div class="pb-5">
               <textarea
-                v-model="students"
+                v-model="studentEmails"
                 class="form-control auto-size student-list"
               />
+              <div v-if="invalidEmails.length">
+                <small class="text-danger" v-html="invalidEmailMessage"></small>
+              </div>
             </div>
             <a
               href="javascript:void(0)"
               class="btn-created float-right"
-              @click="invite()"
+              v-on:click.stop="invite()"
               >{{ $t("addStudents.invite") }}</a
             >
           </div>
@@ -62,29 +65,26 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import StudentEmailMixin from "../../../mixins/student_email";
+
 export default {
   name: "AddStudentModal",
+  mixins: [StudentEmailMixin],
   data() {
     return {
       sent: false,
-      students: `ninenine@yahoo.ca
-oracle@hotmail.com
-tellis@icloud.com
-pakaste@me.com
-banarse@comcast.net
-animats@att.net
-helger@comcast.net
-rmcfarla@comcast.net
-microfab@mac.com
-jfmulder@yahoo.com
-mgreen@aol.com
-stevelim@live.com`,
     };
   },
   methods: {
+    ...mapActions(["addStudent"]),
     invite() {
-      // TODO: do the invite action
-      this.sent = true;
+      if (!this.students.length) return $("#add_student_modal").modal("hide");
+      if (this.invalidEmails.length) return;
+
+      this.addStudent({ students: this.students }).then(() => {
+        this.sent = true;
+      });
     },
     addMore() {
       this.sent = false;

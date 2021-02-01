@@ -54,6 +54,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import InformationForm from "../new_class/information_form.vue";
+import { pick } from "lodash";
 
 export default {
   name: "EditClassModal",
@@ -77,7 +78,9 @@ export default {
       props.validator.validateAll().then((valid) => {
         if (!valid) return;
 
-        this.updateClass(this.formData).then(() => {
+        this.updateClass(
+          pick(this.formData, ["name", "institution", "startDate", "endDate"])
+        ).then(() => {
           $("#edit-class-modal").modal("hide");
         });
       });

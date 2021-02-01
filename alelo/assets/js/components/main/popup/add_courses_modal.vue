@@ -38,7 +38,7 @@
             </label>
 
             <AvailableCoursesTable
-              v-model="classDetail.selectedCourse"
+              v-model="classDetail.selectedCourses"
               :availableCourses="classDetail.availableCourse"
             />
 
@@ -58,6 +58,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import AvailableCoursesTable from "../new_class/available_courses_table.vue";
+import { pick } from "lodash";
 
 export default {
   name: "EditClassModal",
@@ -76,9 +77,13 @@ export default {
   },
   components: { AvailableCoursesTable },
   methods: {
-    ...mapActions(["updateClass"]),
+    ...mapActions(["addCourse"]),
     save() {
-      this.updateClass(this.classDetail).then(() => {
+      let params = pick(this.classDetail, ["selectedCourses"]);
+      if (!params.selectedCourses || !params.selectedCourses.length)
+        return $("#add-courses-modal").modal("hide");
+
+      this.addCourse(params).then(() => {
         $("#add-courses-modal").modal("hide");
       });
     },
