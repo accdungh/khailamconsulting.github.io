@@ -10,7 +10,7 @@
     "welcome": "Welcome",
     "logOut": "Log Out",
     "footer": {
-      "copyRight": "Copyright 2020 Alelo Inc. All rights reserved.",
+      "copyRight": "Copyright 2021 Alelo Inc. All rights reserved.",
       "playLearnCommunicate": "Play. Learn. Communicate.",
       "contactUs": "Contact Us",
       "legal": "Legal"
@@ -71,7 +71,7 @@
     "infoText": "Check courses to include in your class (you can edit your selections later)."
   },
   "studentsForm": {
-    "infoText": "Enter email addresses separated by a common or space. You may also copy and paste a list into the box.",
+    "infoText": "Enter email addresses, one per line. You can add multiple addresses, and also copy and paste a list into the box.",
     "invalidEmail": "The email {emails} {beVerb} invalid",
     "is": "is",
     "are": "are"
@@ -126,7 +126,7 @@
   },
   "addStudents": {
     "instructions": "Instructions",
-    "instructionsText": "Enter email addresses separated by a comma or space. You may also copy and paste a list into the box.",
+    "instructionsText": "Enter email addresses, one per line. You can add multiple addresses, and also copy and paste a list into the box.",
     "invite": "Invite",
     "invitationsSent": "Invitations sent!",
     "addMore": "Add More"
