@@ -13,7 +13,8 @@ export default new Vuex.Store({
     userSetting: {},
     studentDetail: {},
     noticeMessage: null,
-    lang: "en"
+    lang: "en",
+    ajaxCount: 0
   },
 
   mutations: {
@@ -38,6 +39,11 @@ export default new Vuex.Store({
     setLang(state, lang) {
       state.lang = lang;
       App.changeLang(lang);
+    },
+    changeAjaxCount(state, number) {
+      let ajaxCount = state.ajaxCount + number;
+      if (ajaxCount < 0) ajaxCount = 0;
+      state.ajaxCount = ajaxCount;
     },
   },
 
@@ -145,7 +151,10 @@ export default new Vuex.Store({
     },
     setLang({ commit, state }, lang) {
       commit('setLang', lang);
-    }
+    },
+    changeAjaxCount({ commit }, number) {
+      commit('changeAjaxCount', number);
+    },
   },
 
   getters: {
@@ -157,5 +166,6 @@ export default new Vuex.Store({
     studentDetail: state => state.studentDetail,
     noticeMessage: state => state.noticeMessage,
     lang: state => state.lang,
+    ajaxCount: state => state.ajaxCount,
   }
 })
