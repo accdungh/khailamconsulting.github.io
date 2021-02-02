@@ -1,4 +1,5 @@
 import axios from "axios";
+import App from './app.js';
 
 const API_PATH = "https://sim-dev.alelo.com/api/dummy_instructor"
 /** for the production use */
@@ -8,6 +9,21 @@ const configHeaders = {
   "Content-Type": "application/json",
   "Accept": "application/json"
 };
+
+axios.interceptors.request.use(function (config) {
+  App.changeAjaxCount(1);
+  return config;
+}, function (error) {
+  return Promise.reject(error);
+});
+
+axios.interceptors.response.use(function (response) {
+  App.changeAjaxCount(-1);
+  return response;
+}, function (error) {
+  App.changeAjaxCount(-1);
+  return Promise.reject(error);
+});
 
 export default {
   classList() {

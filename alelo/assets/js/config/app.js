@@ -5,6 +5,7 @@ import VeeValidate from "vee-validate";
 import Paginate from 'vuejs-paginate';
 import CommonJs from '../plugins/common.js';
 import moment from 'moment';
+import { mapActions } from "vuex";
 
 import AppHeader from "../components/header.vue";
 import AppMain from "../components/main.vue";
@@ -71,6 +72,7 @@ const app = new Vue({
   },
   created() { },
   methods: {
+    ...mapActions(["changeAjaxCount"]),
     changeLang(lang) {
       this.$i18n.locale = lang;
       moment.locale({ cn: 'zh_cn' }[lang] || lang);

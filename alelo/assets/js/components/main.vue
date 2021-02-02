@@ -9,11 +9,9 @@
             </h1>
           </div>
           <div class="col-5 col-md-12 text-right">
-            <a
-              href="/"
-              class="text-white f-n-18 align-middle"
-              >{{ $t("common.logOut") }}</a
-            >
+            <a href="/" class="text-white f-n-18 align-middle">{{
+              $t("common.logOut")
+            }}</a>
           </div>
         </div>
       </div>
@@ -23,6 +21,7 @@
         <TabList v-if="!$route.meta.hideRouterLink" />
         <router-view></router-view>
         <NoticeModal />
+        <Loader />
       </div>
     </section>
   </main>
@@ -32,12 +31,13 @@
 import VueRouter from "vue-router";
 import TabList from "./main/tab_list.vue";
 import NoticeModal from "./main/popup/notice_modal.vue";
+import Loader from "./main/loader.vue";
 import routes from "../config/routes.js";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Main",
-  components: { TabList, NoticeModal },
+  components: { TabList, NoticeModal, Loader },
   router: new VueRouter({
     base: "/",
     routes,
