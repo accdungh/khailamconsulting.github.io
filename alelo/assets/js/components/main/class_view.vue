@@ -9,23 +9,21 @@
     <form>
       <div class="form-group">
         <div class="row">
-          
           <div class="col-md-24 border-bottom pb-1">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
             <div class="d-inline float-right mt-2">
               <EditClassModal v-model="classDetail" />
             </div>
           </div>
-          
-          
         </div>
 
         <div class="row">
           <div class="col-md-12 mb-2 mt-3 f-m-20">
             {{ $t("classList.summary") }}
           </div>
-           <div class="col-md-12 mb-2 mt-3 f-n-16 text-right">
-            {{ classDetail.startDate | timeParser("MMMM DD, YYYY")  }} - {{ classDetail.endDate | timeParser("MMMM DD, YYYY")  }}
+          <div class="col-md-12 mb-2 mt-3 f-n-16 text-right">
+            {{ classDetail.startDate | timeParser("MMMM DD, YYYY") }} -
+            {{ classDetail.endDate | timeParser("MMMM DD, YYYY") }}
           </div>
         </div>
         <textarea
@@ -136,6 +134,7 @@
               </td>
               <td class="font-weight-bold">
                 <a
+                  v-if="student.isUser"
                   href="javascript:void(0)"
                   @click="
                     $router.push({
@@ -148,6 +147,7 @@
                   "
                   >{{ student.lastName }}</a
                 >
+                <span class="font-weight-bold" v-else>{{ student.lastName }}</span>
               </td>
               <td class="font-weight-bold">{{ student.firstName }}</td>
               <td>
