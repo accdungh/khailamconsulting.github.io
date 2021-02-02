@@ -27,11 +27,12 @@
                   :value="course.id"
                   v-model="selectedCourses"
                   @change="changeSelectedCourses()"
+                  :id="'available-course' + index"
                 />
               </div>
             </td>
             <td class="f-m-18 blue-bold">
-              {{ course.name }}
+              <label :for="'available-course' + index">{{ course.name }}</label>
             </td>
           </tr>
         </tbody>
@@ -68,6 +69,11 @@ export default {
   },
   mounted() {
     $(".scrollbar-inner").scrollbar();
+  },
+  watch: {
+    value() {
+      this.selectedCourses = this.value;
+    },
   },
 };
 </script>

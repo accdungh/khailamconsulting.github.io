@@ -39,7 +39,7 @@
 
             <AvailableCoursesTable
               v-model="classDetail.selectedCourses"
-              :availableCourses="classDetail.availableCourse"
+              :availableCourses="availableCourses"
             />
 
             <a
@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapActions } from "vuex";
 import AvailableCoursesTable from "../new_class/available_courses_table.vue";
-import { pick } from "lodash";
+import { pick, concat, compact } from "lodash";
 
 export default {
   name: "EditClassModal",
@@ -75,6 +75,16 @@ export default {
       classDetail: {},
     };
   },
+  computed: {
+    availableCourses() {
+      return compact(
+        concat(
+          this.classDetail.activeCourse || [],
+          this.classDetail.availableCourse || []
+        )
+      );
+    },
+  },
   components: { AvailableCoursesTable },
   methods: {
     ...mapActions(["addCourse"]),
@@ -90,7 +100,9 @@ export default {
   },
   watch: {
     classObject() {
-      this.classDetail = Object.assign({}, this.classObject);
+      this.classDetail = Object.assign({}, this.classObject, {
+        selectedCourses: (this.classObject.activeCourse || []).map((i) => i.id),
+      });
     },
   },
 };
