@@ -75,7 +75,7 @@ export default {
       this.currentStep = step;
     },
     progressBarChangeStep(step) {
-      let allSteps = ["information", "courses", "students"];
+      let allSteps = ["information", "courses", "students", "review"];
       let currentIndex = allSteps.indexOf(this.currentStep);
       let stepIndex = allSteps.indexOf(step);
 
