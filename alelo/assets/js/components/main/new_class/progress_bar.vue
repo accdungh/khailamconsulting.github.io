@@ -6,9 +6,14 @@
     <li class="linked" @click="changeStep('courses')">
       <span>{{ $t("progressBarForm.courses") }}</span>
     </li>
-    <li>
+    <li class="linked" @click="changeStep('students')">
       <span>{{ $t("progressBarForm.students") }}</span>
     </li>
+
+    <li class="linked" @click="changeStep('review')">
+      <span>{{ $t("progressBarForm.review") }}</span>
+    </li>
+
   </ul>
   <ul class="progressbar" v-else-if="step == 'courses'">
     <li class="active linked" @click="changeStep('information')">
@@ -20,7 +25,25 @@
     <li class="linked" @click="changeStep('students')">
       <span>{{ $t("progressBarForm.students") }}</span>
     </li>
+    <li class="linked" @click="changeStep('review')">
+      <span>{{ $t("progressBarForm.review") }}</span>
+    </li>
   </ul>
+  <ul class="progressbar" v-else-if="step == 'students'">
+    <li class="active linked" @click="changeStep('information')">
+      <span>{{ $t("progressBarForm.information") }}</span>
+    </li>
+    <li class="active linked" @click="changeStep('courses')">
+      <span>{{ $t("progressBarForm.courses") }}</span>
+    </li>
+    <li class="active linked" @click="changeStep('students')">
+      <span>{{ $t("progressBarForm.students") }}</span>
+    </li>
+    <li class="linked" @click="changeStep('review')">
+      <span>{{ $t("progressBarForm.review") }}</span>
+    </li>
+  </ul>
+
   <ul class="progressbar" v-else>
     <li class="active linked" @click="changeStep('information')">
       <span>{{ $t("progressBarForm.information") }}</span>
@@ -30,6 +53,9 @@
     </li>
     <li class="active linked" @click="changeStep('students')">
       <span>{{ $t("progressBarForm.students") }}</span>
+    </li>
+    <li class="active linked" @click="changeStep('review')">
+      <span>{{ $t("progressBarForm.review") }}</span>
     </li>
   </ul>
 </template>

@@ -263,6 +263,10 @@
   top: -12px;
 }
 
+.scroll-element {
+    display: none;
+}
+
 /**
    * Structure
    */
@@ -970,6 +974,7 @@ a:hover {
 
     &.linked {
       cursor: pointer;
+      padding-left: 80px;
     }
 
     &:first-child {
@@ -977,16 +982,7 @@ a:hover {
     }
 
     &:last-child {
-      padding-right: 0px;
-    }
-
-    &:nth-child(2) {
       padding-left: 80px;
-      padding-right: 50px;
-    }
-
-    &:nth-child(3) {
-      padding-left: 30px;
     }
 
     &.active {
@@ -1105,7 +1101,7 @@ table th a {
 .create-class__buttons {
   a {
     &.create-class__buttons__back {
-      color: #cbcbcb;
+      color: #3177b2;
 
       i {
         margin: 0 10px 0 0;
@@ -1155,10 +1151,12 @@ table th a {
     padding-right: 23px;
     position: relative;
     text-align: left;
+    min-width: 166px;
   }
   .dropdown-menu.show {
     width: fit-content;
     padding-right: 20px;
+    min-width: 166px;
   }
   .dropdown-item.hovered:after,
   .dropdown-item:hover:after {

@@ -57,7 +57,8 @@
   "progressBarForm": {
     "information": "Information",
     "courses": "Courses",
-    "students": "Students"
+    "students": "Students",
+    "review": "Review"
   },
   "informationForm": {
     "selectInstitution": "Select your institution.",
