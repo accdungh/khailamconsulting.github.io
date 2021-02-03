@@ -11,7 +11,7 @@
               v-model="formData.institution"
               :options="userSetting.institutions"
               :label="$t('informationForm.institution')"
-              v-validate="'required'"
+              v-validate=""
               data-vv-name="institution"
             />
             <div>
