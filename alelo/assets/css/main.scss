@@ -267,6 +267,10 @@
     display: none;
 }
 
+.scrollbar {
+  min-height: 120px;
+}
+
 /**
    * Structure
    */
@@ -659,6 +663,7 @@ a:hover {
   border-radius: 6px;
   border-collapse: separate !important;
   border-spacing: 0;
+  margin: 0;
 }
 
 .table-custom th {
