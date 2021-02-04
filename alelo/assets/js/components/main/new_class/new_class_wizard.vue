@@ -5,6 +5,7 @@
       v-if="currentStep == 'information'"
       v-model="formData"
       ref="informationForm"
+      :isNew="true"
     >
       <template v-slot:buttons="props">
         <WizardButtons

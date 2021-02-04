@@ -40,6 +40,10 @@
             </div>
           </div>
 
+          <div class="d-none">
+            <KlDatepicker v-model="today" ref="today" />
+          </div>
+
           <div class="col-md-16 mb-3 clearfix">
             <div class="wrap-date">
               <div class="input-group start-date">
@@ -48,7 +52,7 @@
                 </label>
                 <KlDatepicker
                   v-model="formData.startDate"
-                  v-validate="'required|date_format:MM/dd/yyyy'"
+                  v-validate="startDateValidateRule"
                   data-vv-name="start date"
                   ref="start date"
                 />
@@ -61,7 +65,9 @@
                 <KlDatepicker
                   v-model="formData.endDate"
                   v-validate="
-                    'required|date_format:MM/dd/yyyy|after:start date,inclusion:true'
+                    'required|date_format:' +
+                    format +
+                    '|after:start date,inclusion:true'
                   "
                   data-vv-name="end date"
                   ref="end date"
@@ -72,15 +78,17 @@
               <div class="text-danger error-message">
                 <div>
                   <small
-                    v-show="errors.has('start date')"
+                    v-show="isDatesDirty && errors.has('start date')"
                     class="text-danger"
                     >{{ errors.first("start date") }}</small
                   >
                 </div>
                 <div>
-                  <small v-show="errors.has('end date')" class="text-danger">{{
-                    errors.first("end date")
-                  }}</small>
+                  <small
+                    v-show="isDatesDirty && errors.has('end date')"
+                    class="text-danger"
+                    >{{ errors.first("end date") }}</small
+                  >
                 </div>
               </div>
             </div>
@@ -108,6 +116,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import WizardButtons from "./wizard_buttons.vue";
+import moment from "moment";
 
 export default {
   name: "InformationForm",
@@ -118,14 +127,33 @@ export default {
         return {};
       },
     },
+    isNew: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       formData: {},
+      format: "MM/dd/yyyy",
+      today: moment().startOf("days").toDate(),
     };
   },
   computed: {
     ...mapGetters(["userSetting"]),
+    isDatesDirty() {
+      return ["start date", "end date"].some(
+        (key) => this.fields[key] && this.fields[key].dirty
+      );
+    },
+    startDateValidateRule() {
+      let rule = "required|date_format:" + this.format;
+      if (this.isNew) {
+        rule += "|after:today,inclusion:true";
+      }
+
+      return rule;
+    },
   },
   components: {
     WizardButtons,
