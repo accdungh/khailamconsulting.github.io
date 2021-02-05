@@ -52,7 +52,8 @@
     "objectives": "Objectives",
     "skills": "Skills",
     "editCourses": "Edit Courses",
-    "infoText": "Check courses to include in your class."
+    "infoText": "Check courses to include in your class.",
+    "editClassDetail": "Edit Class Details"
   },
   "progressBarForm": {
     "information": "Information",
@@ -156,10 +157,7 @@
   "validations": {
     "custom": {
       "end date": {
-        "after": "End Date should not be before Start Date"
-      },
-      "start date": {
-        "after": "Start Date should not be before today"
+        "after": "Start Date should not be before End Date"
       }
     },
     "attributes": {
