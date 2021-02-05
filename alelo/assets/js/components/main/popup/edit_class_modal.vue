@@ -19,7 +19,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title">Edit Class Details</h2>
+            <h2 class="modal-title">{{ $t("classDetail.editClassDetail") }}</h2>
 
             <button
               type="button"
