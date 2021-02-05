@@ -5,7 +5,7 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12 mb-2">
+      <div class="col-sm-6 mb-2">
         <label class="f-m-14 blue-bold mb-0">
           {{ $t("informationForm.institution") }}:
         </label>
@@ -14,12 +14,21 @@
         </div>
       </div>
 
-      <div class="col-sm-12 mb-2">
+      <div class="col-sm-6 mb-2">
         <label class="f-m-14 blue-bold mb-0">
           {{ $t("reviewForm.classTitle") }}:
         </label>
         <div>
           {{ formData.name }}
+        </div>
+      </div>
+
+      <div class="col-sm-12 mb-2">
+        <label class="f-m-14 blue-bold mb-0">
+          {{ $t("reviewForm.classDes") }}:
+        </label>
+        <div>
+          {{ formData.description }}
         </div>
       </div>
 

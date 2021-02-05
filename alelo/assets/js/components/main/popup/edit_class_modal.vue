@@ -79,7 +79,7 @@ export default {
         if (!valid) return;
 
         this.updateClass(
-          pick(this.formData, ["name", "institution", "startDate", "endDate"])
+          pick(this.formData, ["name", "institution", "description", "startDate", "endDate"])
         ).then(() => {
           $("#edit-class-modal").modal("hide");
         });
@@ -91,6 +91,16 @@ export default {
       this.formData = Object.assign({}, this.value);
     },
   },
+  mounted() {
+    $("#edit-class-modal").on("shown.bs.modal", () => {
+      if (this.formData) {
+        setTimeout(() => {
+          autosize($(".auto-size"));
+          autosize.update($(".auto-size"));
+        });
+      }
+    });
+  }
 };
 </script>
 

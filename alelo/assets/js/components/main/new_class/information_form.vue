@@ -40,6 +40,20 @@
             </div>
           </div>
 
+          <div class="col-md-16 mb-3">
+            <label class="f-m-14 blue-bold">
+              {{ $t("informationForm.addClassDes") }}
+            </label>
+            <textarea
+              :placeholder="$t('informationForm.addNewDes')"
+              rows="1"
+              v-model="formData.description"
+              class="form-control auto-size"
+            />
+          </div>
+
+
+
           <div class="d-none">
             <KlDatepicker v-model="today" ref="today" />
           </div>

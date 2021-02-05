@@ -66,7 +66,9 @@
     "note": "Note: This class will be archived after the end date.",
     "addTitle": "Add a title for your class.",
     "addStartDate": "Add a Start Date",
-    "addEndDate": "Add an End Date."
+    "addEndDate": "Add an End Date.",
+    "addNewDes": "Add new description",
+    "addClassDes": "Add your class description"
   },
   "coursesForm": {
     "infoText": "Check courses to include in your class (you can edit your selections later)."
@@ -89,7 +91,8 @@
     "classDates": "Class Dates",
     "includedCourses": "Included Courses",
     "studentInvited": "Student Invited",
-    "infoText": "Click “Confirm” to create your class. To make changes, click on a heading above, or use the back arrow."
+    "infoText": "Click “Confirm” to create your class. To make changes, click on a heading above, or use the back arrow.",
+    "classDes": "Class Description"
   },
   "setting": {
     "profile": "Profile",
