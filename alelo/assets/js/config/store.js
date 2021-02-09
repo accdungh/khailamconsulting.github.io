@@ -98,6 +98,19 @@ export default new Vuex.Store({
         dispatch('classDetailPostAction', resp.data)
       })
     },
+    removeStudent({ state, dispatch, commit }, studentIds) {
+      return AjaxCaller.removeStudent(state.classDetailId, studentIds).then((resp) => {
+        let json = resp.data;
+        if (json && json.message) commit('setNoticeMessage', json.message);
+        dispatch('fetchClassDetail', state.classDetailId);
+      })
+    },
+    resendInvitation({ state, commit }, studentIds) {
+      return AjaxCaller.resendInvitation(state.classDetailId, studentIds).then((resp) => {
+        let json = resp.data;
+        if (json && json.message) commit('setNoticeMessage', json.message);
+      })
+    },
     classDetailPostAction({ commit, dispatch }, json) {
       if (json && json.success) dispatch('fetchClassDetail', json.data.id)
       if (json && json.message) commit('setNoticeMessage', json.message);

@@ -54,7 +54,11 @@ export default {
   computed: {
     dropDownLabel() {
       if (this.selectedValue) {
-        return this.options.find((i) => i.id == this.selectedValue).name;
+        let selectedValue = this.options.find(
+          (i) => i.id == this.selectedValue
+        );
+
+        if (selectedValue) return selectedValue.name;
       }
 
       return this.label;
