@@ -93,4 +93,18 @@ export default {
       headers: configHeaders,
     });
   },
+  removeStudent(classId, studentIds) {
+    return axios.post(`${API_PATH}/class/deletestudent/${classId}`, {
+      students: studentIds
+    }, {
+      headers: configHeaders,
+    });
+  },
+  resendInvitation(classId, studentIds) {
+    return axios.post(`${API_PATH}/class/resendinvitation/${classId}`, {
+      students: studentIds
+    }, {
+      headers: configHeaders,
+    });
+  }
 }

@@ -147,7 +147,9 @@
                   "
                   >{{ student.lastName }}</a
                 >
-                <span class="font-weight-bold" v-else>{{ student.lastName }}</span>
+                <span class="font-weight-bold" v-else>{{
+                  student.lastName
+                }}</span>
               </td>
               <td class="font-weight-bold">{{ student.firstName }}</td>
               <td>
@@ -199,7 +201,7 @@
 
     <CourseSimulationList :simulations="selectedCourse.simulations" />
     <DeleteClassModal />
-    <RemoveStudentModal @confirmed="removeStudent()" />
+    <RemoveStudentModal @confirmed="submitRemoveStudent()" />
     <ResendInvitationModal @confirmed="resendInviteStudent()" />
     <AddStudentModal />
   </div>
@@ -250,9 +252,19 @@ export default {
     studentSelected() {
       return (this.classDetail.students || []).find((s) => s.selected);
     },
+    selectedStudentIds() {
+      return _.compact(
+        this.classDetail.students.filter((s) => s.selected).map((i) => i.id)
+      );
+    },
   },
   methods: {
-    ...mapActions(["fetchClassDetail", "updateClass"]),
+    ...mapActions([
+      "fetchClassDetail",
+      "updateClass",
+      "removeStudent",
+      "resendInvitation",
+    ]),
     selectAllStudent() {
       this.classDetail.students = this.classDetail.students.map((s) => {
         s.selected = this.selectedAllStudent;
@@ -266,14 +278,11 @@ export default {
         flag
       );
     },
-    removeStudent() {
-      // TODO: maybe call API update here
-      this.classDetail.students = this.classDetail.students.filter(
-        (s) => s.selected != true
-      );
+    submitRemoveStudent() {
+      this.removeStudent(this.selectedStudentIds);
     },
     resendInviteStudent() {
-      // TODO: call API invite
+      this.resendInvitation(this.selectedStudentIds);
     },
     save() {
       this.updateClass(this.classDetail).then(() => {
