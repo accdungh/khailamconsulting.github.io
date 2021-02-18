@@ -4,13 +4,13 @@
     "menu": {
       "classList": "Class List",
       "classView": "Class Viewer",
-      "archivedClass": "Archived Class",
+      "archivedClass": "Archived Classes",
       "setting": "Settings"
     },
     "welcome": "Bienvenido",
     "logOut": "Cerrar sesión",
     "footer": {
-      "copyRight": "Copyright 2020 Alelo Inc. All rights reserved.",
+      "copyRight": "Copyright 2021 Alelo Inc. All rights reserved.",
       "playLearnCommunicate": "Play. Learn. Communicate.",
       "contactUs": "Contact Us",
       "legal": "Legal"

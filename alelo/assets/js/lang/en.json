@@ -4,7 +4,7 @@
     "menu": {
       "classList": "Active Classes",
       "classView": "Class Viewer",
-      "archivedClass": "Archived Class",
+      "archivedClass": "Archived Classes",
       "setting": "Settings"
     },
     "welcome": "Welcome",
@@ -113,7 +113,7 @@
     "course(s)": "Course(s)",
     "simulation": "Simulation",
     "lastAttempt": "Last Attempt",
-    "lastScore": "Last Score",
+    "topScore": "Highest Score",
     "completedStarted": "Completed / Started",
     "masteryScore": "Mastery Score",
     "objectivesMet": "Objectives Met",
@@ -121,7 +121,7 @@
     "timeSpent": "Time Spent",
     "hintsUsed": "Hints Used",
     "totalTime": "Total Time",
-    "lastScoreHoverText": "This is the most recent Mastery Score the student received in each simulation",
+    "topScoreHoverText": "This is the highest Mastery Score the student received in each simulation",
     "completedStartedHoverText": "This column records the amount of times the student has completed this simulation / compared to the amount of times the student has started this simulation",
     "masteryScoreHoverText": "Measure of accuracy and fluency.",
     "objectivesMetHoverText": "Objectives completed/objectives available.",

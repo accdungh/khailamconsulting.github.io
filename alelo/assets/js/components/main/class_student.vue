@@ -92,10 +92,10 @@
                     data-toggle="tooltip"
                     data-container="body"
                     data-placement="top"
-                    :title="$t('classStudent.lastScoreHoverText')"
-                    @click="sortSimulation('lastScore')"
-                    >{{ $t("classStudent.lastScore") }}
-                    <SortArrow :flag="sorter.orderKeys.lastScore.value" />
+                    :title="$t('classStudent.topScoreHoverText')"
+                    @click="sortSimulation('topScore')"
+                    >{{ $t("classStudent.topScore") }}
+                    <SortArrow :flag="sorter.orderKeys.topScore.value" />
                   </a>
                 </th>
                 <th scope="col">
@@ -138,7 +138,7 @@
                   >
                 </td>
                 <td>{{ simulation.lastTried | timeParser }}</td>
-                <td>{{ simulation.lastScore }}</td>
+                <td>{{ simulation.topScore }}</td>
                 <td>{{ simulation.completed }}/{{ simulation.tried }}</td>
                 <td>{{ simulation.totalTimeSpent | toHHMMSS }}</td>
               </tr>
@@ -176,7 +176,7 @@ export default {
         {
           title: {},
           lastTried: { type: "date" },
-          lastScore: {},
+          topScore: {},
           completed: {},
           totalTimeSpent: {},
         },
