@@ -14,10 +14,10 @@
         class="btn btn-created btn-orange mt-2 mb-5"
         >{{ $t("classList.createClass") }}</a
       >
-      <div :class="{ 'scrollbar-list-wrapper': classes.length > 5 }">
+      <div :class="{ 'scrollbar-list-wrapper': activeClasses.length > 5 }">
         <div class="scrollbar-list">
           <ClassListItem
-            v-for="(item, index) in classes"
+            v-for="(item, index) in activeClasses"
             :key="'class-list-item' + index"
             :classData="item"
             @selected="select"
