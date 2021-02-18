@@ -30,7 +30,7 @@
               type="text"
               class="form-control information-form__name"
               v-model="formData.name"
-              v-validate="'required'"
+              v-validate="'required|max:128'"
               data-vv-name="title"
             />
             <div>
@@ -51,8 +51,6 @@
               class="form-control auto-size"
             />
           </div>
-
-
 
           <div class="d-none">
             <KlDatepicker v-model="today" ref="today" />
@@ -114,16 +112,14 @@
             </div>
           </div>
         </div>
-
-        <div>
-          <small v-show="errors.has('summary')" class="text-danger">{{
-            errors.first("summary")
-          }}</small>
-        </div>
       </div>
     </form>
 
-    <slot name="buttons" v-bind:validator="$validator"></slot>
+    <slot
+      name="buttons"
+      v-bind:validator="$validator"
+      v-bind:changeDirtyState="changeDirtyState"
+    ></slot>
   </div>
 </template>
 
@@ -151,13 +147,17 @@ export default {
       formData: {},
       format: "MM/dd/yyyy",
       today: moment().startOf("days").toDate(),
+      isDirty: false,
     };
   },
   computed: {
     ...mapGetters(["userSetting"]),
     isDatesDirty() {
-      return ["start date", "end date"].some(
-        (key) => this.fields[key] && this.fields[key].dirty
+      return (
+        this.isDirty ||
+        ["start date", "end date"].some(
+          (key) => this.fields[key] && this.fields[key].dirty
+        )
       );
     },
     startDateValidateRule() {
@@ -172,7 +172,11 @@ export default {
   components: {
     WizardButtons,
   },
-  methods: {},
+  methods: {
+    changeDirtyState(state) {
+      this.isDirty = state;
+    },
+  },
   created() {
     this.formData = Object.assign({}, this.value);
   },
