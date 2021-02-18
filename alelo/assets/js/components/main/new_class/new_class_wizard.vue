@@ -101,6 +101,7 @@ export default {
       this.$emit("submit");
     },
     gotoCourse(props) {
+      props.changeDirtyState(true);
       props.validator.validateAll().then((valid) => {
         if (!valid) return;
         this.stepChange("courses");

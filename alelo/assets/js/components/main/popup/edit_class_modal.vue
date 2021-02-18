@@ -31,10 +31,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <InformationForm
-              v-model="formData"
-              v-if="formData && formData.name"
-            >
+            <InformationForm v-model="formData" v-if="formData && formData.id">
               <template v-slot:buttons="props">
                 <a
                   href="javascript:void(0)"
@@ -75,11 +72,18 @@ export default {
   methods: {
     ...mapActions(["updateClass"]),
     save(props) {
+      props.changeDirtyState(true);
       props.validator.validateAll().then((valid) => {
         if (!valid) return;
 
         this.updateClass(
-          pick(this.formData, ["name", "institution", "description", "startDate", "endDate"])
+          pick(this.formData, [
+            "name",
+            "institution",
+            "description",
+            "startDate",
+            "endDate",
+          ])
         ).then(() => {
           $("#edit-class-modal").modal("hide");
         });
@@ -100,7 +104,7 @@ export default {
         });
       }
     });
-  }
+  },
 };
 </script>
 
