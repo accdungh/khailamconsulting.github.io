@@ -18,7 +18,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-12 mb-2 mt-3 f-m-20">
+          <div class="col-md-12 mb-2 mt-3 f-m-20 blue-bold">
             {{ $t("classList.summary") }}
           </div>
           <div class="col-md-12 mb-2 mt-3 f-n-16 text-right">
