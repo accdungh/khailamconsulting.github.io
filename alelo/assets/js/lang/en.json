@@ -127,7 +127,7 @@
     "masteryScoreHoverText": "Measure of accuracy and fluency.",
     "objectivesMetHoverText": "Objectives completed/objectives available.",
     "turnsPerMinuteHoverText": "Number of speaking turns each minute.",
-    "hintsUsedHoverText": "Number of time the transcript or utterances were accessed.",
+    "hintsUsedHoverText": "Number of times the transcript or utterances were accessed.",
     "timeSpentHoverText": "Total time spent on this sim."
   },
   "addStudents": {
