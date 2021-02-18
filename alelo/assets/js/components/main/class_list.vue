@@ -14,16 +14,7 @@
         class="btn btn-created btn-orange mt-2 mb-5"
         >{{ $t("classList.createClass") }}</a
       >
-      <div :class="{ 'scrollbar-list-wrapper': activeClasses.length > 5 }">
-        <div class="scrollbar-list">
-          <ClassListItem
-            v-for="(item, index) in activeClasses"
-            :key="'class-list-item' + index"
-            :classData="item"
-            @selected="select"
-          />
-        </div>
-      </div>
+      <ClassListScroller :classList="activeClasses" />
     </form>
 
     <CreateClassModal />
@@ -32,7 +23,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import ClassListItem from "./class_list_item.vue";
+import ClassListScroller from "./class_list_scroller.vue";
 import CreateClassModal from "./popup/create_class_modal.vue";
 
 export default {
@@ -41,8 +32,8 @@ export default {
     ...mapGetters(["activeClasses"]),
   },
   components: {
-    ClassListItem,
     CreateClassModal,
+    ClassListScroller,
   },
   methods: {
     ...mapActions(["fetchClassList", "selectClass"]),
@@ -50,24 +41,11 @@ export default {
       this.selectClass(id);
       this.$router.push({ name: "ClassView", params: { id } });
     },
-    checkAndInitScrollBar() {
-      if (this.activeClasses.length > 5) {
-        this.$commonJs.initListScrollbar();
-      }
-    },
   },
   created() {
     if (!this.activeClasses || !this.activeClasses.length) {
       this.fetchClassList();
     }
-  },
-  watch: {
-    activeClasses() {
-      this.checkAndInitScrollBar();
-    },
-  },
-  mounted() {
-    this.checkAndInitScrollBar();
   },
 };
 </script>

@@ -14,7 +14,7 @@ export default new Vuex.Store({
     studentDetail: {},
     noticeMessage: null,
     lang: "en",
-    ajaxCount: 0
+    ajaxCount: 0,
   },
 
   mutations: {
@@ -172,7 +172,7 @@ export default new Vuex.Store({
 
   getters: {
     activeClasses: state => state.classList.filter(i => i.active),
-    archivedClasses: state => state.classList.filter(i => !i.active),
+    archivedClasses: state => state.classList.filter(i => i.archived),
     classDetail: state => state.classDetail,
     classDetailId: state => state.classDetailId,
     userSetting: state => state.userSetting,

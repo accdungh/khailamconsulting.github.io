@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     select(id) {
-      this.$emit("selected", id);
+      this.$router.push({ name: "ClassView", params: { id } });
     },
   },
   filters: {
