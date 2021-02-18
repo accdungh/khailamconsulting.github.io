@@ -165,7 +165,7 @@
     <div class="group-button clearfix">
       <a
         href="#delete-class"
-        class="float-left f-m-18"
+        class="float-left f-m-18 btn-created"
         data-toggle="modal"
         data-target="#delete-class"
       >
