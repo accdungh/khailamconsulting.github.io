@@ -961,6 +961,9 @@ a:hover {
 
 .group-button a {
   margin-left: 32px;
+  &:first-child {
+    margin: 0;
+  }
 }
 
 /* Progress_bar */
