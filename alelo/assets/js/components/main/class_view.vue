@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-24 border-bottom pb-1">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
-            <div class="d-inline float-right mt-2">
+            <div class="d-inline float-right mt-2" v-if="!isReadonly">
               <EditClassModal v-model="classDetail" />
             </div>
           </div>
@@ -46,7 +46,7 @@
       v-model="selectedCourse"
     />
 
-    <AddCoursesModal :classObject="classDetail" />
+    <AddCoursesModal :classObject="classDetail" v-if="!isReadonly" />
 
     <div class="wrap-student mb-3">
       <h3 class="f-m-20 d-inline blue-bold">
@@ -162,7 +162,7 @@
       </div>
     </div>
 
-    <div class="group-button clearfix">
+    <div class="group-button clearfix" v-if="!isReadonly">
       <a
         href="#delete-class"
         class="float-left f-m-18 btn-created"
@@ -200,10 +200,13 @@
     </div>
 
     <CourseSimulationList :simulations="selectedCourse.simulations" />
-    <DeleteClassModal />
-    <RemoveStudentModal @confirmed="submitRemoveStudent()" />
-    <ResendInvitationModal @confirmed="resendInviteStudent()" />
-    <AddStudentModal />
+    <DeleteClassModal v-if="!isReadonly" />
+    <RemoveStudentModal @confirmed="submitRemoveStudent()" v-if="!isReadonly" />
+    <ResendInvitationModal
+      @confirmed="resendInviteStudent()"
+      v-if="!isReadonly"
+    />
+    <AddStudentModal v-if="!isReadonly" />
   </div>
 </template>
 
@@ -255,6 +258,11 @@ export default {
     selectedStudentIds() {
       return _.compact(
         this.classDetail.students.filter((s) => s.selected).map((i) => i.id)
+      );
+    },
+    isReadonly() {
+      return (
+        this.classDetail && (!this.classDetail.id || this.classDetail.archived)
       );
     },
   },
