@@ -7,23 +7,18 @@
     aria-labelledby="archived-tab"
   >
     <form>
-      <ClassListItem
-        v-for="(item, index) in archivedClasses"
-        :key="'class-list-item' + index"
-        :classData="item"
-      />
+      <ClassListScroller :classList="archivedClasses" />
     </form>
   </div>
 </template>
 
 <script>
-import AjaxCaller from "../../config/ajax_caller";
-import ClassListItem from "./class_list_item.vue";
+import ClassListScroller from "./class_list_scroller.vue";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "ArchivedClass",
-  components: { ClassListItem },
+  components: { ClassListScroller },
   computed: {
     ...mapGetters(["archivedClasses"]),
   },
