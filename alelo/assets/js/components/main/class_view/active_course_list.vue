@@ -62,10 +62,9 @@
               >
             </td>
             <td><a class="launch_ap"
-                   href="#course-info"
-                   data-toggle="modal"
-                   data-target="#course-info"
-                   @click="select(course)"></a></td>
+                   :href="1233"
+                   target="_blank" 
+                   ></a></td>
           </tr>
         </tbody>
       </table>
