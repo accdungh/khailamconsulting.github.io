@@ -65,7 +65,7 @@
                         Politely talk to people in short social exchanges.
                       </li>
                     </ul> -->
-                  <table class="table-modal">
+                  <table class="table-modal table-size">
                     <thead>
                       <tr>
                         <th scope="col">
@@ -75,7 +75,7 @@
                       </tr>
                     </thead>
                   </table>
-                  <table class="table table-striped table-custom">
+                  <table class="table table-striped table-custom table-size">
                     <tbody>
                       <tr
                         v-for="(objective, jIndex) in simulation.objectives"
