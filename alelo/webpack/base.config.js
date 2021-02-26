@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const Webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = function (env) {
     return {
@@ -19,14 +20,20 @@ module.exports = function (env) {
             },
         },
         output: {
-            path: ROOT_PATH + "/assets/dist",
-            chunkFilename: '[name].js',
-            sourceMapFilename: '[name].map',
-            publicPath: ROOT_PATH
+            path: ROOT_PATH + "/dist",
+            chunkFilename: '[name].js'
         },
         plugins: [
             new MiniCssExtractPlugin(),
             new VueLoaderPlugin(),
+            new CopyPlugin({
+                patterns: [
+                    { from: ROOT_PATH + "/assets/scripts", to: ROOT_PATH + "/dist/scripts" },
+                    { from: ROOT_PATH + "/assets/styles", to: ROOT_PATH + "/dist/styles" },
+                    { from: ROOT_PATH + "/assets/images", to: ROOT_PATH + "/dist/images" },
+                    { from: ROOT_PATH + "/assets/fonts", to: ROOT_PATH + "/dist/fonts" },
+                ],
+            }),
         ],
         externals: {
             jquery: 'jQuery',

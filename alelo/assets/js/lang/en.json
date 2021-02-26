@@ -159,6 +159,9 @@
     "custom": {
       "end date": {
         "after": "Start Date should not be before End Date"
+      },
+      "start date": {
+        "after": "Start Date should not be before today"
       }
     },
     "attributes": {
