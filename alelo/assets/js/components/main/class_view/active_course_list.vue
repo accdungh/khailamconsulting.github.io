@@ -62,7 +62,7 @@
               >
             </td>
             <td><a class="launch_ap"
-                   :href="1233"
+                   :href="course.link"
                    target="_blank" 
                    ></a></td>
           </tr>
