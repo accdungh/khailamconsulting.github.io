@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-20">
-            <a href="/"><img src="assets/images/logo.jpg" alt="" /></a>
+            <a href="/"><img src="images/logo.jpg" alt="" /></a>
           </div>
           <div class="col-12 col-lg-4 text-right mt-md-4">
             <div class="dropdown">
@@ -16,7 +16,7 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {{ $t('common.selectLang') }} <i class="fa fa-chevron-down"></i>
+                {{ $t("common.selectLang") }} <i class="fa fa-chevron-down"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a
