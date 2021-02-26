@@ -855,11 +855,18 @@ a:hover {
   font-size: 16px;
 }
 
+.table-modal {
+  width: 100%;
+}
+
 .table-modal th {
-  width: 166px;
   padding: 10px;
   color: #3177b2;
   font-weight: 500;
+}
+
+.table-size th, .table-size td {
+  width: 50%;
 }
 
 .table-modal-custom th,
