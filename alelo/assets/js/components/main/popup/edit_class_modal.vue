@@ -89,10 +89,13 @@ export default {
         });
       });
     },
+    setFormData() {
+      this.formData = Object.assign({}, this.value);
+    },
   },
   watch: {
     value() {
-      this.formData = Object.assign({}, this.value);
+      this.setFormData();
     },
   },
   mounted() {
@@ -104,6 +107,9 @@ export default {
         });
       }
     });
+  },
+  created() {
+    this.setFormData();
   },
 };
 </script>

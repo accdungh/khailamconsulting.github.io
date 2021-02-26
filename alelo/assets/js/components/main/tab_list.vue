@@ -6,53 +6,25 @@
       :key="'route-link-' + index"
     >
       <router-link
-        :to="{ name: r.name }"
+        :to="{
+          name: r.name,
+          params: { id: r.name == 'ClassView' && classDetailId },
+        }"
         class="nav-link"
-        :class="{ active: r.name == $route.name }"
+        :class="{
+          active: r.name == $route.name,
+          'disabled-link': r.name == 'ClassView' && !classDetailId,
+        }"
+        :event="r.name == 'ClassView' && !classDetailId ? '' : 'click'"
         >{{ $t(r.meta.text) }}
       </router-link>
     </li>
-    <!-- <li class="nav-item">
-      <a
-        class="nav-link"
-        id="classviewer-tab"
-        data-toggle="tab"
-        href="#classviewer"
-        role="tab"
-        aria-controls="classviewer"
-        aria-selected="false"
-        >Class Viewer</a
-      >
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        id="archived-tab"
-        data-toggle="tab"
-        href="#archived"
-        role="tab"
-        aria-controls="archived"
-        aria-selected="false"
-        >Archived Classes</a
-      >
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        id="settings-tab"
-        data-toggle="tab"
-        href="#settings"
-        role="tab"
-        aria-controls="settings"
-        aria-selected="false"
-        >Settings</a
-      >
-    </li> -->
   </ul>
 </template>
 
 <script>
 import routes from "../../config/routes.js";
+import { mapGetters } from "vuex";
 
 export default {
   name: "TabList",
@@ -60,6 +32,9 @@ export default {
     return {
       routes: routes.filter((r) => !r.meta.hide),
     };
+  },
+  computed: {
+    ...mapGetters(["classDetailId"]),
   },
 };
 </script>

@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-24 border-bottom pb-1">
             <h2 class="class-title d-inline">{{ classDetail.name }}</h2>
-            <div class="d-inline float-right mt-2" v-show="!isReadonly">
+            <div class="d-inline float-right mt-2" v-if="!isReadonly">
               <EditClassModal v-model="classDetail" />
             </div>
           </div>
