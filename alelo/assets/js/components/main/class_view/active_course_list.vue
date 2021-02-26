@@ -61,7 +61,11 @@
                 >{{ course.name }}</a
               >
             </td>
-            <td><a href="javascript:void(0)" class="launch_ap"></a></td>
+            <td><a class="launch_ap"
+                   href="#course-info"
+                   data-toggle="modal"
+                   data-target="#course-info"
+                   @click="select(course)"></a></td>
           </tr>
         </tbody>
       </table>
