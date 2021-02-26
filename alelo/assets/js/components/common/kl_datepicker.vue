@@ -57,7 +57,7 @@ export default {
       $(this.$refs[this.refKey])
         .off("change")
         .on("change", function () {
-          let date = $(self.$refs[self.refKey]).datepicker("getUTCDate");
+          let date = $(self.$refs[self.refKey]).datepicker("getDate");
           if (!date) return;
           self.dateValue = moment(date).format(self.format);
         });
@@ -68,7 +68,7 @@ export default {
       this.getDateValue();
     },
     dateValue(val) {
-      let datePickerValue = $(this.$refs[this.refKey]).datepicker("getUTCDate");
+      let datePickerValue = $(this.$refs[this.refKey]).datepicker("getDate");
       if (val && !datePickerValue) {
         $(this.$refs[this.refKey]).datepicker("setDate", val);
         this.$emit("input", moment(val, this.format));
@@ -76,7 +76,7 @@ export default {
       }
       let datePickerValueFormat = moment(datePickerValue).format(this.format);
       if (datePickerValueFormat !== this.dateValue) {
-        $(this.$refs[this.refKey]).datepicker("setUTCDate", datePickerValue);
+        $(this.$refs[this.refKey]).datepicker("setDate", datePickerValue);
       } else {
         this.$emit("input", datePickerValue);
       }
