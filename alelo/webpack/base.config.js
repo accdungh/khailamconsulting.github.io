@@ -6,6 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const Webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const path = require('path');
 
 module.exports = function (env) {
     return {
@@ -16,22 +17,21 @@ module.exports = function (env) {
         resolve: {
             extensions: ['.js', '.jsx', '.css', '.scss'],
             alias: {
+                '@assets': path.join(ROOT_PATH, 'assets'),
                 vue: 'vue/dist/vue.js'
             },
         },
         output: {
-            path: ROOT_PATH + "/dist",
-            chunkFilename: '[name].js'
+            path: path.join(ROOT_PATH, 'dist'),
+            chunkFilename: '[name].js',
         },
         plugins: [
             new MiniCssExtractPlugin(),
             new VueLoaderPlugin(),
             new CopyPlugin({
                 patterns: [
-                    { from: ROOT_PATH + "/assets/scripts", to: ROOT_PATH + "/dist/scripts" },
-                    { from: ROOT_PATH + "/assets/styles", to: ROOT_PATH + "/dist/styles" },
-                    { from: ROOT_PATH + "/assets/images", to: ROOT_PATH + "/dist/images" },
-                    { from: ROOT_PATH + "/assets/fonts", to: ROOT_PATH + "/dist/fonts" },
+                    { from: path.join(ROOT_PATH, "assets", "scripts"), to: path.join(ROOT_PATH, "dist", "scripts") },
+                    { from: path.join(ROOT_PATH, "assets", "styles"), to: path.join(ROOT_PATH, "dist", "styles") },
                 ],
             }),
         ],
@@ -43,7 +43,7 @@ module.exports = function (env) {
             rules: [
                 {
                     test: /\.vue$/,
-                    loader: 'vue-loader'
+                    loader: 'vue-loader',
                 },
                 {
                     test: /\.(js|jsx)$/,
@@ -51,17 +51,16 @@ module.exports = function (env) {
                     exclude: /node_modules/
                 },
                 {
-                    test: /\.(gif|png|jpe?g|svg)$/i,
-                    use: 'file-loader?name=images/[name].[ext]'
-                },
-                {
                     test: /\.(sa|sc|c)ss$/,
                     use: [
                         {
-                            loader: MiniCssExtractPlugin.loader
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: ''
+                            }
                         },
                         {
-                            loader: 'css-loader?url=false'
+                            loader: 'css-loader'
                         },
                         {
                             loader: 'postcss-loader',
@@ -80,6 +79,14 @@ module.exports = function (env) {
                             loader: 'sass-loader'
                         }
                     ]
+                },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'asset/resource',
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                    type: 'asset/resource',
                 },
             ]
         }

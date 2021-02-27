@@ -4,6 +4,7 @@ const BaseConfig = require('./base.config.js')
 const ROOT_PATH = process.cwd();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const path = require('path');
 
 module.exports = function (env) {
     return merge(BaseConfig(env.env), {
@@ -25,7 +26,7 @@ module.exports = function (env) {
             new BrowserSyncPlugin({
                 host: '0.0.0.0',
                 port: 8888,
-                server: { baseDir: [ROOT_PATH + `/dist`] },
+                server: { baseDir: [path.join(ROOT_PATH, 'dist')] },
             })
         ]
     })
