@@ -264,7 +264,7 @@
 }
 
 .scroll-element {
-    display: none;
+  display: none;
 }
 
 .scrollbar {
@@ -866,7 +866,8 @@ a:hover {
   font-weight: 500;
 }
 
-.table-size th, .table-size td {
+.table-size th,
+.table-size td {
   width: 50%;
 }
 
@@ -1274,4 +1275,7 @@ table th a {
       transform: rotate(360deg);
     }
   }
+}
+.disabled-link {
+  cursor: no-drop;
 }
