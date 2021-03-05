@@ -12,17 +12,17 @@
           <div class="col-md-9">
             <ul class="list-inline f-20 mb-0 mt-md-0 text-center text-md-right f-n-16">
               <li class="list-inline-item">
-                <a href="/contact" class="text-white text-decoration-underline">
+                <a href="/contact" class="text-white">
                   {{ $t("common.footer.contactUs") }}
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="/privacy" class="text-white text-decoration-underline">
+                <a href="/privacy" class="text-white">
                   {{ $t("common.footer.privacyPolicy") }}
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="/tos" class="text-white text-decoration-underline">
+                <a href="/tos" class="text-white">
                   {{ $t("common.footer.termsService") }}
                 </a>
               </li>
