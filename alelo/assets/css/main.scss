@@ -285,7 +285,6 @@ a {
   text-decoration: none;
 }
 a:hover {
-  
   color: #3177b2;
 }
 
@@ -1279,4 +1278,10 @@ table th a {
 }
 .disabled-link {
   cursor: no-drop;
+}
+.information-form_your-institution {
+  color: #707070;
+  font-weight: 700;
+  font-family: "arial", sans-serif;
+  font-size: 18px;
 }
