@@ -5,7 +5,9 @@
         <thead>
           <tr>
             <th class="text-center">
-              <span class="first-heading-text">Include</span>
+              <span class="first-heading-text">
+                {{ $t("coursesForm.include") }}
+              </span>
             </th>
             <th>
               <a href="javascript:void(0)">{{

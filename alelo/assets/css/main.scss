@@ -1285,3 +1285,26 @@ table th a {
   font-family: "arial", sans-serif;
   font-size: 18px;
 }
+.resend-student-list {
+  .scrollbar {
+    min-height: 75px;
+    max-height: 110px;
+  }
+  .scrollbar-list > .scroll-element.scroll-y,
+  .scrollbar-inner > .scroll-element.scroll-y {
+    height: calc(100% - 38px);
+    .scroll-element_outer {
+      height: calc(100% - 42px);
+    }
+  }
+  .table-custom {
+    border: 0;
+
+    td {
+      padding: 5px 0;
+      &:only-child {
+        border-radius: 0;
+      }
+    }
+  }
+}

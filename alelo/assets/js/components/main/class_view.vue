@@ -128,7 +128,8 @@
                     class="form-check-input position-static"
                     type="checkbox"
                     aria-label="..."
-                    v-model="student.selected"
+                    :checked="student.selected"
+                    @click="toggleSelectStudent(student)"
                   />
                 </div>
               </td>
@@ -204,6 +205,7 @@
     <RemoveStudentModal @confirmed="submitRemoveStudent()" v-if="!isReadonly" />
     <ResendInvitationModal
       @confirmed="resendInviteStudent()"
+      :students="selectedStudents"
       v-if="!isReadonly"
     />
     <AddStudentModal v-if="!isReadonly" />
@@ -256,9 +258,10 @@ export default {
       return (this.classDetail.students || []).find((s) => s.selected);
     },
     selectedStudentIds() {
-      return _.compact(
-        this.classDetail.students.filter((s) => s.selected).map((i) => i.id)
-      );
+      return _.compact(this.selectedStudents.map((i) => i.id));
+    },
+    selectedStudents() {
+      return _.compact(this.classDetail.students.filter((s) => s.selected));
     },
     isReadonly() {
       return (
@@ -295,6 +298,14 @@ export default {
     save() {
       this.updateClass(this.classDetail).then(() => {
         this.editMode = false;
+      });
+    },
+    toggleSelectStudent(student) {
+      this.classDetail.students = this.classDetail.students.map((s) => {
+        if (s == student) {
+          s.selected = !s.selected;
+        }
+        return s;
       });
     },
   },

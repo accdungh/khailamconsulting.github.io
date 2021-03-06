@@ -26,12 +26,14 @@
           <p class="f-m-20 blue-bold mb-1">
             {{ $t("resendInvitation.introText") }}
           </p>
-          <p class="f-m-20 gray-blur mb-5">
+          <p class="f-m-20 gray-blur mb-1">
             {{ $t("resendInvitation.infoText") }}
           </p>
 
-          <div class="wrap-item text-center pb-5">
-            <h3 class="mt-5 mb-5">{{ $t("resendInvitation.confirmText") }}</h3>
+          <ResendStudentList :students="students" />
+
+          <div class="wrap-item text-center pb-3 pt-3">
+            <h3 class="mb-3">{{ $t("resendInvitation.confirmText") }}</h3>
             <a
               href="javascript:void(0)"
               class="btn-created"
@@ -47,8 +49,19 @@
 </template>
 
 <script>
+import ResendStudentList from "../class_view/resend_student_list.vue";
+
 export default {
   name: "RemoveInvitationModal",
+  props: {
+    students: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  components: {
+    ResendStudentList,
+  },
 };
 </script>
 

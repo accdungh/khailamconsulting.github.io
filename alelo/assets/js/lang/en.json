@@ -54,7 +54,8 @@
     "skills": "Skills",
     "editCourses": "Edit Courses",
     "infoText": "Check courses to include in your class.",
-    "editClassDetail": "Edit Class Details"
+    "editClassDetail": "Edit Class Details",
+    "email": "Email"
   },
   "progressBarForm": {
     "information": "Information",
@@ -74,7 +75,8 @@
     "addClassDes": "Add your class description"
   },
   "coursesForm": {
-    "infoText": "Check courses to include in your class (you can edit your selections later)."
+    "infoText": "Check courses to include in your class (you can edit your selections later).",
+    "include": "Include"
   },
   "studentsForm": {
     "infoText": "Enter email addresses, one per line. You can add multiple addresses, and also copy and paste a list into the box.",
