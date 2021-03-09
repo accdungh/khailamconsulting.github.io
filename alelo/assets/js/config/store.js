@@ -171,7 +171,7 @@ export default new Vuex.Store({
   },
 
   getters: {
-    activeClasses: state => state.classList.filter(i => i.active),
+    activeClasses: state => state.classList.filter(i => !i.archived),
     archivedClasses: state => state.classList.filter(i => i.archived),
     classDetail: state => state.classDetail,
     classDetailId: state => state.classDetailId,
