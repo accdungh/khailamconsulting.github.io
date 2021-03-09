@@ -77,15 +77,10 @@ export default {
         if (!valid) return;
 
         this.updateClass(
-          pick(this.formData, [
-            "name",
-            "institution",
-            "description",
-            "startDate",
-            "endDate",
-          ])
+          pick(this.formData, ["name", "description", "startDate", "endDate"])
         ).then(() => {
           $("#edit-class-modal").modal("hide");
+          $(".modal-backdrop").remove();
         });
       });
     },

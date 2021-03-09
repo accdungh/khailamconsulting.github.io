@@ -55,8 +55,8 @@ export default {
         language: { cn: "zh-CN" }[this.lang] || this.lang,
       });
       $(this.$refs[this.refKey])
-        .off("change")
-        .on("change", function () {
+        .off("blur")
+        .on("blur", function () {
           let date = $(self.$refs[self.refKey]).datepicker("getDate");
           if (!date) return;
           self.dateValue = moment(date).format(self.format);
@@ -68,6 +68,8 @@ export default {
       this.getDateValue();
     },
     dateValue(val) {
+      if (!moment(val, this.format, true).isValid()) return;
+
       let datePickerValue = $(this.$refs[this.refKey]).datepicker("getDate");
       if (val && !datePickerValue) {
         $(this.$refs[this.refKey]).datepicker("setDate", val);

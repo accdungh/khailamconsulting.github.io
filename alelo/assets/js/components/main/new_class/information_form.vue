@@ -3,7 +3,7 @@
     <form>
       <div class="form-group">
         <div class="row">
-          <div class="col-md-16 mb-3">
+          <div class="col-md-16 mb-3" v-if="isNew">
             <label class="f-m-14 blue-bold">{{
               $t("informationForm.selectInstitution")
             }}</label>
@@ -18,6 +18,15 @@
               <small v-show="errors.has('institution')" class="text-danger">{{
                 errors.first("institution")
               }}</small>
+            </div>
+          </div>
+
+          <div class="col-md-16 mb-3" v-else>
+            <label class="f-m-14 blue-bold">{{
+              $t("informationForm.yourInstitution")
+            }}</label>
+            <div class="information-form_your-institution">
+              {{ institutionName }}
             </div>
           </div>
 
@@ -167,6 +176,11 @@ export default {
       }
 
       return rule;
+    },
+    institutionName() {
+      return this.userSetting.institutions.find(
+        (i) => i.id == this.formData.institution
+      ).name;
     },
   },
   components: {

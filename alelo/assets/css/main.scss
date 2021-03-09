@@ -285,7 +285,6 @@ a {
   text-decoration: none;
 }
 a:hover {
-  
   color: #3177b2;
 }
 
@@ -1279,4 +1278,33 @@ table th a {
 }
 .disabled-link {
   cursor: no-drop;
+}
+.information-form_your-institution {
+  color: #707070;
+  font-weight: 700;
+  font-family: "arial", sans-serif;
+  font-size: 18px;
+}
+.resend-student-list {
+  .scrollbar {
+    min-height: 75px;
+    max-height: 110px;
+  }
+  .scrollbar-list > .scroll-element.scroll-y,
+  .scrollbar-inner > .scroll-element.scroll-y {
+    height: calc(100% - 38px);
+    .scroll-element_outer {
+      height: calc(100% - 42px);
+    }
+  }
+  .table-custom {
+    border: 0;
+
+    td {
+      padding: 5px 0;
+      &:only-child {
+        border-radius: 0;
+      }
+    }
+  }
 }
