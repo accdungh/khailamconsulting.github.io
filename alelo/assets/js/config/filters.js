@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export default {
   timeParser(value, format = "MM/DD/YYYY HH:mm") {
-    if (value) {
+    if (value && moment(String(value)).isValid()) {
       return moment(String(value)).format(format);
     }
   },

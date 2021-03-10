@@ -170,25 +170,29 @@
         data-toggle="modal"
         data-target="#delete-class"
       >
-        {{ $t("classDetail.deleteClass") }}</a
-      >
+        {{ $t("classDetail.deleteClass") }}
+      </a>
       <a
         v-if="!studentSelected"
         href="#add_student_modal"
         data-toggle="modal"
         data-target="#add_student_modal"
         class="btn-created float-right"
-        >{{ $t("classDetail.addStudents") }}</a
       >
+        {{ $t("classDetail.addStudents") }}
+      </a>
 
       <a
         v-if="studentSelected"
         href="#resent-invitation"
         data-toggle="modal"
         data-target="#resent-invitation"
-        class="btn-created btn-red float-right"
-        >{{ $t("classDetail.resendInvite") }}</a
+        class="btn-created btn-red float-right btn"
+        :class="{ disabled: !invitedStudents.length }"
+        :aria-disabled="!invitedStudents.length"
       >
+        {{ $t("classDetail.resendInvite") }}
+      </a>
 
       <a
         v-if="studentSelected"
@@ -196,8 +200,9 @@
         data-toggle="modal"
         data-target="#removestudent"
         class="btn-created btn-red float-right"
-        >{{ $t("classDetail.removeStudents") }}</a
       >
+        {{ $t("classDetail.removeStudents") }}
+      </a>
     </div>
 
     <CourseSimulationList :simulations="selectedCourse.simulations" />
@@ -205,7 +210,7 @@
     <RemoveStudentModal @confirmed="submitRemoveStudent()" v-if="!isReadonly" />
     <ResendInvitationModal
       @confirmed="resendInviteStudent()"
-      :students="selectedStudents"
+      :students="invitedStudents"
       v-if="!isReadonly"
     />
     <AddStudentModal v-if="!isReadonly" />
@@ -263,6 +268,12 @@ export default {
     selectedStudents() {
       return _.compact(this.classDetail.students.filter((s) => s.selected));
     },
+    invitedStudents() {
+      return _.compact(this.selectedStudents.filter((s) => !s.isUser));
+    },
+    invitedStudentIds() {
+      return _.compact(this.invitedStudents.map((i) => i.id));
+    },
     isReadonly() {
       return (
         this.classDetail && (!this.classDetail.id || this.classDetail.archived)
@@ -293,7 +304,7 @@ export default {
       this.removeStudent(this.selectedStudentIds);
     },
     resendInviteStudent() {
-      this.resendInvitation(this.selectedStudentIds);
+      this.resendInvitation(this.invitedStudentIds);
     },
     save() {
       this.updateClass(this.classDetail).then(() => {
