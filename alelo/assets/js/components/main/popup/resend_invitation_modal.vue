@@ -26,9 +26,6 @@
           <p class="f-m-20 blue-bold mb-1">
             {{ $t("resendInvitation.introText") }}
           </p>
-          <p class="f-m-20 gray-blur mb-1">
-            {{ $t("resendInvitation.infoText") }}
-          </p>
 
           <ResendStudentList :students="students" />
 
