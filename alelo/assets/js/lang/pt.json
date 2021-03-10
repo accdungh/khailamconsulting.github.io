@@ -18,6 +18,7 @@
   },
   "classList": {
     "summary": "Summary",
+    "description": "Description",
     "createClass": "Create A New Class"
   },
   "classDetail": {

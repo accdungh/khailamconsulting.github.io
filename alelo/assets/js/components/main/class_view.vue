@@ -28,6 +28,17 @@
         </div>
         <textarea
           rows="1"
+          v-model="classDetail.summary"
+          class="form-control auto-size"
+        />
+
+        <div class="row">
+          <div class="col-md-12 mb-2 mt-3 f-m-20 blue-bold">
+            {{ $t("classList.description") }}
+          </div>
+        </div>
+        <textarea
+          rows="1"
           v-model="classDetail.description"
           class="form-control auto-size"
         />

@@ -10,7 +10,7 @@
         {{ classData.startDate | toMMDDYYYY }} - {{ classData.endDate | toMMDDYYYY }}
       </div>
       <div class="txt-description col-md-24">
-        {{ classData.description }}
+        {{ classData.summary }}
       </div>
     </div>
   </div>
