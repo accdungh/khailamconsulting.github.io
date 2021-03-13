@@ -24,9 +24,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p class="f-m-20 blue-bold">
-            {{ noticeMessage }}
-          </p>
+          <p class="f-m-20 blue-bold" v-html="noticeMessage"></p>
         </div>
       </div>
     </div>
