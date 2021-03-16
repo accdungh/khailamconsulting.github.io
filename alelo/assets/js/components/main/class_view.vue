@@ -26,7 +26,10 @@
             {{ classDetail.endDate | timeParser("MMMM DD, YYYY") }}
           </div>
         </div>
-        <textarea
+        <div class="form-control">
+          {{ classDetail.description }}
+        </div>
+        <!--<textarea
           rows="1"
           v-model="classDetail.summary"
           class="form-control auto-size"
@@ -41,7 +44,7 @@
           rows="1"
           v-model="classDetail.description"
           class="form-control auto-size"
-        />
+        />-->
       </div>
     </form>
 
