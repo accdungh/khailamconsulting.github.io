@@ -61,10 +61,6 @@
             />
           </div>
 
-          <div class="d-none">
-            <KlDatepicker v-model="today" ref="today" />
-          </div>
-
           <div class="col-md-16 mb-3 clearfix">
             <div class="wrap-date">
               <div class="input-group start-date">
@@ -85,11 +81,7 @@
                 </label>
                 <KlDatepicker
                   v-model="formData.endDate"
-                  v-validate="
-                    'required|date_format:' +
-                    format +
-                    '|after:start date,inclusion:true'
-                  "
+                  v-validate="'required|afterDate:start date'"
                   data-vv-name="end date"
                   ref="end date"
                 />
@@ -155,7 +147,6 @@ export default {
     return {
       formData: {},
       format: "MM/dd/yyyy",
-      today: moment().startOf("days").toDate(),
       isDirty: false,
     };
   },
@@ -170,9 +161,9 @@ export default {
       );
     },
     startDateValidateRule() {
-      let rule = "required|date_format:" + this.format;
+      let rule = "required";
       if (this.isNew) {
-        rule += "|after:today,inclusion:true";
+        rule += "|afterToday";
       }
 
       return rule;
@@ -193,11 +184,41 @@ export default {
   },
   created() {
     this.formData = Object.assign({}, this.value);
+    this.$validator.extend("afterToday", (value) => {
+      let date = moment(value);
+      let today = moment().startOf("days");
+
+      return date >= today;
+    });
+    this.$validator.extend(
+      "afterDate",
+      (value, [otherValue]) => {
+        if (!value || !otherValue) return true;
+
+        let date1 = moment(value);
+        let date2 = moment(otherValue);
+
+        return date1 >= date2;
+      },
+      {
+        hasTarget: true,
+      }
+    );
   },
   watch: {
     formData: {
       deep: true,
       handler() {
+        if (this.formData.startDate) {
+          setTimeout(() => {
+            this.$validator.validate("start date");
+          });
+        }
+        if (this.formData.endDate) {
+          setTimeout(() => {
+            this.$validator.validate("end date");
+          });
+        }
         this.$emit("input", this.formData);
       },
     },

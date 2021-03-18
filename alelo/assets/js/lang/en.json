@@ -161,10 +161,10 @@
   "validations": {
     "custom": {
       "end date": {
-        "after": "Start Date should not be before End Date"
+        "afterDate": "End Date should not be before Start Date"
       },
       "start date": {
-        "after": "Start Date should not be before Today"
+        "afterToday": "Start Date should not be before Today"
       }
     },
     "attributes": {
