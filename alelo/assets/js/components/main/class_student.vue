@@ -19,7 +19,7 @@
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
         <h3 class="f-m-36">{{ studentDetail.name }}</h3>
         <div>
-          <b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.id }}
+          <b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.studentId }}
         </div>
         <div>
           <b>{{ $t("classStudent.email") }}</b> {{ studentDetail.email }}
