@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="form-control">
-          {{ classDetail.description }}
+          {{ classDetail.summary }}
         </div>
         <!--<textarea
           rows="1"
