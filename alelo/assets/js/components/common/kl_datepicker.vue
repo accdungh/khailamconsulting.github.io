@@ -39,6 +39,7 @@ export default {
     return {
       dateValue: "",
       endWatch: false,
+      debouncer: null,
     };
   },
   computed: {
@@ -55,10 +56,24 @@ export default {
         language: { cn: "zh-CN" }[this.lang] || this.lang,
       });
       $(this.$refs[this.refKey])
+        .off("changeDate")
+        .on("changeDate", function () {
+          let date = $(self.$refs[self.refKey]).datepicker("getDate");
+          if (!date) return;
+          clearTimeout(self.debouncer);
+          self.dateValue = moment(date).format(self.format);
+        });
+      $(this.$refs[this.refKey])
         .off("blur")
         .on("blur", function () {
           let date = $(self.$refs[self.refKey]).datepicker("getDate");
-          if (!date) return;
+          if (!date) {
+            self.debouncer = setTimeout(() => {
+              self.dateValue = null;
+              self.$emit("input", null);
+            }, 200);
+            return;
+          }
           self.dateValue = moment(date).format(self.format);
         });
     },
