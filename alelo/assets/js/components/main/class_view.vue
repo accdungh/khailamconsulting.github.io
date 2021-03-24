@@ -220,14 +220,15 @@
     </div>
 
     <CourseSimulationList :simulations="selectedCourse.simulations" />
-    <DeleteClassModal v-if="!isReadonly" />
-    <RemoveStudentModal @confirmed="submitRemoveStudent()" v-if="!isReadonly" />
-    <ResendInvitationModal
-      @confirmed="resendInviteStudent()"
-      :students="invitedStudents"
-      v-if="!isReadonly"
-    />
-    <AddStudentModal v-if="!isReadonly" />
+    <div v-show="!isReadonly">
+      <DeleteClassModal />
+      <RemoveStudentModal @confirmed="submitRemoveStudent()" />
+      <ResendInvitationModal
+        @confirmed="resendInviteStudent()"
+        :students="invitedStudents"
+      />
+      <AddStudentModal />
+    </div>
   </div>
 </template>
 
