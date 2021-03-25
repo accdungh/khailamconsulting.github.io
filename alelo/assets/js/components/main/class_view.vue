@@ -60,7 +60,7 @@
       v-model="selectedCourse"
     />
 
-    <AddCoursesModal :classObject="classDetail" v-if="!isReadonly" />
+    <AddCoursesModal :classObject="classDetail" v-show="!isReadonly" />
 
     <div class="wrap-student mb-3">
       <h3 class="f-m-20 d-inline blue-bold">
