@@ -106,5 +106,28 @@ export default {
     }, {
       headers: configHeaders,
     });
-  }
+  },
+  classReport(classId) {
+    return axios.post(`${API_PATH}/class/report`, {
+      classId
+    }, {
+      headers: configHeaders,
+    });
+  },
+  studentCourseReport(classId, studentId) {
+    return axios.post(`${API_PATH}/student/coursereport`, {
+      classId,
+      studentId
+    }, {
+      headers: configHeaders,
+    });
+  },
+  studentScenarioReport(classId, studentId) {
+    return axios.post(`${API_PATH}/student/scenarioreport`, {
+      classId,
+      studentId
+    }, {
+      headers: configHeaders,
+    });
+  },
 }

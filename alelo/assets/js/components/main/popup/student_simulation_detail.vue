@@ -122,10 +122,12 @@
             :page-range="9"
           >
           </paginate>
-          <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-            ><i class="fa fa-download"></i>
-            {{ $t("classDetail.download") }}</span
-          >
+          <a href="javascript:void(0)" @click="$emit('download')">
+            <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold">
+              <i class="fa fa-download"></i>
+              {{ $t("classDetail.download") }}
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -133,7 +135,6 @@
 </template>
 
 <script>
-import moment from "moment";
 import Sorter from "../../../services/sorter.js";
 
 export default {

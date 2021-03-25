@@ -19,7 +19,8 @@
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
         <h3 class="f-m-36">{{ studentDetail.name }}</h3>
         <div>
-          <b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.studentId }}
+          <b>{{ $t("classStudent.studentID") }}</b>
+          {{ studentDetail.studentId }}
         </div>
         <div>
           <b>{{ $t("classStudent.email") }}</b> {{ studentDetail.email }}
@@ -150,13 +151,31 @@
         <span class="d-inline float-left f-n-14 blue-light mr-4">{{
           $t("classDetail.hoverText")
         }}</span>
-        <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold"
-          ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
+        <a
+          href="javascript:void(0)"
+          @click="
+            studentCourseReport({
+              classId: $route.params.classId,
+              studentId: studentDetail.id,
+            })
+          "
         >
+          <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold">
+            <i class="fa fa-download"></i> {{ $t("classDetail.download") }}
+          </span>
+        </a>
       </div>
     </div>
 
-    <StudentSimulationDetail :simulationDetail="simulationDetail" />
+    <StudentSimulationDetail
+      :simulationDetail="simulationDetail"
+      @download="
+        studentScenarioReport({
+          classId: $route.params.classId,
+          studentId: studentDetail.id,
+        })
+      "
+    />
   </section>
 </template>
 
@@ -208,7 +227,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["fetchStudentDetail"]),
+    ...mapActions([
+      "fetchStudentDetail",
+      "studentCourseReport",
+      "studentScenarioReport",
+    ]),
     selectActiveCourse(index) {
       this.activeCourseIndex = index;
       this.sortSimulation("title", true);

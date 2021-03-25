@@ -168,6 +168,30 @@ export default new Vuex.Store({
     changeAjaxCount({ commit }, number) {
       commit('changeAjaxCount', number);
     },
+    classReport({ commit }, classId) {
+      AjaxCaller.classReport(classId).then(resp => {
+        let json = resp.data;
+        if (json && json.message) {
+          commit('setNoticeMessage', json.message);
+        }
+      })
+    },
+    studentCourseReport({ commit }, { classId, studentId }) {
+      AjaxCaller.studentCourseReport(classId, studentId).then(resp => {
+        let json = resp.data;
+        if (json && json.message) {
+          commit('setNoticeMessage', json.message);
+        }
+      })
+    },
+    studentScenarioReport({ commit }, { classId, studentId }) {
+      AjaxCaller.studentScenarioReport(classId, studentId).then(resp => {
+        let json = resp.data;
+        if (json && json.message) {
+          commit('setNoticeMessage', json.message);
+        }
+      })
+    },
   },
 
   getters: {
