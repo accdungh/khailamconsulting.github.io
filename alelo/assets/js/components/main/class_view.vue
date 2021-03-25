@@ -68,7 +68,7 @@
       </h3>
       <a
         href="javascript:void(0)"
-        @click="classReport(classDetail && classDetailId)"
+        @click="classReport(classDetail && classDetail.id)"
       >
         <span class="d-inline f-n-14 m-3 mt-1 mr-4 blue-light">
           <i class="fa fa-download"></i> {{ $t("classDetail.download") }}
