@@ -281,6 +281,7 @@ export default {
       return _.compact(this.selectedStudents.map((i) => i.id));
     },
     selectedStudents() {
+      if (!this.classDetail || !this.classDetail.students) return [];
       return _.compact(this.classDetail.students.filter((s) => s.selected));
     },
     invitedStudents() {

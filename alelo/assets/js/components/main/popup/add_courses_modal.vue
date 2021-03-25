@@ -99,10 +99,15 @@ export default {
     },
   },
   watch: {
-    classObject() {
-      this.classDetail = Object.assign({}, this.classObject, {
-        selectedCourses: (this.classObject.activeCourse || []).map((i) => i.id),
-      });
+    classObject: {
+      deep: true,
+      handler() {
+        this.classDetail = Object.assign({}, this.classObject, {
+          selectedCourses: (this.classObject.activeCourse || []).map(
+            (i) => i.id
+          ),
+        });
+      },
     },
   },
 };
