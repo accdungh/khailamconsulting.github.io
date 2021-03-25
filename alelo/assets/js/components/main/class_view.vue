@@ -66,9 +66,14 @@
       <h3 class="f-m-20 d-inline blue-bold">
         {{ $t("classDetail.studentList") }}
       </h3>
-      <span class="d-inline f-n-14 m-3 mt-1 mr-4 blue-light"
-        ><i class="fa fa-download"></i> {{ $t("classDetail.download") }}</span
+      <a
+        href="javascript:void(0)"
+        @click="classReport(classDetail && classDetail.id)"
       >
+        <span class="d-inline f-n-14 m-3 mt-1 mr-4 blue-light">
+          <i class="fa fa-download"></i> {{ $t("classDetail.download") }}
+        </span>
+      </a>
     </div>
     <div class="wrap-item">
       <div class="scrollbar scrollbar-inner">
@@ -302,6 +307,7 @@ export default {
       "updateClass",
       "removeStudent",
       "resendInvitation",
+      "classReport",
     ]),
     selectAllStudent() {
       this.classDetail.students = this.classDetail.students.map((s) => {
