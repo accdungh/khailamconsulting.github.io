@@ -19,8 +19,7 @@
       <div class="wrap-item col-md-14 p-4 f-n-16 line-height-40">
         <h3 class="f-m-36">{{ studentDetail.name }}</h3>
         <div>
-          <b>{{ $t("classStudent.studentID") }}</b>
-          {{ studentDetail.studentId }}
+          <b>{{ $t("classStudent.studentID") }}</b> {{ studentDetail.studentId }}
         </div>
         <div>
           <b>{{ $t("classStudent.email") }}</b> {{ studentDetail.email }}
@@ -66,7 +65,7 @@
           >
             <thead>
               <tr>
-                <th scope="col">
+                <th scope="col" class="text-center">
                   <a
                     href="javascript:void(0)"
                     @click="sortSimulation('title')"
@@ -76,7 +75,7 @@
                     <SortArrow :flag="sorter.orderKeys.title.value" />
                   </a>
                 </th>
-                <th scope="col">
+                <th scope="col" class="text-center">
                   <a
                     href="javascript:void(0)"
                     data-toggle="tooltip"
@@ -87,7 +86,7 @@
                     <SortArrow :flag="sorter.orderKeys.lastTried.value" />
                   </a>
                 </th>
-                <th scope="col">
+                <th scope="col" class="text-center">
                   <a
                     href="javascript:void(0)"
                     data-toggle="tooltip"
@@ -99,7 +98,7 @@
                     <SortArrow :flag="sorter.orderKeys.topScore.value" />
                   </a>
                 </th>
-                <th scope="col">
+                <th scope="col" class="text-center">
                   <a
                     href="javascript:void(0)"
                     data-toggle="tooltip"
@@ -111,7 +110,7 @@
                     <SortArrow :flag="sorter.orderKeys.completed.value" />
                   </a>
                 </th>
-                <th scope="col">
+                <th scope="col" class="text-center">
                   <a
                     href="javascript:void(0)"
                     data-toggle="tooltip"
@@ -151,8 +150,7 @@
         <span class="d-inline float-left f-n-14 blue-light mr-4">{{
           $t("classDetail.hoverText")
         }}</span>
-        <a
-          href="javascript:void(0)"
+        <a style="display: none;" href="javascript:void(0)"
           @click="
             studentCourseReport({
               classId: $route.params.classId,
@@ -234,7 +232,7 @@ export default {
     ]),
     selectActiveCourse(index) {
       this.activeCourseIndex = index;
-      this.sortSimulation("title", true);
+      //this.sortSimulation("title", true);
     },
     sortSimulation(orderBy = null, flag = undefined) {
       this.studentDetail.courses[
@@ -252,7 +250,7 @@ export default {
       id: this.$route.params.id,
       classId: this.$route.params.classId,
     }).finally(() => {
-      this.sortSimulation("title", true);
+      //this.sortSimulation("title", true);
       this.$commonJs.initJs();
       this.$commonJs.initHorizontalScrollBar();
     });

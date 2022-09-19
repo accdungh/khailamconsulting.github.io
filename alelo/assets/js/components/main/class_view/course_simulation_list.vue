@@ -27,7 +27,7 @@
           <div id="accordion">
             <div
               class="card"
-              v-for="(simulation, index) in sortedSimulations"
+              v-for="(simulation, index) in simulations"
               :key="'simulation' + index"
             >
               <div class="card-header" id="headingOne">

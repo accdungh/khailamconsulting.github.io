@@ -91,7 +91,7 @@
                 v-for="(attempt, index) in currentPageAttempts"
                 :key="'active-log-' + index"
               >
-                <td>{{ attempt.date | timeParser }}</td>
+                <td>{{ attempt.endTime | timeParser }}</td>
                 <td>{{ attempt.score }}</td>
                 <td>
                   {{ attempt.objectivesCompleted }}/{{
@@ -122,7 +122,7 @@
             :page-range="9"
           >
           </paginate>
-          <a href="javascript:void(0)" @click="$emit('download')">
+          <a style="display: none;" href="javascript:void(0)" @click="$emit('download')">
             <span class="d-inline float-right f-n-14 mt-1 mr-4 blue-bold">
               <i class="fa fa-download"></i>
               {{ $t("classDetail.download") }}

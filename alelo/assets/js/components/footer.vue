@@ -7,7 +7,7 @@
             {{ $t("common.footer.copyRight") }}
           </div>
           <div class="col-md-6 text-center text-md-left f-n-16">
-            {{ $t("common.footer.playLearnCommunicate") }}
+            {{ $t("common.footer.slogan") }}
           </div>
           <div class="col-md-9">
             <ul class="list-inline f-20 mb-0 mt-md-0 text-center text-md-right f-n-16">

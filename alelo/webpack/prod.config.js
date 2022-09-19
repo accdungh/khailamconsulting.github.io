@@ -2,8 +2,10 @@ const Webpack = require('webpack')
 const {
     merge
 } = require('webpack-merge')
+const ROOT_PATH = process.cwd();
 const BaseConfig = require('./base.config.js')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const {
     CleanWebpackPlugin
@@ -13,6 +15,7 @@ module.exports = function (env) {
     return merge(BaseConfig(env.env), {
         mode: 'production',
         optimization: {
+            minimize: true,
             minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
         },
         plugins: [
@@ -24,6 +27,10 @@ module.exports = function (env) {
                         NODE_ENV: JSON.stringify('production')
                     }
                 }
+            }),
+            new HtmlWebpackPlugin({
+                title: 'SimServer - Instructor Dashboard',
+                template: ROOT_PATH + `/assets/index.html`,
             }),
             new Webpack.LoaderOptionsPlugin({
                 minimize: true,

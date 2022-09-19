@@ -27,7 +27,7 @@
           <p class="f-m-20 blue-bold mb-1">
             {{ $t("addStudents.instructions") }}
           </p>
-          <p class="f-m-20 gray-blur mb-5">
+          <p class="f-m-14 gray-blur mb-4">
             {{ $t("addStudents.instructionsText") }}
           </p>
           <div v-if="!sent">

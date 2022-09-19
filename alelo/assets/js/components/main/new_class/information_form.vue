@@ -57,8 +57,15 @@
               :placeholder="$t('informationForm.addNewDes')"
               rows="1"
               v-model="formData.description"
+              v-validate="'required'"
+              data-vv-name="description"
               class="form-control auto-size"
             />
+            <div>
+              <small v-show="errors.has('description')" class="text-danger">{{
+                errors.first("description")
+              }}</small>
+            </div>
           </div>
 
           <div class="col-md-16 mb-3 clearfix">

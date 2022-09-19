@@ -1,9 +1,9 @@
 import axios from "axios";
 import App from './app.js';
 
-const API_PATH = "https://sim-dev.alelo.com/api/dummy_instructor"
+//const API_PATH = "https://sim-dev.alelo.com/api/dummy_instructor"
 /** for the production use */
-//const API_PATH = "/api/instructor";
+const API_PATH = "https://sim-dev.alelo.com/api/instructor";
 
 const configHeaders = {
   "Content-Type": "application/json",

@@ -10,8 +10,8 @@
     "welcome": "Welcome",
     "logOut": "Log Out",
     "footer": {
-      "copyRight": "Copyright 2021 Alelo Inc. All rights reserved.",
-      "playLearnCommunicate": "Play. Learn. Communicate.",
+      "copyRight": "Copyright 2022 Alelo Inc. All rights reserved.",
+      "slogan": "Real-World Skills. Real Fast.",
       "contactUs": "Contact Us",
       "privacyPolicy": "Privacy Policy",
       "termsService": "Terms of Service"
@@ -80,7 +80,7 @@
     "include": "Include"
   },
   "studentsForm": {
-    "infoText": "Enter email addresses, one per line. You can add multiple addresses, and also copy and paste a list into the box.",
+    "infoText": "Enter one email address per line. You can add as many addresses as you need, or copy and paste from a list.",
     "invalidEmail": "The email {emails} {beVerb} invalid",
     "is": "is",
     "are": "are"
@@ -136,9 +136,9 @@
   },
   "addStudents": {
     "instructions": "Instructions",
-    "instructionsText": "Enter email addresses, one per line. You can add multiple addresses, and also copy and paste a list into the box.",
+    "instructionsText": "Enter one email address per line. You can add as many addresses as you need, or copy and paste from a list.",
     "invite": "Invite",
-    "invitationsSent": "Invitations sent!",
+    "invitationsSent": "Invitation(s) sent!",
     "addMore": "Add More"
   },
   "deleteClass": {
@@ -169,6 +169,7 @@
     },
     "attributes": {
       "title": "Title",
+      "description": "Description",
       "summary": "Summary",
       "start date": "Start Date",
       "end date": "End Date"
