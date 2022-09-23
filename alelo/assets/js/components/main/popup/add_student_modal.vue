@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import StudentEmailMixin from "../../../mixins/student_email";
 
 export default {
@@ -76,6 +76,9 @@ export default {
       sent: false,
     };
   },
+  computed: {
+    ...mapGetters(["noticeMessage"]),
+  },
   methods: {
     ...mapActions(["addStudent"]),
     invite() {
@@ -83,7 +86,8 @@ export default {
       if (this.invalidEmails.length) return;
 
       this.addStudent({ students: this.students }).then(() => {
-        this.sent = true;
+        if (!noticeMessage)
+          this.sent = true;
       });
     },
     addMore() {
@@ -96,9 +100,14 @@ export default {
       autosize($(".student-list"));
       autosize.update($(".student-list"));
     },
+    resetForm() {
+      this.clearStudentEmails();
+    },
   },
   created() {
-    $(document).on("shown.bs.modal", "#add_student_modal", this.autosizeEvent);
+    const t = this;
+    $(document).on("shown.bs.modal", "#add_student_modal", t.autosizeEvent);
+    $(document).on("hidden.bs.modal", "#add_student_modal", t.resetForm);
   },
 };
 </script>

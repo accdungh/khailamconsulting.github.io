@@ -38,9 +38,15 @@ export default function () {
     },
 
     initListScrollbar() {
-      $('.class-list .scrollbar-list').scrollbar();
+      $('.class-list .scrollbar-list, .class-archived .scrollbar-list').each((indx, el) => {
+        $(el).scrollbar({
+          'autoScrollSize': false,
+          'scrollx': $(el).parent().find('.external-scroll_x'),
+          'scrolly': $(el).parent().find('.external-scroll_y'),
+        });
+      });
     },
-    
+
     initHorizontalScrollBar() {
       new HorizontalScrollBarHandler($('.nav-tab-course')).perform();
     }

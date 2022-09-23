@@ -1,10 +1,10 @@
 <template>
   <input
-    :placeholder="placeholder || format"
+    :placeholder="placeholder || momentFormat"
     :ref="refKey"
     v-model="dateValue"
     :class="inputClass"
-    :data-date-format="format.toLowerCase()"
+    :data-date-format="format"
   />
 </template>
 
@@ -32,7 +32,7 @@ export default {
     },
     format: {
       type: String,
-      default: "MM/DD/YYYY",
+      default: "mm/dd/yyyy",
     },
   },
   data() {
@@ -44,26 +44,30 @@ export default {
   },
   computed: {
     ...mapGetters(["lang"]),
+    momentFormat() { return this.format.toUpperCase(); }
   },
   methods: {
     getDateValue() {
-      if (this.value) this.dateValue = moment(this.value).format(this.format);
+      if (this.value)
+        this.dateValue = moment(this.value).format(this.momentFormat);
+      else
+        this.dateValue = null;
     },
     initDatepicker() {
       let self = this;
-      $(this.$refs[this.refKey]).datepicker("destroy");
-      $(this.$refs[this.refKey]).datepicker({
-        language: { cn: "zh-CN" }[this.lang] || this.lang,
+      $(self.$refs[self.refKey]).datepicker("destroy");
+      $(self.$refs[self.refKey]).datepicker({
+        language: { cn: "zh-CN" }[self.lang] || self.lang,
       });
-      $(this.$refs[this.refKey])
+      $(self.$refs[self.refKey])
         .off("changeDate")
-        .on("changeDate", function () {
-          let date = $(self.$refs[self.refKey]).datepicker("getDate");
+        .on("changeDate", function (e) {
+          let date = e.date;
           if (!date) return;
           clearTimeout(self.debouncer);
-          self.dateValue = moment(date).format(self.format);
+          self.dateValue = moment(date).format(self.momentFormat);
         });
-      $(this.$refs[this.refKey])
+      $(self.$refs[self.refKey])
         .off("blur")
         .on("blur", function () {
           let date = $(self.$refs[self.refKey]).datepicker("getDate");
@@ -74,7 +78,7 @@ export default {
             }, 200);
             return;
           }
-          self.dateValue = moment(date).format(self.format);
+          self.dateValue = moment(date).format(self.momentFormat);
         });
     },
   },
@@ -82,21 +86,14 @@ export default {
     value(val) {
       this.getDateValue();
     },
-    dateValue(val) {
-      if (!moment(val, this.format, true).isValid()) return;
+    dateValue(val, oldVal) {
+      if (!moment(val, this.momentFormat, true).isValid()) return;
 
-      let datePickerValue = $(this.$refs[this.refKey]).datepicker("getDate");
-      if (val && !datePickerValue) {
+      let datePickerValueFormat = moment(val, this.momentFormat).format(this.momentFormat);
+      if (datePickerValueFormat !== oldVal) 
         $(this.$refs[this.refKey]).datepicker("setDate", val);
-        this.$emit("input", moment(val, this.format));
-        return;
-      }
-      let datePickerValueFormat = moment(datePickerValue).format(this.format);
-      if (datePickerValueFormat !== this.dateValue) {
-        $(this.$refs[this.refKey]).datepicker("setDate", datePickerValue);
-      } else {
-        this.$emit("input", datePickerValue);
-      }
+
+      this.$emit("input", val);
     },
     lang() {
       this.initDatepicker();

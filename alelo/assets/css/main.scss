@@ -1,3 +1,11 @@
+@mixin arrow_icon {
+  display: inline-block;
+  font: normal normal normal 18px/1 FontAwesome;
+  position: absolute;
+  right: 5px;
+  z-index: 100;
+}
+
 /*************** SCROLLBAR BASE CSS ***************/
 .scrollbar-nav {
   position: relative;
@@ -59,7 +67,7 @@
   margin: 0;
   max-height: none;
   max-width: none !important;
-  overflow-y: scroll !important;
+  overflow: scroll !important;
   padding: 0;
   position: relative !important;
   top: 0;
@@ -86,35 +94,8 @@
   cursor: default;
 }
 
-.scroll-textarea {
-  border: 1px solid #cccccc;
-  border-top-color: #999999;
-}
-.scroll-textarea > .scroll-content {
-  overflow: hidden !important;
-}
-.scroll-textarea > .scroll-content > textarea {
-  border: none !important;
-  box-sizing: border-box;
-  height: 100% !important;
-  margin: 0;
-  max-height: none !important;
-  max-width: none !important;
-  overflow: scroll !important;
-  outline: none;
-  padding: 2px;
-  position: relative !important;
-  top: 0;
-  width: 100% !important;
-}
-.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
-  height: 0;
-  width: 0;
-}
 /*************** SIMPLE INNER SCROLLBAR ***************/
 
-.scrollbar-list > .scroll-element div,
-.scrollbar-list > .scroll-element,
 .scrollbar-inner > .scroll-element,
 .scrollbar-inner > .scroll-element div {
   border: none;
@@ -124,7 +105,6 @@
   z-index: 10;
 }
 
-.scrollbar-list > .scroll-element div,
 .scrollbar-inner > .scroll-element div {
   display: block;
   height: 100%;
@@ -142,83 +122,114 @@
 }
 
 .scrollbar-list-wrapper {
-  margin-right: -60px;
+  position: relative;
+  width: auto !important;
+
   .scrollbar-list {
-    padding: 0 60px 0 6px;
     max-height: 600px;
+    overflow: auto;
+  }
+  
+  .scroll-element_outer {
+    height: 560px !important;
+    right: 0px;
+    top: 20px !important;
+    width: 30px;
+  }
+  
+  .external-scroll_y.scroll-scrolly_visible:before,
+  .external-scroll_y.scroll-scrolly_visible:after {
+    @include arrow_icon
+  }
+  .external-scroll_y.scroll-scrolly_visible:before {
+    content: "\f078";
+    bottom: 0px;
+  }
+  .external-scroll_y.scroll-scrolly_visible:after {
+    top: 0px;
+    content: "\f077";
+  }
 
-    .scroll-element {
-      .scroll-element_outer {
-        height: 560px;
-        right: 0px;
-        top: 20px;
-        width: 30px;
-      }
+  .external-scroll_x,
+  .external-scroll_y {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+  }
 
-      &scroll-x {
-        display: none;
-      }
+  .external-scroll_y.scroll-scrolly_visible {
+    display: block;
+    height: 600px;
+    right: -60px;
+    top: 0;
+    width: 30px;
+    border: 0;
+    background-color: #ededed;
+    border-radius: 10px;
+  }
+  
+  .external-scroll_x div,
+  .external-scroll_y div
+  {
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .external-scroll_x .scroll-bar,
+  .external-scroll_y .scroll-bar {
+      z-index: 12;
+  }
+  
+  .external-scroll_y .scroll-bar {
+    background-color: #cbcbcb;
+    height: 190px!important;
+    width: 8px;
+    margin-left: 12px;
+  }
 
-      &.scroll-y {
-        height: 600px;
-        right: 0px;
-        top: 0;
-        width: 30px;
-        border: 0;
-        background-color: #ededed;
-        border-radius: 10px;
-      }
-
-      .scroll-bar {
-        background-color: #cbcbcb;
-        height: 190px !important;
-      }
-    }
+  .form-group {
+    padding-left: 7px;
+    padding-right: 7px;
   }
 }
 
-.scrollbar-list > .scroll-element.scroll-y,
-.scrollbar-inner > .scroll-element.scroll-y {
-  height: 240px;
-  right: 1px;
-  top: 38px;
-  width: 30px;
-  background-color: #fff;
-  border-radius: 0;
-  border-left: 3px solid #ededed;
+
+.scrollbar-inner {
+  > .scroll-element.scroll-y {
+    height: 240px;
+    right: 1px;
+    top: 38px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 0;
+    border-left: 3px solid #ededed;
+  }
+  > .scroll-element .scroll-element_outer {
+    top: 20px;
+    height: 190px;
+    bottom: 20px;
+  }
+  
+  > .scroll-element .scroll-element_outer:after,
+  > .scroll-element .scroll-element_outer:before {
+    @include arrow_icon
+  }
+
+  > .scroll-element .scroll-element_outer:after {
+    content: "\f077";
+    top: -20px;
+  }
+  
+  > .scroll-element .scroll-element_outer:before {
+    content: "\f078";
+    bottom: -20px;
+  }
 }
 
-.scrollbar-list > .scroll-element.scroll-element_outer,
-.scrollbar-inner > .scroll-element .scroll-element_outer {
-  top: 20px;
-  height: 190px;
-  bottom: 20px;
-}
 
-.scrollbar-list > .scroll-element .scroll-element_outer:after,
-.scrollbar-inner > .scroll-element .scroll-element_outer:after {
-  content: "\f077";
-  display: inline-block;
-  font: normal normal normal 18px/1 FontAwesome;
-  position: absolute;
-  right: 5px;
-  top: -20px;
-  z-index: 100;
-}
-.scrollbar-list > .scroll-element .scroll-element_outer:before,
-.scrollbar-inner > .scroll-element .scroll-element_outer:before {
-  content: "\f078";
-  display: inline-block;
-  font: normal normal normal 18px/1 FontAwesome;
-  position: absolute;
-  right: 5px;
-  bottom: -20px;
-  z-index: 100;
-}
-
-.scrollbar-list > .scroll-element .scroll-element_outer,
-.scrollbar-list > .scroll-element .scroll-element_track,
-.scrollbar-list > .scroll-element .scroll-bar,
 .scrollbar-inner > .scroll-element .scroll-element_outer,
 .scrollbar-inner > .scroll-element .scroll-element_track,
 .scrollbar-inner > .scroll-element .scroll-bar {
@@ -227,7 +238,6 @@
   border-radius: 8px;
 }
 
-.scrollbar-list > .scroll-element .scroll-bar,
 .scrollbar-inner > .scroll-element .scroll-bar {
   width: 8px;
   margin-left: 12px;
@@ -267,9 +277,6 @@
   display: none;
 }
 
-.scrollbar {
-  min-height: 120px;
-}
 
 /**
    * Structure

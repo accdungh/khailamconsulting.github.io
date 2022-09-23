@@ -34,4 +34,9 @@ export default {
       });
     },
   },
+  methods: {
+    clearStudentEmails() {
+      this.studentEmails = '';
+    },
+  },
 }

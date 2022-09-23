@@ -12,11 +12,11 @@
               :options="userSetting.institutions"
               :label="$t('informationForm.institution')"
               v-validate="'required'"
-              data-vv-name="institution"
+              data-vv-name="Institution"
             />
             <div>
-              <small v-show="errors.has('institution')" class="text-danger">{{
-                errors.first("institution")
+              <small v-show="errors.has('Institution')" class="text-danger">{{
+                errors.first("Institution")
               }}</small>
             </div>
           </div>
@@ -40,11 +40,11 @@
               class="form-control information-form__name"
               v-model="formData.name"
               v-validate="'required|max:128'"
-              data-vv-name="title"
+              data-vv-name="Title"
             />
             <div>
-              <small v-show="errors.has('title')" class="text-danger">{{
-                errors.first("title")
+              <small v-show="errors.has('Title')" class="text-danger">{{
+                errors.first("Title")
               }}</small>
             </div>
           </div>
@@ -58,12 +58,12 @@
               rows="1"
               v-model="formData.description"
               v-validate="'required'"
-              data-vv-name="description"
+              data-vv-name="Description"
               class="form-control auto-size"
             />
             <div>
-              <small v-show="errors.has('description')" class="text-danger">{{
-                errors.first("description")
+              <small v-show="errors.has('Description')" class="text-danger">{{
+                errors.first("Description")
               }}</small>
             </div>
           </div>
@@ -77,8 +77,8 @@
                 <KlDatepicker
                   v-model="formData.startDate"
                   v-validate="startDateValidateRule"
-                  data-vv-name="start date"
-                  ref="start date"
+                  data-vv-name="Start Date"
+                  ref="Start Date"
                 />
               </div>
 
@@ -88,9 +88,9 @@
                 </label>
                 <KlDatepicker
                   v-model="formData.endDate"
-                  v-validate="'required|afterDate:start date'"
-                  data-vv-name="end date"
-                  ref="end date"
+                  v-validate="'required|afterDate:Start Date'"
+                  data-vv-name="End Date"
+                  ref="End Date"
                 />
               </div>
 
@@ -98,16 +98,16 @@
               <div class="text-danger error-message">
                 <div>
                   <small
-                    v-show="isDatesDirty && errors.has('start date')"
+                    v-show="isDatesDirty && errors.has('Start Date')"
                     class="text-danger"
-                    >{{ errors.first("start date") }}</small
+                    >{{ errors.first("Start Date") }}</small
                   >
                 </div>
                 <div>
                   <small
-                    v-show="isDatesDirty && errors.has('end date')"
+                    v-show="isDatesDirty && errors.has('End Date')"
                     class="text-danger"
-                    >{{ errors.first("end date") }}</small
+                    >{{ errors.first("End Date") }}</small
                   >
                 </div>
               </div>
@@ -153,7 +153,6 @@ export default {
   data() {
     return {
       formData: {},
-      format: "MM/dd/yyyy",
       isDirty: false,
     };
   },
@@ -162,7 +161,7 @@ export default {
     isDatesDirty() {
       return (
         this.isDirty ||
-        ["start date", "end date"].some(
+        ["Start Date", "End Date"].some(
           (key) => this.fields[key] && this.fields[key].dirty
         )
       );
@@ -176,9 +175,12 @@ export default {
       return rule;
     },
     institutionName() {
-      return this.userSetting.institutions.find(
-        (i) => i.id == this.formData.institution
-      ).name;
+      if (this.userSetting.institutions) {
+        const institution = this.userSetting.institutions.find(
+          (i) => i.id == this.formData.institution
+        )
+        return institution && institution.name;
+      }
     },
   },
   components: {
@@ -188,29 +190,31 @@ export default {
     changeDirtyState(state) {
       this.isDirty = state;
     },
+    resetForm() {
+      this.formData = {};
+      this.$validator.reset();
+    },
   },
   created() {
-    this.formData = Object.assign({}, this.value);
+    this.resetForm();
     this.$validator.extend("afterToday", (value) => {
       let date = moment(value);
       let today = moment().startOf("days");
 
       return date >= today;
     });
-    this.$validator.extend(
-      "afterDate",
-      (value, [otherValue]) => {
-        if (!value || !otherValue) return true;
+    this.$validator.extend("afterDate", (value, [otherValue]) => {
+      if (!value || !otherValue) return true;
 
-        let date1 = moment(value);
-        let date2 = moment(otherValue);
+      let date1 = moment(value);
+      let date2 = moment(otherValue);
 
-        return date1 >= date2;
-      },
-      {
-        hasTarget: true,
-      }
-    );
+      return date1 >= date2;
+    }, { hasTarget: true, });
+  },
+  mounted() {
+    const t = this;
+    $(document).on("hidden.bs.modal", "#create-new-class", t.resetForm);
   },
   watch: {
     formData: {
@@ -218,12 +222,12 @@ export default {
       handler() {
         if (this.formData.startDate) {
           setTimeout(() => {
-            this.$validator.validate("start date");
+            this.$validator.validate("Start Date");
           });
         }
         if (this.formData.endDate) {
           setTimeout(() => {
-            this.$validator.validate("end date");
+            this.$validator.validate("End Date");
           });
         }
         this.$emit("input", this.formData);

@@ -1,11 +1,27 @@
 <template>
-  <div :class="{ 'scrollbar-list-wrapper': classList.length > 5 }">
+  <div class='scrollbar-list-wrapper'>
     <div class="scrollbar-list">
       <ClassListItem
         v-for="(item, index) in classList"
         :key="'class-list-item' + index"
         :classData="item"
       />
+    </div>
+
+    <div class='external-scroll_x'>
+      <div class='scroll-element_outer'>
+        <div class='scroll-element_size'></div>
+        <div class='scroll-element_track'></div>
+        <div class='scroll-bar'></div>
+      </div>
+    </div>
+
+    <div class='external-scroll_y'>
+      <div class='scroll-element_outer'>
+        <div class='scroll-element_size'></div>
+        <div class='scroll-element_track'></div>
+        <div class='scroll-bar'></div>
+      </div>
     </div>
   </div>
 </template>

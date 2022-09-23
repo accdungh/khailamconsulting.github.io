@@ -65,13 +65,13 @@
     "review": "Review"
   },
   "informationForm": {
-    "selectInstitution": "Select your institution.",
-    "yourInstitution": "Your institution.",
+    "selectInstitution": "Select your institution",
+    "yourInstitution": "Your institution",
     "institution": "Institution",
     "note": "Note: This class will be archived after the end date.",
-    "addTitle": "Add a title for your class.",
+    "addTitle": "Add a title for your class",
     "addStartDate": "Add a Start Date",
-    "addEndDate": "Add an End Date.",
+    "addEndDate": "Add an End Date",
     "addNewDes": "Add new description",
     "addClassDes": "Add your class description"
   },
